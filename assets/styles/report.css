@@ -9,8 +9,7 @@ body {
 
 main {
   margin: 0 auto;
-  margin-top: 10%;
-  margin-bottom: 30px;
+  margin-top: 30px;
   max-width: 1000px;
 }
 
@@ -79,7 +78,7 @@ footer p {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -129,6 +128,5 @@ figure.right {
   transform: rotate(-5deg);
 }
 .lucky img {
-  text-align: center;
   width: 100%;
 }/*# sourceMappingURL=report.css.map */

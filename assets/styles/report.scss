@@ -85,7 +85,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -136,8 +136,6 @@ figure.right {
         transform: rotate(-5deg);
     }
     img {
-        text-align: center;
         width: 100%;
     }
 }
-
