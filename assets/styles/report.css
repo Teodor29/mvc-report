@@ -9,7 +9,8 @@ body {
 
 main {
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 2em;
+  padding-bottom: 2em;
   max-width: 1000px;
 }
 
@@ -129,4 +130,68 @@ figure.right {
 }
 .lucky img {
   width: 100%;
+}
+
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding-bottom: 2em;
+  text-align: center;
+}
+.cardLink a {
+  text-decoration: none;
+  color: #212121;
+  font-size: 2em;
+  margin: 0.5em;
+  padding: 0.6em;
+  border-radius: 10px;
+}
+.cardLink a:hover {
+  background-color: #E4DCCF;
+}
+.cardLink div {
+  padding-top: 3em;
+}
+
+.container {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  min-height: 400px;
+}
+.container .card {
+  background-color: #eee;
+  margin: 0.3em;
+  display: inline-block;
+  text-align: center;
+  width: 90px;
+  height: 130px;
+  border-radius: 5px;
+  box-shadow: 5px 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.container h2 {
+  padding: 1em;
+}
+.container .api_link {
+  background-color: #E4DCCF;
+  text-decoration: none;
+  color: #212121;
+  margin: 1em;
+  display: inline-block;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.container .api_link p {
+  padding: 0.5em;
+}
+.container .api_link:hover {
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }/*# sourceMappingURL=report.css.map */
