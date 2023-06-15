@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+
+<h1>Card Deck</h1>
+
+{% if deck == null %}
+<p>Deck is empty. You need to shuffle deck first!</p>
+{% endif %}
+
+<div class="container">
+        {% for card in deck %}
+        <div class="card">
+            <p>{{ card }}</p>
+        </div>
+        {% endfor %}
+</div>
+
+
+
+{% endblock %}

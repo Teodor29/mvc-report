@@ -32,7 +32,26 @@
 
     <h2 id="kmom02">kmom02</h2>
 
-    <p></p>
+    <h3>Klasser</h3>
+    <p>DeckOfCards klassen skapar en kortlek. Två arrayer används, en med kortens färg och en med värdet. Sen skapas alla kort med foreach loop. Shuffle funktionen blandar kortleken. </p>
+    <p>Card klassen hämtar kortleken som skapades i DeckOfCards. Genom drawCards funktionen hämtas de översta korten ur kortleken med array_splice().  </p>
+    <h3>Routs</h3>
+    <p>CardsConroller innehåller alla routs som används i Card-fliken. </p>
+    <p>Card/deck/shuffle använder DeckOfCards som skapar kortleken. Kortleken blandas med shuffle innan den läggs i sessionen. Kortleken skickas till shuffle.html.twig där korten skrivs ut med en for loop. </p>
+    <p>Card/deck hämtar kortleken från sessionen, sorterar den och skriver ut korten i deck.html.twig. </p>
+    <p>Card/deck/draw använder drawCards funktionen ur card klassen. Klassen tar kortleken och ett nummer som parametrar. Korten tas ut med array_splice och sen returneras kortleken och de uttagna korten separat. Sessionen uppdateras och de dragna korten skrivs ut i draw.html.twig. </p>
+    <p>Card/deck/draw/{num<\d+>} funkar på samma sätt men använder numret som angivits. </p>
+    <p>ApiController innehåller alla routs som används i API-fliken. Alla routes funkar på samma sätt. Fast istället för att skicka datan till en twig fil skapas en json response med “JSON_PRETTY_PRINT” </p>
+    <h3>Konstruktioner</h3>
+    <p>Arv handlar om att skapa nya klasser baserat på befintliga klasser. En ny klass kan ärva egenskaper och beteenden från en befintlig klass. Man använder “extends” i php. </p>
+    <p>Komposition handlar om att kombinera olika delar för att skapa en ny klass. Man skapar en ny klass genom att komponera instanser av andra klasser. </p>
+    <p>Ett interface definierar en uppsättning metoder som en klass måste implementera. Det fungerar som en slags mall som beskriver vad en klass ska kunna göra. Man använder “interface” för att skapa ett interface i php. </p>
+    <p>En trait är en återanvändbar bit kod som kan användas i flera klasser. I PHP inkluderar man en trait i en klass med hjälp av nyckelordet "use". </p>
+    <h3>Reflektion</h3>
+    <p>Jag är relativt nöjd med uppgiften. Korten hade kunnat se betydligt mycket bättre ut. Jag hade kunnat vara lite mer kreativ med twig sidorna men jag prioriterade att bli klar med uppgiften. </p>
+    <p>Det funkar bra att att jobba i symfony förutom att det tar några sekunder för stylen att laddas in även om an använder “npm run watch”. Vilket kan kännas som en evighet för den otålmodige. 
+Min TIL är “npm run watch”. </p>
+
 
     <h2 id="kmom03">kmom03</h2>
 

@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+<div class="cardLink">
+        <h1>Card links</h1>
+        <div>
+                <a href="{{ path('deck') }}">Deck</a>
+                <a href="{{ path('shuffle') }}">Shuffle</a>
+                <a href="{{ path('draw') }}">Draw</a>
+        </div>
+</div>
+
+<div>
+        <h3>DeckOfCards</h3>
+        <p>Klassen skapar en kortlek. Två arrayer används, en med kortens färg och en med värdet. Sen skapas alla kort med foreach loop. Shuffle funktionen blandar kortleken. </p>
+        <h3>Cards</h3>
+        <p>Klassen använder kortleken som skapades i DeckOfCards. Genom drawCards funktionen hämtas de översta korten ur kortleken med array_splice().  </p>
+</div>
+
+{% endblock %}

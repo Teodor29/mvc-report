@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+
+
+
+
+<div class="container">
+    <h1>Api links</h1>
+
+    <a class="api_link" href="{{ path('quote') }}">
+
+            <h2>Quote</h2>
+    
+        <p>JSON svar som ger ett slumpmässigt citat tillsammans med dagens datum och tidstämpel för när svaret genererades.</p>
+
+    </a>
+    <a class="api_link" href="{{ path('api_deck') }}">
+
+            <h2>Deck</h2>
+    
+        <p>JSON svar med alla kort i kortleken sorterade</p>
+
+    </a>    
+    
+    <a class="api_link" href="{{ path('api_deck_shuffle') }}">
+
+            <h2>Shuffle</h2>
+    
+        <p>JSON svar med alla kort i kortleken blandade.</p>
+
+    </a>
+
+    </a>   
+    
+    <a class="api_link" href="{{ path('api_deck_draw') }}">
+
+        <h2>Draw</h2>
+
+        <p>JSON svar med alla kort i kortleken blandade.</p>
+
+    </a>
+
+
+
+</div>
+    
+
+{% endblock %}

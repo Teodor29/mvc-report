@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+
+<h1>Draw cards</h1>
+
+{% if cards == null %}
+<p>Deck is empty. You need to shuffle deck first!</p>
+{% endif %}
+
+<p>Draw 
+    <a href="{{ path('drawNumber', {num: 2}) }}">2</a>
+    or 
+    <a href="{{ path('drawNumber', {num: 5}) }}">5</a>
+    cards.
+</p>
+
+<div class="container">
+    <h2>Cards remaining: {{ remainingCards }}</h2>
+        {% for card in cards %}
+        <div class="card">
+            <p>{{ card }}</p>
+        </div>
+        {% endfor %}
+</div>
+
+
+{% endblock %}
