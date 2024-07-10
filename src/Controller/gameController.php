@@ -16,9 +16,15 @@ class gameController extends AbstractController {
     
 
    #[Route("/game", name: "game")]
-    public function card(): Response
+    public function game(): Response
     {
         return $this->render('game.html.twig');
+    }
+
+    #[Route("/play", name: "play")]
+    public function play(): Response
+    {
+        return $this->render('play.html.twig');
     }
 
 }

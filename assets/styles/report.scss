@@ -1,12 +1,16 @@
- $backgroundNavbar: #E4DCCF;
- $backgroundFooter: #E4DCCF;
- $background: #F9F5EB;
- $secondaryBackground: rgb(153, 153, 153);
- $textColor: #212121;
+ $backgroundNavbar: #171717;
+ $backgroundFooter: #171717;
+ $background: #212121;
+ $secondaryBackground: #9c82a1a6;
+ $accent: #9c82a1;
+ $textColor: #ccc;
+ $textColor2: #aaa;
+$textColorDark: #333;
 
 html {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     background-color: $background;
+    color: $textColor;
 }
 
 body {
@@ -18,7 +22,36 @@ main {
     margin-top: 2em;
     padding-bottom: 2em;
     max-width: 1000px;
-    
+}
+
+h1 {
+    text-align: center;
+    color: $textColor;
+}
+
+a {
+    color: $textColor2;
+}
+
+.button {
+    font-weight: 600;
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: $textColorDark;
+    background-color: $accent;
+    border-radius: 1rem;
+    transition: background-color 0.5s;
+    &:hover {
+        background-color: $secondaryBackground;
+    }
+}
+
+.button-big {
+    font-size: 2rem;
+    padding: 20px 30px;
 }
 
 nav {
@@ -33,8 +66,8 @@ nav {
     li {
         display: inline;
         a {
-            padding: 0.5rem;
-            margin: 1rem;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
             color: $textColor;
             text-decoration: none;
             font-size: 1.5rem;
@@ -66,7 +99,7 @@ footer {
     margin: 0 auto;
     h2 {
         font-size: 1.2rem;
-        border-bottom: 2px double #41561f;
+        border-bottom: 2px double $accent;
         font-family: Arial, sans-serif;
     }
     ul {
@@ -74,7 +107,6 @@ footer {
     }
     a {
         text-decoration: none;
-        color: #313131;
         &:hover {
             text-decoration: underline;
             color: #414141;
@@ -93,11 +125,6 @@ footer {
 .aside {
     padding-left: 2em;
     padding-right: 1em;
-}
-
-h1 {
-    font-size: 2em;
-    border-bottom: 4px double;
 }
 
 .article {
@@ -129,6 +156,10 @@ figure.right {
     background-color: #BC8593;
     padding: 2rem;
     padding-bottom: 0;
+    h1,
+    p {
+        color: $textColorDark;
+    }
     p {
         font-size: 5em;
         text-align: center;
@@ -146,8 +177,7 @@ figure.right {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 200px;
-    padding-bottom: 2em;
+    padding: 1em;
     text-align: center;
     a {
         text-decoration: none;
@@ -162,7 +192,6 @@ figure.right {
     }
 
     div{
-        padding-top: 3em;
     }
 }
 
@@ -171,7 +200,7 @@ figure.right {
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 2em;
-    min-height: 400px;
+    min-height: 300px;
     .card {
         background-color: #eee;
         margin: 0.3em;
