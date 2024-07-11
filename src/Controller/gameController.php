@@ -21,10 +21,35 @@ class gameController extends AbstractController {
         return $this->render('game.html.twig');
     }
 
-    #[Route("/play", name: "play")]
-    public function play(): Response
+    #[Route("/blackjack", name: "blackjack")]
+    public function blackjack(
+        Request $request,
+        SessionInterface $session
+    ): Response
     {
-        return $this->render('play.html.twig');
+
+        $deck = $session->get("deck");
+
+        if (!$deck) {
+            $DeckOfCards = new DeckOfCards();
+            $deck = $DeckOfCards->shuffle();
+            $session->set('deck', $deck);
+        }
+
+        $card = new Card($deck, 1);
+        $result = $card->drawCards();
+        $cards = $result['cards'];
+        $remainingCards = count($result['deck']);
+        $session->set('deck', $result['deck']);
+        $session->set('remainingCards', $remainingCards);
+
+
+        $data = [
+            "cards" => $cards,
+            "remainingCards" => $remainingCards,
+        ];
+        
+        return $this->render('blackjack.html.twig', $data);
     }
 
 }

@@ -30,6 +30,12 @@ class cardsController extends AbstractController {
 
         $deck = $session->get("deck");
 
+        if (!$deck) {
+            $DeckOfCards = new DeckOfCards();
+            $deck = $DeckOfCards->shuffle();
+            $session->set('deck', $deck);
+        }
+
         sort($deck);
 
         $data = [
@@ -67,6 +73,12 @@ class cardsController extends AbstractController {
     {
 
         $deck = $session->get("deck");
+
+        if (!$deck) {
+            $DeckOfCards = new DeckOfCards();
+            $deck = $DeckOfCards->shuffle();
+            $session->set('deck', $deck);
+        }
 
         $card = new Card($deck, 1);
         $result = $card->drawCards();
@@ -115,7 +127,6 @@ class cardsController extends AbstractController {
 
         return $this->render('draw.html.twig', $data);
     }
-
 
 }
 
