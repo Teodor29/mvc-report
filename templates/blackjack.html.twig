@@ -6,13 +6,47 @@
 
 
 <div class="container">
-    <h2>Cards remaining: {{ remainingCards }}</h2>
-    {% for card in cards %}
-    <div class="card">
-        <p>{{ card }}</p>
+    <h2>{{ dealerScore }}</h2>
+    <div class="container-cards">
+    {% for card in dealerHand %}
+        <div class="card">
+            <p>{{ card }}</p>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-    <a class="button" href="{{ path('drawNumber', {num: 1}) }}">Ta kort</a>
+    {% if end %}
+        {% if playerScore > 21 %}
+            <h2>Player busts! Du förlorade.</h2>
+        {% elseif dealerScore > 21 %}
+            <h2>Dealer busts! Du vann.</h2>
+        {% elseif playerScore == 21 %}
+            <h2>Blackjack! Du vann.</h2>
+        {% elseif dealerScore == 21 %}
+            <h2>Dealern har Blackjack! Du förlorade</h2>
+        {% elseif dealerScore >= 17 and playerScore <= dealerScore %}
+            <h2>Du förlorade!</h2>
+        {% elseif dealerScore >= 17 and playerScore > dealerScore %}
+            <h2>Du Vann!</h2>
+        {% endif %}
+    {% endif %}
+
+    <h2>{{ playerScore }}</h2>
+    <div class="container-cards">
+    {% for card in playerHand %}
+        <div class="card">
+            <p>{{ card }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% if not end %}
+    <div class="blackjack-btns">
+        <a href="{{ path('hit') }}" class="button">Ta kort</a>
+        <a href="{{ path('stand') }}" class="button">Stanna</a>
+    </div>
+    {%else%}
+    <div class="blackjack-btns">
+        <a href="{{ path('game') }}" class="button">Spela igen</a>
+    {% endif %}
 </div>
 
 

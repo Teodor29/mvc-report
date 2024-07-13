@@ -25,5 +25,17 @@ class DeckOfCards {
       return $this->deck;
     }
 
+    public function deal() {
+
+      return array_shift($this->deck);
+    }
+
+    public function getDeck() {
+
+      return $this->deck;
+    }
+
+    
+
   
   }
