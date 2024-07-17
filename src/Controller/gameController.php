@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Card\DeckOfCards;
+use App\Card\Blackjack;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -11,7 +12,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class gameController extends AbstractController {
 
-   #[Route("/game", name: "game")]
+    #[Route("/game", name: "game")]
     public function game(): Response
     {
         return $this->render('game.html.twig');
@@ -23,30 +24,22 @@ class gameController extends AbstractController {
         SessionInterface $session
     ): Response
     {
-        $end = false;
         $deck = new DeckOfCards();
         $deck->shuffle();
-        $playerHand = [];
-        $dealerHand = [];
-        $playerHand[] = $deck->deal();
-        $dealerHand[] = $deck->deal();
-        $playerHand[] = $deck->deal();
-        $playerScore = $this->calculateScore($playerHand);
-        $dealerScore = $this->calculateScore($dealerHand);
-        $end = $this->checkGameEnd($playerScore, $dealerScore);
+        $blackjack = new Blackjack($deck);
+
+        $playerHand = [$blackjack->deal(), $blackjack->deal()];
+        $dealerHand = [$blackjack->deal()];
+
+        $playerScore = $blackjack->calculateScore($playerHand);
+        $dealerScore = $blackjack->calculateScore($dealerHand);
+        $end = $blackjack->checkGameEnd($playerScore, $dealerScore);
 
         $session->set('deck', $deck);
         $session->set('playerHand', $playerHand);
         $session->set('dealerHand', $dealerHand);
         $session->set('playerScore', $playerScore);
         $session->set('dealerScore', $dealerScore);
-
-        if ($playerScore > 20) {
-            $end = true;
-        }
-        else if ($dealerScore > 20) {
-            $end = true;
-        }
 
         return $this->render('blackjack.html.twig', [
             'playerHand' => $playerHand,
@@ -64,11 +57,13 @@ class gameController extends AbstractController {
     ): Response
     {
         $deck = $session->get('deck');
+        $blackjack = new Blackjack($deck);
         $playerHand = $session->get('playerHand');
-        $dealerHand = $session->get('dealerHand');
-        $playerHand[] = $deck->deal();
-        $playerScore = $this->calculateScore($playerHand);
-        $end = $this->checkGameEnd($playerScore, $session->get('dealerScore'));
+        $playerHand[] = $blackjack->deal();
+
+        $playerScore = $blackjack->calculateScore($playerHand);
+        $dealerScore = $session->get('dealerScore');
+        $end = $blackjack->checkGameEnd($playerScore, $dealerScore);
 
         $session->set('deck', $deck);
         $session->set('playerHand', $playerHand);
@@ -76,9 +71,9 @@ class gameController extends AbstractController {
 
         return $this->render('blackjack.html.twig', [
             'playerHand' => $playerHand,
-            'dealerHand' => $dealerHand,
+            'dealerHand' => $session->get('dealerHand'),
             'playerScore' => $playerScore,
-            'dealerScore' => $session->get('dealerScore'),
+            'dealerScore' => $dealerScore,
             'end' => $end
         ]);
     }
@@ -90,15 +85,18 @@ class gameController extends AbstractController {
     ): Response
     {
         $deck = $session->get('deck');
-        $playerHand = $session->get('playerHand');
+        $blackjack = new Blackjack($deck);
         $dealerHand = $session->get('dealerHand');
-        $dealerScore = $this->calculateScore($dealerHand);
-        $end = $this->checkGameEnd($session->get('playerScore'), $dealerScore);
+        $dealerScore = $blackjack->calculateScore($dealerHand);
 
         while ($dealerScore < 17) {
-            $dealerHand[] = $deck->deal();
-            $dealerScore = $this->calculateScore($dealerHand);
+            $dealerHand[] = $blackjack->deal();
+            $dealerScore = $blackjack->calculateScore($dealerHand);
         }
+
+        $playerHand = $session->get('playerHand');
+        $playerScore = $session->get('playerScore');
+        $end = true;
 
         $session->set('deck', $deck);
         $session->set('dealerHand', $dealerHand);
@@ -107,41 +105,15 @@ class gameController extends AbstractController {
         return $this->render('blackjack.html.twig', [
             'playerHand' => $playerHand,
             'dealerHand' => $dealerHand,
-            'playerScore' => $session->get('playerScore'),
+            'playerScore' => $playerScore,
             'dealerScore' => $dealerScore,
             'end' => $end
         ]);
     }
 
-    private function calculateScore($hand) {
-        $score = 0;
-        $numAces = 0;
-        
-        foreach ($hand as $card) {
-            $rank = explode(' ', $card)[1];
-            if ($rank === 'Knekt' || $rank === 'Drottning' || $rank === 'Kung') {
-                $score += 10;
-            } elseif ($rank === 'Ess') {
-                $score += 11;
-                $numAces++;
-            } else {
-                $score += intval($rank);
-            }
-        }
-        while ($score > 21 && $numAces > 0) {
-            $score -= 10;
-            $numAces--;
-        }
-        return $score;
+    #[Route("/game/doc", name: "doc")]
+    public function doc(): Response
+    {
+        return $this->render('doc.html.twig');
     }
-
-    private function checkGameEnd($playerScore, $dealerScore){
-        if ($playerScore > 20 || $dealerScore > 20 || $dealerScore > 16) {
-            return true;
-        }
-    }
-
-
-
 }
-

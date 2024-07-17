@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+
+<h1>doc</h1>
+
+<div class="text-container">
+    <h2>klasser</h2>
+    <p>Jag behöver en Blackjack klass där jag tar kortleken och lägger
+        till funktioner nödvändiga för blackjack spelet.
+    </p>
+    <h2>funktioner</h2>
+    <p>Funktionen deal tar bort första kortet från kortleken och returnerar det.</p>
+    <p>Funktionen calculateScore räknar ut poängen för en hand.</p>
+    <p>Funktionen checkGameEnd kollar om spelet är slut.</p>
+</div>
+
+<div class="container-doc text-center">
+    <div class="two-col-layout align-items-start">
+        <div class="col">
+            <h3>Flödesschema</h3>
+            <a href="../img/flowchart.png" target="_blank">
+                <img src="../img/flowchart.png" width="100%" alt="Bild">
+            </a>
+        </div>
+        <div class="col">
+            <h3>Psuedokod</h3>
+            <a href="../img/psuedokod.png" target="_blank">
+                <img src="../img/psuedokod.png" width="100%" alt="Bild">
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

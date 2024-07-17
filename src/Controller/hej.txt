@@ -1,0 +1,30 @@
+// pseudo
+klass GameController:
+
+    Route "/game":
+        return 'game.html.twig'
+
+    Route "/blackjack":
+        Initiera spelet, dela ut kort, beräkna poäng
+        Spara spelstatus i session
+        return 'blackjack.html.twig' med spelstatus
+
+    Route "/hit":
+        Hämta spelstatus från session
+        Dela ut kort till spelare, beräkna om poängen
+        Spara uppdaterad status i session
+        return 'blackjack.html.twig' med uppdaterad spelstatus
+
+    Route "/stand":
+        Hämta spelstatus från session
+        Dealern spelar tills poäng >= 17
+        Spara uppdaterad status i session
+        return 'blackjack.html.twig' med slutstatus
+
+    function calculateScore(cards):
+        Beräkna poängen för en hand av kort
+        return poäng
+
+    function checkGameEnd(spelarens hand, dealerns hand):
+        Kontrolera om spelet är slut
+        return bool

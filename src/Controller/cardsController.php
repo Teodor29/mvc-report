@@ -74,7 +74,7 @@ class cardsController extends AbstractController {
 
         $deck = $session->get("deck");
 
-        if (!$deck) {
+        if (!$session->get("deck")) {
             $DeckOfCards = new DeckOfCards();
             $deck = $DeckOfCards->shuffle();
             $session->set('deck', $deck);
@@ -126,6 +126,17 @@ class cardsController extends AbstractController {
         
 
         return $this->render('draw.html.twig', $data);
+    }
+
+    #[Route("/card/deck/reset", name: "reset")]
+    public function reset(
+        Request $request,
+        SessionInterface $session
+    ): Response
+    {
+        $session->clear();
+
+        return $this->render('card.html.twig');
     }
 
 }

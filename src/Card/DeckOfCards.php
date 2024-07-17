@@ -3,6 +3,7 @@
 namespace App\Card;
 
 class DeckOfCards {
+    
 
   private $deck;
 
@@ -25,17 +26,14 @@ class DeckOfCards {
       return $this->deck;
     }
 
-    public function deal() {
-
-      return array_shift($this->deck);
-    }
-
     public function getDeck() {
 
       return $this->deck;
     }
 
-    
+    public function deal(){
+        $card = array_shift($this->deck);
+        return $card;
+    }
 
-  
   }

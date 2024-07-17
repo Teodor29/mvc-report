@@ -13,6 +13,10 @@ html {
     color: $textColor;
 }
 
+img {
+    border-radius: 1rem;
+}
+
 body {
     margin: 0;
 }
@@ -21,9 +25,21 @@ main {
     margin: 0 auto;
     margin-top: 2em;
     padding-bottom: 2em;
-    max-width: 1000px;
+    max-width: 1200px;
     min-height: 400px;
 }
+
+.max800 {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text-container {
+    max-width: 65ch;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
 
 h1 {
     text-align: center;
@@ -92,11 +108,11 @@ footer {
     }
 }
 
-.row {
+.footer-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 50px;
+    gap: 1rem;
     max-width: 1000px;
     margin: 0 auto;
     h2 {
@@ -120,8 +136,17 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 1000px;
     margin: 0 auto;
+    max-width: 1000px;
+    .col {
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .two-col-layout {
+        flex-direction: column;
+    }
 }
 
 .aside {
@@ -158,6 +183,7 @@ figure.right {
     background-color: #BC8593;
     padding: 2rem;
     padding-bottom: 0;
+    border-radius: 3rem;
     h1,
     p {
         color: $textColorDark;
@@ -194,22 +220,30 @@ figure.right {
     }
 }
 
-.container {
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
-    padding: 1em;
+.center {
     text-align: center;
+    margin: 0 auto;
+    padding: 1em;
 }
 
-.container-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.container {
+    margin: 0 auto;
     padding: 1em;
     text-align: center;
+    p,
+    h1,
+    h2,
+    h3
+    {
+        text-align: left;
+    }
+}
+
+.container-doc {
+    h3 {
+        text-align: center;
+    }
+    // return to one column layout when screen is smaller than 800px
 }
 
 .blackjack-btns {

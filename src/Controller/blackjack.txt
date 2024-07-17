@@ -1,0 +1,36 @@
+// pseudokod
+
+Route "/game":
+    return game.html.twig
+
+Route "/blackjack":
+    Dela ut kort
+    Beräkna poäng
+    Spara spelstatus i session
+    return blackjack.html.twig
+
+Route "/hit":
+    Hämta spelstatus från session
+    Dela ut kort till spelare
+    Beräkna poängen
+    Spara spelstatus i session
+    return blackjack.html.twig
+
+Route "/stand":
+    Hämta spelstatus från session
+    Dealern spelar tills poäng >= 17
+    Spara spelstatus i session
+    return blackjack.html.twig
+
+Klass Blackjack:
+
+    function deal()
+        return första kortet ur kortleken
+
+    function calculateScore(cards):
+        Beräkna poängen för korten
+        return poäng
+
+    function checkGameEnd(spelarens hand, dealerns hand):
+        Kontrollera om spelet är slut
+        return true eller false
