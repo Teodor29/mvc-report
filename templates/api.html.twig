@@ -5,7 +5,7 @@
 {% block body %}
 
 <h1>Api links</h1>
-<div class="container-cards max800">
+<div class="max1000 center">
 
     <a class="api_link" href="{{ path('quote') }}">
 
@@ -18,7 +18,7 @@
 
             <h2>Deck</h2>
     
-        <p>JSON svar med alla kort i kortleken sorterade</p>
+        <p>JSON svar med alla kort i kortleken sorterade.</p>
 
     </a>    
     
@@ -37,6 +37,14 @@
         <h2>Draw</h2>
 
         <p>JSON svar med alla kort i kortleken blandade.</p>
+
+    </a>
+
+    <a class="api_link" href="{{ path('api_game') }}">
+
+    <h2>Blackjack</h2>
+
+    <p>JSON svar med aktuell ställning för spelet blackjack.</p>
 
     </a>
 

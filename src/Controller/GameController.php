@@ -2,28 +2,27 @@
 
 namespace App\Controller;
 
-use App\Card\DeckOfCards;
 use App\Card\Blackjack;
+use App\Card\DeckOfCards;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Routing\Annotation\Route;
 
-class gameController extends AbstractController {
-
-    #[Route("/game", name: "game")]
+class GameController extends AbstractController
+{
+    #[Route('/game', name: 'game')]
     public function game(): Response
     {
         return $this->render('game.html.twig');
     }
 
-    #[Route("/blackjack", name: "blackjack")]
+    #[Route('/blackjack', name: 'blackjack')]
     public function blackjack(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = new DeckOfCards();
         $deck->shuffle();
         $blackjack = new Blackjack($deck);
@@ -46,16 +45,15 @@ class gameController extends AbstractController {
             'dealerHand' => $dealerHand,
             'playerScore' => $playerScore,
             'dealerScore' => $dealerScore,
-            'end' => $end
+            'end' => $end,
         ]);
     }
 
-    #[Route("/hit", name: "hit")]
+    #[Route('/hit', name: 'hit')]
     public function hit(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = $session->get('deck');
         $blackjack = new Blackjack($deck);
         $playerHand = $session->get('playerHand');
@@ -74,16 +72,15 @@ class gameController extends AbstractController {
             'dealerHand' => $session->get('dealerHand'),
             'playerScore' => $playerScore,
             'dealerScore' => $dealerScore,
-            'end' => $end
+            'end' => $end,
         ]);
     }
 
-    #[Route("/stand", name: "stand")]
+    #[Route('/stand', name: 'stand')]
     public function stand(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $deck = $session->get('deck');
         $blackjack = new Blackjack($deck);
         $dealerHand = $session->get('dealerHand');
@@ -107,11 +104,11 @@ class gameController extends AbstractController {
             'dealerHand' => $dealerHand,
             'playerScore' => $playerScore,
             'dealerScore' => $dealerScore,
-            'end' => $end
+            'end' => $end,
         ]);
     }
 
-    #[Route("/game/doc", name: "doc")]
+    #[Route('/game/doc', name: 'doc')]
     public function doc(): Response
     {
         return $this->render('doc.html.twig');

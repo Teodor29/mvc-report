@@ -2,18 +2,22 @@
 
 namespace App\Card;
 
-class Blackjack {
+class Blackjack
+{
     private $deck;
-    
-    public function __construct($deck) {
+
+    public function __construct($deck)
+    {
         $this->deck = $deck;
     }
 
-    public function deal() {
+    public function deal()
+    {
         return $this->deck->deal();
     }
 
-    public function calculateScore($hand) {
+    public function calculateScore($hand)
+    {
         $score = 0;
         $numAces = 0;
 
@@ -21,9 +25,9 @@ class Blackjack {
             $rank = explode(' ', $card)[1];
             if (in_array($rank, ['Knekt', 'Drottning', 'Kung'])) {
                 $score += 10;
-            } elseif ($rank === 'Ess') {
+            } elseif ('Ess' === $rank) {
                 $score += 11;
-                $numAces++;
+                ++$numAces;
             } else {
                 $score += intval($rank);
             }
@@ -31,13 +35,14 @@ class Blackjack {
 
         while ($score > 21 && $numAces > 0) {
             $score -= 10;
-            $numAces--;
+            --$numAces;
         }
 
         return $score;
     }
 
-    public function checkGameEnd($playerScore, $dealerScore) {
+    public function checkGameEnd($playerScore, $dealerScore)
+    {
         return $playerScore > 20 || $dealerScore > 20 || $dealerScore > 16;
     }
 }

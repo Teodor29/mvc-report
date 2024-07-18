@@ -29,6 +29,11 @@ main {
     min-height: 400px;
 }
 
+.max1000 {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 .max800 {
     max-width: 800px;
     margin: 0 auto;
@@ -51,8 +56,9 @@ a {
 }
 
 .button {
-    margin: 1rem;
+    margin: 1rem 0.5rem;
     font-weight: 600;
+    font-size: 1.2rem;
     display: inline-block;
     padding: 10px 15px;
     cursor: pointer;
@@ -200,26 +206,6 @@ figure.right {
     }
 }
 
-.cardLink {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1em;
-    text-align: center;
-    a {
-        text-decoration: none;
-        color: $textColor;
-        font-size: 2em;
-        margin: 0.5em;
-        padding: 0.6em;
-        border-radius: 10px;
-        &:hover{
-            background-color: $secondaryBackground;
-        }
-    }
-}
-
 .center {
     text-align: center;
     margin: 0 auto;
@@ -243,7 +229,6 @@ figure.right {
     h3 {
         text-align: center;
     }
-    // return to one column layout when screen is smaller than 800px
 }
 
 .blackjack-btns {
@@ -251,6 +236,29 @@ figure.right {
         margin-top: 0;
     }
 }
+
+.api_link {
+    background-color: $backgroundNavbar;
+    text-decoration: none;
+    text-align: center;
+    color: $textColor;
+    margin: 1em;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 250px;
+    height: 250px;
+    border-radius: 2rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    p {
+        padding: 0.5em;
+    }
+    &:hover{
+        box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+    }
+}
+
+.container
 
 .container-cards {
     text-align: center;
@@ -273,26 +281,6 @@ figure.right {
     }
     h2 {
         padding: 1em;
-    }
-
-    .api_link {
-        background-color: $backgroundNavbar;
-        text-decoration: none;
-        color: $textColor;
-        margin: 1em;
-        display: inline-block;
-        vertical-align: bottom;
-        width: 300px;
-        height: 300px;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        p {
-            padding: 0.5em;
-        }
-        &:hover{
-            box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            
-        }
     }
     
 }
