@@ -29,13 +29,13 @@ main {
     min-height: 400px;
 }
 
-.max1000 {
-    max-width: 1000px;
+.max800 {
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.max800 {
-    max-width: 800px;
+.max1000 {
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -240,7 +240,6 @@ figure.right {
 .api_link {
     background-color: $backgroundNavbar;
     text-decoration: none;
-    text-align: center;
     color: $textColor;
     margin: 1em;
     display: inline-block;
@@ -250,15 +249,13 @@ figure.right {
     border-radius: 2rem;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     p {
-        padding: 0.5em;
+        padding: rem;
     }
     &:hover{
         box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         
     }
 }
-
-.container
 
 .container-cards {
     text-align: center;
@@ -278,9 +275,6 @@ figure.right {
     h1 {
         align-items: center;
         border-bottom: none;
-    }
-    h2 {
-        padding: 1em;
     }
     
 }

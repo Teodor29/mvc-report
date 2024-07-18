@@ -10,14 +10,13 @@
 <p>Deck is empty. You need to shuffle deck first!</p>
 {% endif %}
 
-<p>Draw 
-    <a href="{{ path('drawNumber', {num: 2}) }}">2</a>
-    or 
-    <a href="{{ path('drawNumber', {num: 5}) }}">5</a>
-    cards.
-</p>
-
 <div class="container-cards">
+    <p>Draw 
+        <a href="{{ path('drawNumber', {num: 2}) }}">2</a>
+        or 
+        <a href="{{ path('drawNumber', {num: 5}) }}">5</a>
+        cards.
+    </p>
     <h2>Cards remaining: {{ remainingCards }}</h2>
         {% for card in cards %}
         <div class="card">
