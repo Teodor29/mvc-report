@@ -2,6 +2,9 @@
 
 namespace App\Card;
 
+/**
+ * The Blackjack class provides functionality to play a game of Blackjack.
+ */
 class Blackjack
 {
     private $deck;
@@ -11,6 +14,11 @@ class Blackjack
         $this->deck = $deck;
     }
 
+    /**
+     * Deals a card from the deck.
+     *
+     * @return string the card dealt
+     */
     public function deal()
     {
         return $this->deck->deal();

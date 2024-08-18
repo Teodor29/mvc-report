@@ -6,14 +6,20 @@ class DeckOfCards
 {
     private $deck;
 
-    public function __construct()
-    {
-        $suits = ['♣', '♦', '♥', '♠'];
-        $ranks = ['Ess', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Knekt', 'Drottning', 'Kung'];
+    // if argument is passed, use that deck, otherwise create a new deck
 
-        foreach ($suits as $suit) {
-            foreach ($ranks as $rank) {
-                $this->deck[] = "$suit $rank";
+    public function __construct($deck = null)
+    {
+        if ($deck) {
+            $this->deck = $deck;
+        } else {
+            $suits = ['♣', '♦', '♥', '♠'];
+            $ranks = ['Ess', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Knekt', 'Drottning', 'Kung'];
+
+            foreach ($suits as $suit) {
+                foreach ($ranks as $rank) {
+                    $this->deck[] = "$suit $rank";
+                }
             }
         }
     }

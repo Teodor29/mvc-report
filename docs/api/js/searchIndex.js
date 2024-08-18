@@ -3,7 +3,7 @@ Search.appendIndex(
                 {
             "fqsen": "\\App\\Card\\Blackjack",
             "name": "Blackjack",
-            "summary": "",
+            "summary": "The\u0020Blackjack\u0020class\u0020provides\u0020functionality\u0020to\u0020play\u0020a\u0020game\u0020of\u0020Blackjack.",
             "url": "classes/App-Card-Blackjack.html"
         },                {
             "fqsen": "\\App\\Card\\Blackjack\u003A\u003A__construct\u0028\u0029",
@@ -13,7 +13,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Blackjack\u003A\u003Adeal\u0028\u0029",
             "name": "deal",
-            "summary": "",
+            "summary": "Deals\u0020a\u0020card\u0020from\u0020the\u0020deck.",
             "url": "classes/App-Card-Blackjack.html#method_deal"
         },                {
             "fqsen": "\\App\\Card\\Blackjack\u003A\u003AcalculateScore\u0028\u0029",
