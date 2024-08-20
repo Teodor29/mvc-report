@@ -3,12 +3,21 @@
 namespace App\Card;
 
 /**
- * The Blackjack class provides functionality to play a game of Blackjack.
+ * Class for Blackjack game.
+ * It can deal cards, calculate scores, and check if the game has ended.
  */
 class Blackjack
 {
+    /**
+     * @var DeckOfCards
+     */
     private $deck;
 
+    /**
+     * Constructor for the Blackjack class.
+     *
+     * @param DeckOfCards
+     */
     public function __construct($deck)
     {
         $this->deck = $deck;
@@ -17,13 +26,20 @@ class Blackjack
     /**
      * Deals a card from the deck.
      *
-     * @return string the card dealt
+     * @return string
      */
     public function deal()
     {
         return $this->deck->deal();
     }
 
+    /**
+     * Calculates the score of a hand in Blackjack.
+     *
+     * @param array
+     * 
+     * @return int
+     */
     public function calculateScore($hand)
     {
         $score = 0;
@@ -49,6 +65,14 @@ class Blackjack
         return $score;
     }
 
+    /**
+     * Checks if the game of Blackjack has ended.
+     *
+     * @param int
+     * @param int
+     * 
+     * @return bool
+     */
     public function checkGameEnd($playerScore, $dealerScore)
     {
         return $playerScore > 20 || $dealerScore > 20 || $dealerScore > 16;

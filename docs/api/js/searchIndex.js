@@ -3,12 +3,12 @@ Search.appendIndex(
                 {
             "fqsen": "\\App\\Card\\Blackjack",
             "name": "Blackjack",
-            "summary": "The\u0020Blackjack\u0020class\u0020provides\u0020functionality\u0020to\u0020play\u0020a\u0020game\u0020of\u0020Blackjack.",
+            "summary": "Class\u0020for\u0020Blackjack\u0020game.",
             "url": "classes/App-Card-Blackjack.html"
         },                {
             "fqsen": "\\App\\Card\\Blackjack\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020for\u0020the\u0020Blackjack\u0020class.",
             "url": "classes/App-Card-Blackjack.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\Blackjack\u003A\u003Adeal\u0028\u0029",
@@ -18,12 +18,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Blackjack\u003A\u003AcalculateScore\u0028\u0029",
             "name": "calculateScore",
-            "summary": "",
+            "summary": "Calculates\u0020the\u0020score\u0020of\u0020a\u0020hand\u0020in\u0020Blackjack.",
             "url": "classes/App-Card-Blackjack.html#method_calculateScore"
         },                {
             "fqsen": "\\App\\Card\\Blackjack\u003A\u003AcheckGameEnd\u0028\u0029",
             "name": "checkGameEnd",
-            "summary": "",
+            "summary": "Checks\u0020if\u0020the\u0020game\u0020of\u0020Blackjack\u0020has\u0020ended.",
             "url": "classes/App-Card-Blackjack.html#method_checkGameEnd"
         },                {
             "fqsen": "\\App\\Card\\Blackjack\u003A\u003A\u0024deck",
@@ -33,17 +33,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Card",
             "name": "Card",
-            "summary": "",
+            "summary": "Class\u0020for\u0020card.",
             "url": "classes/App-Card-Card.html"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020for\u0020the\u0020Card\u0020class.",
             "url": "classes/App-Card-Card.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AdrawCards\u0028\u0029",
             "name": "drawCards",
-            "summary": "",
+            "summary": "Draws\u0020a\u0020number\u0020of\u0020cards\u0020from\u0020the\u0020deck.",
             "url": "classes/App-Card-Card.html#method_drawCards"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003A\u0024deck",
@@ -58,27 +58,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards",
             "name": "DeckOfCards",
-            "summary": "",
+            "summary": "Class\u0020for\u0020Deck\u0020of\u0020cards.",
             "url": "classes/App-Card-DeckOfCards.html"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020for\u0020the\u0020DeckOfCards\u0020class.",
             "url": "classes/App-Card-DeckOfCards.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003Ashuffle\u0028\u0029",
             "name": "shuffle",
-            "summary": "",
+            "summary": "Shuffles\u0020the\u0020deck\u0020of\u0020cards.",
             "url": "classes/App-Card-DeckOfCards.html#method_shuffle"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AgetDeck\u0028\u0029",
             "name": "getDeck",
-            "summary": "",
+            "summary": "Get\u0020the\u0020current\u0020state\u0020of\u0020the\u0020deck.",
             "url": "classes/App-Card-DeckOfCards.html#method_getDeck"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003Adeal\u0028\u0029",
             "name": "deal",
-            "summary": "",
+            "summary": "Deals\u0020a\u0020card\u0020from\u0020the\u0020deck.",
             "url": "classes/App-Card-DeckOfCards.html#method_deal"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003A\u0024deck",
