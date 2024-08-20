@@ -1,69 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1724067058">
-  <project timestamp="1724067058">
+<coverage generated="1724181606">
+  <project timestamp="1724181606">
     <package name="App\Card">
-      <file name="/home/teo/dbwebb-kurser/mvc/me/report2/src/Card/Blackjack.php">
+      <file name="/home/teo/dbwebb-kurser/mvc/me/report/src/Card/Blackjack.php">
         <class name="App\Card\Blackjack" namespace="App\Card">
           <metrics complexity="11" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="21" coveredelements="21"/>
         </class>
-        <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="4"/>
-        <line num="14" type="stmt" count="4"/>
-        <line num="22" type="method" name="deal" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="24" type="stmt" count="1"/>
-        <line num="27" type="method" name="calculateScore" visibility="public" complexity="6" crap="6" count="1"/>
-        <line num="29" type="stmt" count="1"/>
-        <line num="30" type="stmt" count="1"/>
-        <line num="32" type="stmt" count="1"/>
+        <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="23" type="stmt" count="4"/>
+        <line num="31" type="method" name="deal" visibility="public" complexity="1" crap="1" count="1"/>
         <line num="33" type="stmt" count="1"/>
-        <line num="34" type="stmt" count="1"/>
-        <line num="35" type="stmt" count="1"/>
-        <line num="36" type="stmt" count="1"/>
-        <line num="37" type="stmt" count="1"/>
-        <line num="38" type="stmt" count="1"/>
-        <line num="40" type="stmt" count="1"/>
-        <line num="44" type="stmt" count="1"/>
+        <line num="43" type="method" name="calculateScore" visibility="public" complexity="6" crap="6" count="1"/>
         <line num="45" type="stmt" count="1"/>
         <line num="46" type="stmt" count="1"/>
+        <line num="48" type="stmt" count="1"/>
         <line num="49" type="stmt" count="1"/>
-        <line num="52" type="method" name="checkGameEnd" visibility="public" complexity="3" crap="3" count="1"/>
+        <line num="50" type="stmt" count="1"/>
+        <line num="51" type="stmt" count="1"/>
+        <line num="52" type="stmt" count="1"/>
+        <line num="53" type="stmt" count="1"/>
         <line num="54" type="stmt" count="1"/>
-        <metrics loc="57" ncloc="49" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="21" coveredelements="21"/>
+        <line num="56" type="stmt" count="1"/>
+        <line num="60" type="stmt" count="1"/>
+        <line num="61" type="stmt" count="1"/>
+        <line num="62" type="stmt" count="1"/>
+        <line num="65" type="stmt" count="1"/>
+        <line num="76" type="method" name="checkGameEnd" visibility="public" complexity="3" crap="3" count="1"/>
+        <line num="78" type="stmt" count="1"/>
+        <metrics loc="81" ncloc="49" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="21" coveredelements="21"/>
       </file>
-      <file name="/home/teo/dbwebb-kurser/mvc/me/report2/src/Card/Card.php">
+      <file name="/home/teo/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
         <class name="App\Card\Card" namespace="App\Card">
           <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
         </class>
-        <line num="10" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="12" type="stmt" count="1"/>
-        <line num="13" type="stmt" count="1"/>
-        <line num="16" type="method" name="drawCards" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="18" type="stmt" count="1"/>
-        <line num="20" type="stmt" count="1"/>
-        <metrics loc="23" ncloc="23" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
+        <line num="24" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="26" type="stmt" count="1"/>
+        <line num="27" type="stmt" count="1"/>
+        <line num="35" type="method" name="drawCards" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="37" type="stmt" count="1"/>
+        <line num="39" type="stmt" count="1"/>
+        <metrics loc="42" ncloc="23" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
       </file>
-      <file name="/home/teo/dbwebb-kurser/mvc/me/report2/src/Card/DeckOfCards.php">
+      <file name="/home/teo/dbwebb-kurser/mvc/me/report/src/Card/DeckOfCards.php">
         <class name="App\Card\DeckOfCards" namespace="App\Card">
           <metrics complexity="7" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="16" coveredelements="16"/>
         </class>
-        <line num="11" type="method" name="__construct" visibility="public" complexity="4" crap="4" count="4"/>
-        <line num="13" type="stmt" count="4"/>
-        <line num="14" type="stmt" count="2"/>
-        <line num="16" type="stmt" count="2"/>
-        <line num="17" type="stmt" count="2"/>
-        <line num="19" type="stmt" count="2"/>
-        <line num="20" type="stmt" count="2"/>
-        <line num="21" type="stmt" count="2"/>
-        <line num="27" type="method" name="shuffle" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="29" type="stmt" count="1"/>
-        <line num="31" type="stmt" count="1"/>
-        <line num="34" type="method" name="getDeck" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="36" type="stmt" count="1"/>
-        <line num="39" type="method" name="deal" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="41" type="stmt" count="2"/>
-        <line num="43" type="stmt" count="2"/>
-        <metrics loc="46" ncloc="45" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="16" coveredelements="16"/>
+        <line num="21" type="method" name="__construct" visibility="public" complexity="4" crap="4" count="4"/>
+        <line num="23" type="stmt" count="4"/>
+        <line num="24" type="stmt" count="2"/>
+        <line num="26" type="stmt" count="2"/>
+        <line num="27" type="stmt" count="2"/>
+        <line num="29" type="stmt" count="2"/>
+        <line num="30" type="stmt" count="2"/>
+        <line num="31" type="stmt" count="2"/>
+        <line num="42" type="method" name="shuffle" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="44" type="stmt" count="1"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="54" type="method" name="getDeck" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="56" type="stmt" count="1"/>
+        <line num="64" type="method" name="deal" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="66" type="stmt" count="2"/>
+        <line num="68" type="stmt" count="2"/>
+        <metrics loc="71" ncloc="44" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="16" coveredelements="16"/>
       </file>
     </package>
-    <metrics files="3" loc="126" ncloc="117" classes="3" methods="10" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="33" elements="43" coveredelements="43"/>
+    <metrics files="3" loc="194" ncloc="116" classes="3" methods="10" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="33" elements="43" coveredelements="43"/>
   </project>
 </coverage>
