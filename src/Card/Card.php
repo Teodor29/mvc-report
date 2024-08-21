@@ -9,19 +9,18 @@ namespace App\Card;
 class Card
 {
     /**
-     * @var array
-     * @var int
+     * @var array<string>
      */
-    private $deck;
-    private $num;
+    private array $deck;
+
+    private int $num;
 
     /**
      * Constructor for the Card class.
      *
-     * @param array
-     * @param int
+     * @param array<string> $deck
      */
-    public function __construct($deck, $num)
+    public function __construct(array $deck, int $num)
     {
         $this->deck = $deck;
         $this->num = $num;
@@ -30,9 +29,9 @@ class Card
     /**
      * Draws a number of cards from the deck.
      *
-     * @return array
+     * @return array<string, array<string>>
      */
-    public function drawCards()
+    public function drawCards(): array
     {
         $removedCards = array_splice($this->deck, 0, $this->num);
 

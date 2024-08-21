@@ -23,7 +23,9 @@ class CardsController extends AbstractController
         Request $request,
         SessionInterface $session
     ): Response {
+        /** @var array<int> $deck */
         $deck = $session->get('deck');
+        dump($deck);
 
         if (!$deck) {
             $DeckOfCards = new DeckOfCards();
@@ -71,6 +73,7 @@ class CardsController extends AbstractController
             $session->set('deck', $deck);
         }
 
+        /** @var array<string> $deck */
         $card = new Card($deck, 1);
         $result = $card->drawCards();
         $cards = $result['cards'];
@@ -92,14 +95,17 @@ class CardsController extends AbstractController
         Request $request,
         SessionInterface $session
     ): Response {
+        /** @var int $num */
         $num = $request->get('num');
         $remainingCards = $session->get('remainingCards');
         if ($num > $remainingCards) {
-            throw new \Exception("Can not get more than {{$remainingCards}} cards!");
+            throw new \Exception('Can not get more cards!');
         }
 
         $deck = $session->get('deck');
+        /** @var array<string> $deck */
         $card = new Card($deck, $num);
+        dump($card);
         $result = $card->drawCards();
         $cards = $result['cards'];
         $remainingCards = count($result['deck']);

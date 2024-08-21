@@ -51,6 +51,7 @@ class ApiController extends AbstractController
     public function apiDeck(
         SessionInterface $session
     ): Response {
+        /** @var array<int> $deck */
         $deck = $session->get('deck');
 
         sort($deck);
@@ -95,6 +96,7 @@ class ApiController extends AbstractController
     ): Response {
         $deck = $session->get('deck');
 
+        /** @var array<string> $deck */
         $card = new Card($deck, 1);
         $result = $card->drawCards();
         $cards = $result['cards'];
@@ -121,13 +123,15 @@ class ApiController extends AbstractController
         Request $request,
         int $num
     ): Response {
+        /** @var int $num */
         $num = $request->get('num');
         $remainingCards = $session->get('remainingCards');
         if ($num > $remainingCards) {
-            throw new \Exception("Can not get more than {{$remainingCards}} cards!");
+            throw new \Exception('Can not get more cards!');
         }
 
         $deck = $session->get('deck');
+        /** @var array<string> $deck */
         $card = new Card($deck, $num);
         $result = $card->drawCards();
         $cards = $result['cards'];

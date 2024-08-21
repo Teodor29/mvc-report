@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 class BlackjackTest extends TestCase
 {
 
-    public function testCreateBlackjack()
+    public function testCreateBlackjack(): void
     {
         $deck = ['♠ 10', '♠ Knekt', '♠ Ess', '♦ 5', '♦ 10', '♣ 6'];
         $deckOfCards = new DeckOfCards($deck);
@@ -17,7 +17,7 @@ class BlackjackTest extends TestCase
         $this->assertInstanceOf(Blackjack::class, $blackjack);
     }
 
-    public function testDealCard()
+    public function testDealCard(): void
     {
         $deck = ['♠ 10', '♠ Knekt', '♠ Ess', '♦ 5', '♦ 10', '♣ 6'];
         $deckOfCards = new DeckOfCards($deck);
@@ -26,21 +26,21 @@ class BlackjackTest extends TestCase
         $this->assertEquals('♠ 10', $card);
     }
 
-    public function testCalculateScore()
+    public function testCalculateScore(): void
     {
         $deck = ['♠ 10', '♠ Knekt', '♠ Ess', '♦ 5', '♦ 10', '♣ 6'];
-        $blackjack = new Blackjack($deck);
+        $deckOfCards = new DeckOfCards($deck);
+        $blackjack = new Blackjack($deckOfCards);
         $score = $blackjack->calculateScore(['♠ 10', '♠ Knekt', '♠ Ess']);
         $this->assertEquals(21, $score);
-
     }
 
-    public function testCheckGameEnd()
+    public function testCheckGameEnd(): void
     {
         $deck = ['♠ 10', '♠ Knekt', '♠ Ess', '♦ 5', '♦ 10', '♣ 6'];
-        $blackjack = new Blackjack($deck);
+        $deckOfCards = new DeckOfCards($deck);
+        $blackjack = new Blackjack($deckOfCards);
         $gameEnd = $blackjack->checkGameEnd(21, 20);
         $this->assertTrue($gameEnd);
-
     }
 }

@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class DeckOfCardsTest extends TestCase
 {
-    public function testShuffleDeck()
+    public function testShuffleDeck(): void
     {
         $deck = new DeckOfCards();
         $originalDeck = $deck->getDeck();
@@ -16,7 +16,7 @@ class DeckOfCardsTest extends TestCase
         $this->assertNotEquals($originalDeck, $shuffledDeck);
     }
 
-    public function testDealCard()
+    public function testDealCard(): void
     {
         $deck = new DeckOfCards();
         $card = $deck->deal();

@@ -8,15 +8,12 @@ namespace App\Card;
  */
 class Blackjack
 {
-    /**
-     * @var DeckOfCards
-     */
-    private $deck;
+    private DeckOfCards $deck;
 
     /**
      * Constructor for the Blackjack class.
      *
-     * @param DeckOfCards
+     * @param DeckOfCards $deck
      */
     public function __construct($deck)
     {
@@ -26,7 +23,7 @@ class Blackjack
     /**
      * Deals a card from the deck.
      *
-     * @return string
+     * @return string|null
      */
     public function deal()
     {
@@ -36,8 +33,8 @@ class Blackjack
     /**
      * Calculates the score of a hand in Blackjack.
      *
-     * @param array
-     * 
+     * @param array<string> $hand
+     *
      * @return int
      */
     public function calculateScore($hand)
@@ -68,9 +65,9 @@ class Blackjack
     /**
      * Checks if the game of Blackjack has ended.
      *
-     * @param int
-     * @param int
-     * 
+     * @param int $playerScore
+     * @param int $dealerScore
+     *
      * @return bool
      */
     public function checkGameEnd($playerScore, $dealerScore)

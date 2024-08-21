@@ -27,7 +27,9 @@ class GameController extends AbstractController
         $deck->shuffle();
         $blackjack = new Blackjack($deck);
 
+        /** @var array<string> $playerHand */
         $playerHand = [$blackjack->deal(), $blackjack->deal()];
+        /** @var array<string> $dealerHand */
         $dealerHand = [$blackjack->deal()];
 
         $playerScore = $blackjack->calculateScore($playerHand);
@@ -54,12 +56,18 @@ class GameController extends AbstractController
         Request $request,
         SessionInterface $session
     ): Response {
+        /** @var DeckOfCards $deck */
         $deck = $session->get('deck');
+        $playerHand = $session->get('playerHand', []);
+        dump($playerHand);
+
         $blackjack = new Blackjack($deck);
-        $playerHand = $session->get('playerHand');
+        /** @var array<string> $playerHand */
         $playerHand[] = $blackjack->deal();
+        dump($playerHand);
 
         $playerScore = $blackjack->calculateScore($playerHand);
+        /** @var int $dealerScore */
         $dealerScore = $session->get('dealerScore');
         $end = $blackjack->checkGameEnd($playerScore, $dealerScore);
 
@@ -81,13 +89,17 @@ class GameController extends AbstractController
         Request $request,
         SessionInterface $session
     ): Response {
+        /** @var DeckOfCards $deck */
         $deck = $session->get('deck');
+        /** @var array<string> $dealerHand */
+        $dealerHand = $session->get('dealerHand', []);
         $blackjack = new Blackjack($deck);
-        $dealerHand = $session->get('dealerHand');
         $dealerScore = $blackjack->calculateScore($dealerHand);
 
         while ($dealerScore < 17) {
+            /** @var array<string> $dealerHand */
             $dealerHand[] = $blackjack->deal();
+            dump($dealerHand);
             $dealerScore = $blackjack->calculateScore($dealerHand);
         }
 

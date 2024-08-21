@@ -9,14 +9,14 @@ namespace App\Card;
 class DeckOfCards
 {
     /**
-     * @var array
+     * @var array<string>
      */
     private $deck;
 
     /**
      * Constructor for the DeckOfCards class.
      *
-     * @param array
+     * @param array<string>|null $deck
      */
     public function __construct($deck = null)
     {
@@ -37,7 +37,7 @@ class DeckOfCards
     /**
      * Shuffles the deck of cards.
      *
-     * @return array
+     * @return array<string>
      */
     public function shuffle()
     {
@@ -49,7 +49,7 @@ class DeckOfCards
     /**
      * Get the current state of the deck.
      *
-     * @return array
+     * @return array<string>
      */
     public function getDeck()
     {
@@ -59,11 +59,12 @@ class DeckOfCards
     /**
      * Deals a card from the deck.
      *
-     * @return string
+     * @return string|null
      */
     public function deal()
     {
         $card = array_shift($this->deck);
+        dump("$card");
 
         return $card;
     }

@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class CardTest extends TestCase
 {
-    public function testCreateCard()
+    public function testCreateCard(): void
     {
         $deck = ['♠ 10', '♠ Knekt', '♠ Ess', '♦ 5', '♦ 10', '♣ 6'];
         $card = new Card($deck, 1);
