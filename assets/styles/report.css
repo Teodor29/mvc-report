@@ -1,7 +1,11 @@
-html {
+html,
+body {
     font-family: "Roboto", sans-serif;
     background-color: #212121;
     color: #ccc;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 img {
@@ -10,17 +14,6 @@ img {
 
 body {
     margin: 0;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 2em 1rem;
-    max-width: 1200px;
-    min-height: 400px;
 }
 
 h1,
@@ -96,7 +89,6 @@ textarea {
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
     padding: 3rem 2rem;
 }
 
@@ -177,6 +169,7 @@ nav li a:hover {
 footer {
     background-color: #171717;
     padding: 1.5rem;
+    margin-top: auto;
 }
 footer p {
     text-align: center;

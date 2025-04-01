@@ -3,13 +3,15 @@
 {% block title %}Hello LibraryController!{% endblock %}
 
 {% block body %}
-<h1>Api links</h1>
-<div class="max1000 center">
+<h1>Library</h1>
+<div class="center">
 
-    <a class="api_link" href="{{ path('app_book_index') }}">
+    <a class="button" href="{{ path('app_book_index') }}">
+        Book
+    </a>
 
-        <h2>Book</h2>
-    
+    <a class="button" href="{{ path('app_book_new') }}">
+        New Book
     </a>
 
 

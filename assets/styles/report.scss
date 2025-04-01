@@ -7,12 +7,16 @@ $accent: #9c82a1;
 $textColor: #ccc;
 $textColor2: #aaa;
 $textColorDark: #333;
-$link:rgb(175, 153, 180);
+$link: rgb(175, 153, 180);
 
-html {
+html,
+body {
     font-family: "Roboto", sans-serif;
     background-color: $background;
     color: $textColor;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 img {
@@ -21,17 +25,6 @@ img {
 
 body {
     margin: 0;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 2em 1rem;
-    max-width: 1200px;
-    min-height: 400px;
 }
 
 h1,
@@ -105,7 +98,6 @@ textarea {
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
     padding: 3rem 2rem;
 }
 
@@ -189,6 +181,7 @@ nav {
 footer {
     background-color: $backgroundFooter;
     padding: 1.5rem;
+    margin-top: auto; // Pushes footer to the bottom
     p {
         text-align: center;
     }
