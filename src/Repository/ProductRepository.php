@@ -18,10 +18,11 @@ class ProductRepository extends ServiceEntityRepository
 
     /**
      * Find all producs having a value above the specified one with SQL.
-     * 
-     * @return [][] Returns an array of arrays (i.e. a raw data set)
+     *
+     * @param int $value The minimum value to filter products.
+     * @return array<array<string, mixed>> Returns an array of associative arrays (i.e. a raw data set).
      */
-    public function findByMinimumValue2($value): array
+    public function findByMinimumValue(int $value): array
     {
         $conn = $this->getEntityManager()->getConnection();
 
