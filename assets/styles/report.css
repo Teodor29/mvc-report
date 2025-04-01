@@ -13,45 +13,101 @@ body {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
-    margin-top: 2em;
-    padding-bottom: 2em;
+    padding: 2em 1rem;
     max-width: 1200px;
     min-height: 400px;
 }
 
-.max800 {
-    max-width: 800px;
-    margin: 0 auto;
+h1,
+h2,
+h3,
+p,
+button,
+a {
+    margin-bottom: 1rem;
 }
 
-.max1000 {
-    max-width: 1000px;
-    margin: 0 auto;
+button {
+    margin: 0.5rem 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    text-align: center;
+    color: #333;
+    background-color: #9c82a1;
+    border: none;
+    border-radius: 1rem;
+    transition: background-color 0.5s;
+}
+button:hover {
+    background-color: rgba(156, 130, 161, 0.6509803922);
 }
 
-.text-container {
-    max-width: 65ch;
+table {
+    border-collapse: collapse;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 1em;
+    margin-bottom: 2em;
+}
+
+th,
+td {
+    padding: 1em;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    background-color: #171717;
+    color: #ccc;
+    font-size: 1.125rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    background-color: #323232;
+    color: #ccc;
+    font-size: 1rem;
+    border: 1px solid #ccc;
 }
 
 .center {
     text-align: center;
     margin: 0 auto;
-    padding: 0 1em;
 }
 
 .container {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1em;
-    text-align: center;
+    padding: 3rem 2rem;
 }
-.container p,
-.container h1,
-.container h2,
-.container h3 {
-    text-align: left;
+
+@media (max-width: 800px) {
+    .container {
+        padding: 2rem 1rem;
+    }
+}
+.text-container {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .container-doc h3 {
@@ -64,7 +120,7 @@ h1 {
 }
 
 a {
-    color: #aaa;
+    color: rgb(175, 153, 180);
 }
 
 .button {
@@ -167,16 +223,7 @@ footer p {
     }
 }
 .aside {
-    padding-left: 2em;
-    padding-right: 1em;
-}
-
-.article {
-    overflow: auto;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-bottom: 1em;
-    min-height: 20em;
+    padding-right: 2rem;
 }
 
 .figure {
@@ -195,7 +242,7 @@ figure.right {
 }
 
 .lucky {
-    background-color: #BC8593;
+    background-color: #bc8593;
     padding: 2rem;
     padding-bottom: 0;
     border-radius: 3rem;

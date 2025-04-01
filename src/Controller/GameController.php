@@ -62,7 +62,7 @@ class GameController extends AbstractController
         dump($playerHand);
 
         $blackjack = new Blackjack($deck);
-        /** @var array<string> $playerHand */
+        /* @var array<string> $playerHand */
         $playerHand[] = $blackjack->deal();
         dump($playerHand);
 
@@ -97,7 +97,7 @@ class GameController extends AbstractController
         $dealerScore = $blackjack->calculateScore($dealerHand);
 
         while ($dealerScore < 17) {
-            /** @var array<string> $dealerHand */
+            /* @var array<string> $dealerHand */
             $dealerHand[] = $blackjack->deal();
             dump($dealerHand);
             $dealerScore = $blackjack->calculateScore($dealerHand);
