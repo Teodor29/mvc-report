@@ -37,4 +37,12 @@ class ReportController extends AbstractController
 
         return $this->render('lucky.html.twig', $data);
     }
+
+    #[Route('/library', name: 'library')]
+    public function index(): Response
+    {
+        return $this->render('library/index.html.twig', [
+            'controller_name' => 'LibraryController',
+        ]);
+    }
 }
