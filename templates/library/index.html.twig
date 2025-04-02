@@ -5,14 +5,17 @@
 {% block body %}
 <h1>Library</h1>
 <div class="center">
+    <div>
+        <a class="button" href="{{ path('app_book_index') }}">
+            Book List
+        </a>
+    </div>
 
-    <a class="button" href="{{ path('app_book_index') }}">
-        Book
-    </a>
-
-    <a class="button" href="{{ path('app_book_new') }}">
-        New Book
-    </a>
+    <div>
+        <a class="button" href="{{ path('app_book_new') }}">
+            Create New Book
+        </a>
+    </div>
 
 
 
