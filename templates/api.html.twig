@@ -9,29 +9,29 @@
 
     <a class="api_link" href="{{ path('quote') }}">
 
-            <h2>Quote</h2>
-    
+        <h2>Quote</h2>
+
         <p>JSON svar som ger ett slumpmässigt citat tillsammans med dagens datum och tidstämpel för när svaret genererades.</p>
 
     </a>
     <a class="api_link" href="{{ path('api_deck') }}">
 
-            <h2>Deck</h2>
-    
+        <h2>Deck</h2>
+
         <p>JSON svar med alla kort i kortleken sorterade.</p>
 
-    </a>    
-    
+    </a>
+
     <a class="api_link" href="{{ path('api_deck_shuffle') }}">
 
-            <h2>Shuffle</h2>
-    
+        <h2>Shuffle</h2>
+
         <p>JSON svar med alla kort i kortleken blandade.</p>
 
     </a>
 
-    </a>   
-    
+    </a>
+
     <a class="api_link" href="{{ path('api_deck_draw') }}">
 
         <h2>Draw</h2>
@@ -42,15 +42,21 @@
 
     <a class="api_link" href="{{ path('api_game') }}">
 
-    <h2>Blackjack</h2>
+        <h2>Blackjack</h2>
 
-    <p>JSON svar med aktuell ställning för spelet blackjack.</p>
+        <p>JSON svar med aktuell ställning för spelet blackjack.</p>
 
     </a>
 
+    <a class="api_link" href="{{ path('api_library_books') }}">
+        <h2>Library</h2>
+
+        <p>JSON svar med alla böcker i biblioteket.</p>
+        <p>"api/library/book/<isbn>" för att se en bok via dess ISBN</p>
+    </a>
 
 
 </div>
-    
+
 
 {% endblock %}
