@@ -115,6 +115,7 @@
     "require-dev": {
         "php": "^8.2",
         "friendsofphp/php-cs-fixer": "^3.59",
+        "phpmetrics/phpmetrics": "^0.0.1",
         "phpunit/phpunit": "^11",
         "squizlabs/php_codesniffer": "^3.10",
         "symfony/browser-kit": "7.0.*",

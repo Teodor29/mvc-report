@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1743669572">
-  <project timestamp="1743669572">
+<coverage generated="1743700125">
+  <project timestamp="1743700125">
     <package name="App\Card">
       <file name="/home/teo/dbwebb-kurser/mvc/me/report/src/Card/Blackjack.php">
         <class name="App\Card\Blackjack" namespace="App\Card">
