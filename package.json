@@ -21,6 +21,6 @@
     },
     "dependencies": {
         "@symfony/stimulus-bridge": "^3.2.2",
-        "node": "^18.0.0"
+        "node": "^16.0.0"
     }
 }
