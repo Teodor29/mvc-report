@@ -4,7 +4,7 @@
 
 {% block body %}
 <div class="two-col-layout max800">
-    
+
     <aside class="aside">
         <h2>Innehåll</h2>
         <ul>
@@ -17,84 +17,94 @@
             <li><a href="#kmom10">kmom10</a></li>
         </ul>
     </aside>
-<article class="text-container">
-    <h2 id="kmom01">kmom01</h2>
+    <article class="text-container">
+        <h2 id="kmom01">kmom01</h2>
 
-    <p>Jag tycker kursmomentet har i stort sett gått bra. Hade lite slarvfel men det gick bra att lösa genom att gå igenom symfony övningen en extra gång. Sen hade jag lite problem med github ssh keys tills jag kom på att jag hade en ny dator och fick göra en ny nyckel. </p>
-    <p>Jag har inte mer erfarenhet av objektorientering än vad vi lärt oss i tidigare kurser. </p>
-    <p>PHP har stöd för objektorienterad programmering och använder klasser för att skapa objekt. En klass är en mall som definierar egenskaper och beteenden för objekten </p>
-    <p>För att komma igång med att skapa klasser i PHP är det viktigt att förstå hur man definierar en klass, hur man skapar och använder objekt av den klassen och hur man ändrar objektens egenskaper. </p>
-    <p>I uppgiften me/report användes en kodbas som var relativt enkel och lätthanterlig. Koden var organiserad på ett logiskt sätt, vilket gjorde det ganska enkelt att navigera. Jag tyckte dock det var lite krångligt att komma igång med symfony och jag gillar inte riktigt att man måste köra “npm build” hela tiden. </p>
-    <p>De delar ur artikeln jag finner mest intressanta är hur man skriver "clean code”. Det är något jag anser vara viktigt oh behöver bli bättre på. </p>
-    <p>Min TIL är hur man använder ramverket symfony och grundläggande objektorientering i php. </p>
-
-
-
-    <h2 id="kmom02">kmom02</h2>
-
-    <h4>Klasser</h4>
-    <p>DeckOfCards klassen skapar en kortlek. Två arrayer används, en med kortens färg och en med värdet. Sen skapas alla kort med foreach loop. Shuffle funktionen blandar kortleken. </p>
-    <p>Card klassen hämtar kortleken som skapades i DeckOfCards. Genom drawCards funktionen hämtas de översta korten ur kortleken med array_splice().  </p>
-    <h4>Routs</h4>
-    <p>CardsConroller innehåller alla routs som används i Card-fliken. </p>
-    <p>Card/deck/shuffle använder DeckOfCards som skapar kortleken. Kortleken blandas med shuffle innan den läggs i sessionen. Kortleken skickas till shuffle.html.twig där korten skrivs ut med en for loop. </p>
-    <p>Card/deck hämtar kortleken från sessionen, sorterar den och skriver ut korten i deck.html.twig. </p>
-    <p>Card/deck/draw använder drawCards funktionen ur card klassen. Klassen tar kortleken och ett nummer som parametrar. Korten tas ut med array_splice och sen returneras kortleken och de uttagna korten separat. Sessionen uppdateras och de dragna korten skrivs ut i draw.html.twig. </p>
-    <p>Card/deck/draw/{num<\d+>} funkar på samma sätt men använder numret som angivits. </p>
-    <p>ApiController innehåller alla routs som används i API-fliken. Alla routes funkar på samma sätt. Fast istället för att skicka datan till en twig fil skapas en json response med “JSON_PRETTY_PRINT” </p>
-    <h4>Konstruktioner</h4>
-    <p>Arv handlar om att skapa nya klasser baserat på befintliga klasser. En ny klass kan ärva egenskaper och beteenden från en befintlig klass. Man använder “extends” i php. </p>
-    <p>Komposition handlar om att kombinera olika delar för att skapa en ny klass. Man skapar en ny klass genom att komponera instanser av andra klasser. </p>
-    <p>Ett interface definierar en uppsättning metoder som en klass måste implementera. Det fungerar som en slags mall som beskriver vad en klass ska kunna göra. Man använder “interface” för att skapa ett interface i php. </p>
-    <p>En trait är en återanvändbar bit kod som kan användas i flera klasser. I PHP inkluderar man en trait i en klass med hjälp av nyckelordet "use". </p>
-    <h4>Reflektion</h4>
-    <p>Jag är relativt nöjd med uppgiften. Korten hade kunnat se betydligt mycket bättre ut. Jag hade kunnat vara lite mer kreativ med twig sidorna men jag prioriterade att bli klar med uppgiften. </p>
-    <p>Det funkar bra att att jobba i symfony förutom att det tar några sekunder för stylen att laddas in även om an använder “npm run watch”. Vilket kan kännas som en evighet för den otålmodige. 
-Min TIL är “npm run watch”. </p>
-
-
-    <h2 id="kmom03">kmom03</h2>
-    <p>Att modellera ett kortspel med flödesdiagram och pseudokod var en intressant uppgift. Det kändes bra att först visualisera spelets flöde och sedan skriva pseudokod innan jag började programmera. Detta hjälpte mig att förstå spelets struktur och gjorde det lättare att skriva koden.
-    </p>
-    <h4>Implementation</h4>
-    <p>Jag löste uppgiften genom att först skriva pseudokod som beskrev varje steg i spelet. Först initieras spelet genom att dela ut kort och sparar spelets status i sessionen. /hit delar ut ett kort till spelaren och /stand delar ut ett till dealern. Sedan skapade jag klasser och metoder i “Blackjack.php”. Jag är nöjd med hur spelet fungerar, men jag tror att jag kan förbättra min kod genom att göra fler metoder för att minska mängden kod i GameController. Egentligen ska dealern få två kort i blackjack, där ett av dem är upp och ned.
-    </p>
-    <h4>Känsla för att koda i Symfony
-    </h4>
-    <p>Att koda i Symfony har varit både utmanande och lärorikt. I början var det lite svårt att förstå allt, men nu känner jag mig mer bekväm med det.</p>
-    <h4>TIL</h4>
-    <p>Min TIL för det här kursmomentet är hur hjälpsamt det är att planera koden med flödesdiagram och pseudokod innan man börjar programmera. Det har också varit värdefullt att lära sig mer om hur man använder Symfony.
-    </p>
-
-    <h2 id="kmom04">kmom04</h2>
-
-    <p>Att skriva tester med PHPUnit har varit lärorikt. Vi har ju jobbat lite med enhetstester i python innan så det var inte helt främmande att jobba med det i PHP. Det är samma princip fast i ett annat programmeringsspråk.
-    </p>
-    <p>Jag lyckades uppnå en kodtäckning på 100%. Det var inte många metoder i klasserna så jag körde ett test per metod vilket gav 100% kodtäckning.</p>
-    <p>Jag upplever att min egen kod var testbar, men det finns alltid utrymme för förbättringar. Vissa delar av koden var lättare att testa än andra. Till exempel, metoder som returnerar 2 värden är enklare att testa. Det var svårare att testa mer komplexa funktioner där resultatet kunde variera.
-    </p>
-    <p>Jag valde att inte skriva om min kod. Eftersom det inte krävdes så många tester för att nå full kodtäckning så nöjde jag mig med resultatet.
-    </p>
-    <p>Testbar kod är nog ofta ett kännetecken på snygg och ren kod. Om man satsar på att skriva mer testbar kod tvingas man också att skriva bättre kod överlag. Det blir enklare att testa ju mer optimerad en kod är.
-    </p>
-    <p>Min TIL för detta kursmoment är hur viktig enhetstester är. Det hjälper till att hålla koden strukturerad och välorganiserad.
-    </p>
-
-    <h2 id="kmom05">kmom05</h2>
-
-    <p></p>
-
-    <h2 id="kmom06">kmom06</h2>
-
-    <p></p>
+        <p>Jag tycker kursmomentet har i stort sett gått bra. Hade lite slarvfel men det gick bra att lösa genom att gå igenom symfony övningen en extra gång. Sen hade jag lite problem med github ssh keys tills jag kom på att jag hade en ny dator och fick göra en ny nyckel. </p>
+        <p>Jag har inte mer erfarenhet av objektorientering än vad vi lärt oss i tidigare kurser. </p>
+        <p>PHP har stöd för objektorienterad programmering och använder klasser för att skapa objekt. En klass är en mall som definierar egenskaper och beteenden för objekten </p>
+        <p>För att komma igång med att skapa klasser i PHP är det viktigt att förstå hur man definierar en klass, hur man skapar och använder objekt av den klassen och hur man ändrar objektens egenskaper. </p>
+        <p>I uppgiften me/report användes en kodbas som var relativt enkel och lätthanterlig. Koden var organiserad på ett logiskt sätt, vilket gjorde det ganska enkelt att navigera. Jag tyckte dock det var lite krångligt att komma igång med symfony och jag gillar inte riktigt att man måste köra “npm build” hela tiden. </p>
+        <p>De delar ur artikeln jag finner mest intressanta är hur man skriver "clean code”. Det är något jag anser vara viktigt oh behöver bli bättre på. </p>
+        <p>Min TIL är hur man använder ramverket symfony och grundläggande objektorientering i php. </p>
 
 
 
-    <h2 id="kmom10">kmom10</h2>
+        <h2 id="kmom02">kmom02</h2>
 
-    <p></p>
+        <h4>Klasser</h4>
+        <p>DeckOfCards klassen skapar en kortlek. Två arrayer används, en med kortens färg och en med värdet. Sen skapas alla kort med foreach loop. Shuffle funktionen blandar kortleken. </p>
+        <p>Card klassen hämtar kortleken som skapades i DeckOfCards. Genom drawCards funktionen hämtas de översta korten ur kortleken med array_splice(). </p>
+        <h4>Routs</h4>
+        <p>CardsConroller innehåller alla routs som används i Card-fliken. </p>
+        <p>Card/deck/shuffle använder DeckOfCards som skapar kortleken. Kortleken blandas med shuffle innan den läggs i sessionen. Kortleken skickas till shuffle.html.twig där korten skrivs ut med en for loop. </p>
+        <p>Card/deck hämtar kortleken från sessionen, sorterar den och skriver ut korten i deck.html.twig. </p>
+        <p>Card/deck/draw använder drawCards funktionen ur card klassen. Klassen tar kortleken och ett nummer som parametrar. Korten tas ut med array_splice och sen returneras kortleken och de uttagna korten separat. Sessionen uppdateras och de dragna korten skrivs ut i draw.html.twig. </p>
+        <p>Card/deck/draw/{num<\d+>} funkar på samma sätt men använder numret som angivits. </p>
+        <p>ApiController innehåller alla routs som används i API-fliken. Alla routes funkar på samma sätt. Fast istället för att skicka datan till en twig fil skapas en json response med “JSON_PRETTY_PRINT” </p>
+        <h4>Konstruktioner</h4>
+        <p>Arv handlar om att skapa nya klasser baserat på befintliga klasser. En ny klass kan ärva egenskaper och beteenden från en befintlig klass. Man använder “extends” i php. </p>
+        <p>Komposition handlar om att kombinera olika delar för att skapa en ny klass. Man skapar en ny klass genom att komponera instanser av andra klasser. </p>
+        <p>Ett interface definierar en uppsättning metoder som en klass måste implementera. Det fungerar som en slags mall som beskriver vad en klass ska kunna göra. Man använder “interface” för att skapa ett interface i php. </p>
+        <p>En trait är en återanvändbar bit kod som kan användas i flera klasser. I PHP inkluderar man en trait i en klass med hjälp av nyckelordet "use". </p>
+        <h4>Reflektion</h4>
+        <p>Jag är relativt nöjd med uppgiften. Korten hade kunnat se betydligt mycket bättre ut. Jag hade kunnat vara lite mer kreativ med twig sidorna men jag prioriterade att bli klar med uppgiften. </p>
+        <p>Det funkar bra att att jobba i symfony förutom att det tar några sekunder för stylen att laddas in även om an använder “npm run watch”. Vilket kan kännas som en evighet för den otålmodige.
+            Min TIL är “npm run watch”. </p>
 
-    
-</article>
+
+        <h2 id="kmom03">kmom03</h2>
+        <p>Att modellera ett kortspel med flödesdiagram och pseudokod var en intressant uppgift. Det kändes bra att först visualisera spelets flöde och sedan skriva pseudokod innan jag började programmera. Detta hjälpte mig att förstå spelets struktur och gjorde det lättare att skriva koden.
+        </p>
+        <h4>Implementation</h4>
+        <p>Jag löste uppgiften genom att först skriva pseudokod som beskrev varje steg i spelet. Först initieras spelet genom att dela ut kort och sparar spelets status i sessionen. /hit delar ut ett kort till spelaren och /stand delar ut ett till dealern. Sedan skapade jag klasser och metoder i “Blackjack.php”. Jag är nöjd med hur spelet fungerar, men jag tror att jag kan förbättra min kod genom att göra fler metoder för att minska mängden kod i GameController. Egentligen ska dealern få två kort i blackjack, där ett av dem är upp och ned.
+        </p>
+        <h4>Känsla för att koda i Symfony
+        </h4>
+        <p>Att koda i Symfony har varit både utmanande och lärorikt. I början var det lite svårt att förstå allt, men nu känner jag mig mer bekväm med det.</p>
+        <h4>TIL</h4>
+        <p>Min TIL för det här kursmomentet är hur hjälpsamt det är att planera koden med flödesdiagram och pseudokod innan man börjar programmera. Det har också varit värdefullt att lära sig mer om hur man använder Symfony.
+        </p>
+
+        <h2 id="kmom04">kmom04</h2>
+
+        <p>Att skriva tester med PHPUnit har varit lärorikt. Vi har ju jobbat lite med enhetstester i python innan så det var inte helt främmande att jobba med det i PHP. Det är samma princip fast i ett annat programmeringsspråk.
+        </p>
+        <p>Jag lyckades uppnå en kodtäckning på 100%. Det var inte många metoder i klasserna så jag körde ett test per metod vilket gav 100% kodtäckning.</p>
+        <p>Jag upplever att min egen kod var testbar, men det finns alltid utrymme för förbättringar. Vissa delar av koden var lättare att testa än andra. Till exempel, metoder som returnerar 2 värden är enklare att testa. Det var svårare att testa mer komplexa funktioner där resultatet kunde variera.
+        </p>
+        <p>Jag valde att inte skriva om min kod. Eftersom det inte krävdes så många tester för att nå full kodtäckning så nöjde jag mig med resultatet.
+        </p>
+        <p>Testbar kod är nog ofta ett kännetecken på snygg och ren kod. Om man satsar på att skriva mer testbar kod tvingas man också att skriva bättre kod överlag. Det blir enklare att testa ju mer optimerad en kod är.
+        </p>
+        <p>Min TIL för detta kursmoment är hur viktig enhetstester är. Det hjälper till att hålla koden strukturerad och välorganiserad.
+        </p>
+
+        <h2 id="kmom05">kmom05</h2>
+
+        <p>Att jobba igenom övningen med Symfony och Doctrine gick bra. Det var smidigt att hantera databasen och skapa entiteter, repositories och controller via Doctrine. Det är mycket som genereras automatiskt vilket sparar tid, men det gäller att förstå vad som händer i bakgrunden.
+        </p>
+        <p>Användaren kan skapa, redigera och ta bort böcker. BookController hanterar funktionaliteten. Jag försökte hålla det så enkelt som möjligt. För användargränssnittet fokuserade jag på att få en ren och simpel struktur. Böcker visas i en lista och formulären är enkla.
+        </p>
+        <p>Att jobba med ORM i CRUD var smidigt. Doctrine sköter mycket av SQL-arbetet, vilket gör det enkelt att hämta och ändra data. Jämfört med att direkt skriva SQL känns det smidigare.
+        </p>
+        <p>Min uppfattning om ORM så här långt är att det är kraftfullt och gör att man kan fokusera mindre på databasen. Dock kan det kännas som att man har mindre kontroll jämfört med att skriva SQL direkt. Jag ser fördelarna med att använda ORM i större projekt.
+        </p>
+        <p>Min TIL från detta kmom är hur Doctrine och Symfony används för att hantera databaser på ett strukturerat sätt.
+        </p>
+
+
+        <h2 id="kmom06">kmom06</h2>
+
+        <p></p>
+
+
+
+        <h2 id="kmom10">kmom10</h2>
+
+        <p></p>
+
+
+    </article>
 </div>
 {% endblock %}

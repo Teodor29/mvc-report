@@ -231,16 +231,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-GameController.html#method_doc"
         },                {
-            "fqsen": "\\App\\Controller\\LibraryController",
-            "name": "LibraryController",
-            "summary": "",
-            "url": "classes/App-Controller-LibraryController.html"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003Aindex\u0028\u0029",
-            "name": "index",
-            "summary": "",
-            "url": "classes/App-Controller-LibraryController.html#method_index"
-        },                {
             "fqsen": "\\App\\Controller\\LuckyController",
             "name": "LuckyController",
             "summary": "",
@@ -325,6 +315,11 @@ Search.appendIndex(
             "name": "number",
             "summary": "",
             "url": "classes/App-Controller-ReportController.html#method_number"
+        },                {
+            "fqsen": "\\App\\Controller\\ReportController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "",
+            "url": "classes/App-Controller-ReportController.html#method_index"
         },                {
             "fqsen": "\\App\\Entity\\Book",
             "name": "Book",
