@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+<div class="text-container">
+    <h1>Metrics analys</h1>
+    <h2>Introduktion</h2>
+    <p><strong>Codestyle</strong> handlar om att följa enhetliga kodstandarder, vilket gör koden lättläst och underhållbar.
+    </p>
+    <p><strong>Coverage</strong> mäter hur stor del av koden som är täckt av tester.
+    </p>
+    <p><strong>Complexity</strong> avser hur komplicerade metoder och klasser är. Hög komplexitet kan leda till
+        svårigheter vid underhåll och debugging.
+    </p>
+    <p><strong>Cohesion</strong> avser hur väl metoder och klasser relaterar till sin specifika uppgift.
+    </p>
+    <p><strong>Coupling</strong> handlar om hur beroende moduler är av varandra. Låg koppling är önskvärt för bättre modulär kod.</p>
+    <p><strong>CRAP</strong> är ett mått som kombinerar komplexitet och testtäckning för att identifiera svag kod.
+    </p>
+    <p>Dessa faktorer påverkar direkt kodens kvalitet och underhållbarhet. Genom att analysera mätvärden från phpmetrics och Scrutinizer kan vi identifiera problemområden och förbättra koden.
+    </p>
+
+
+    <h2>Phpmetrics</h2>
+
+    <a href="https://scrutinizer-ci.com/g/Teodor29/mvc-report/">
+        <img src="https://scrutinizer-ci.com/g/Teodor29/mvc-report/badges/quality-score.png?b=main" alt="Scrutinizer Quality Score">
+    </a>
+
+    <a href="https://scrutinizer-ci.com/g/Teodor29/mvc-report/">
+        <img src="https://scrutinizer-ci.com/g/Teodor29/mvc-report/badges/coverage.png?b=main" alt="Scrutinizer Coverage">
+    </a>
+    <a href="https://scrutinizer-ci.com/g/Teodor29/mvc-report/">
+        <img src="https://scrutinizer-ci.com/g/Teodor29/mvc-report/badges/build.png?b=main" alt="Scrutinizer build">
+    </a>
+    <a href="https://scrutinizer-ci.com/g/Teodor29/mvc-report/">
+        <img src="https://scrutinizer-ci.com/g/Teodor29/mvc-report/badges/build.png?b=main" alt="Scrutinizer code intelligence">
+
+</div>
+{% endblock %}
