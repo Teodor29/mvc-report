@@ -2,6 +2,12 @@ imports:
     - php
 
 filter:
+    path:
+        - src/*
+        - tests/*
+        - templates/*
+        - assets/*
+        
     excluded_paths: [vendor/*, test/*]
 
 build:
