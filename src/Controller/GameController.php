@@ -20,7 +20,6 @@ class GameController extends AbstractController
 
     #[Route('/blackjack', name: 'blackjack')]
     public function blackjack(
-        Request $request,
         SessionInterface $session
     ): Response {
         $deck = new DeckOfCards();
@@ -53,7 +52,6 @@ class GameController extends AbstractController
 
     #[Route('/hit', name: 'hit')]
     public function hit(
-        Request $request,
         SessionInterface $session
     ): Response {
         /** @var DeckOfCards|null $deck */
@@ -71,7 +69,7 @@ class GameController extends AbstractController
         $blackjack = new Blackjack($deck);
         $playerHand[] = $blackjack->deal();
 
-        $playerHand = array_filter($playerHand, fn ($card) => null !== $card);
+        $playerHand = array_filter($playerHand, fn($card) => null !== $card);
 
         $playerScore = $blackjack->calculateScore($playerHand);
         /** @var int|null $dealerScore */
@@ -113,13 +111,13 @@ class GameController extends AbstractController
         }
 
         $blackjack = new Blackjack($deck);
-        $dealerHand = array_filter($dealerHand, fn ($card) => null !== $card);
+        $dealerHand = array_filter($dealerHand, fn($card) => null !== $card);
 
         $dealerScore = $blackjack->calculateScore($dealerHand);
 
         while ($dealerScore < 17) {
             $dealerHand[] = $blackjack->deal();
-            $dealerHand = array_filter($dealerHand, fn ($card) => null !== $card);
+            $dealerHand = array_filter($dealerHand, fn($card) => null !== $card);
             $dealerScore = $blackjack->calculateScore($dealerHand);
         }
 

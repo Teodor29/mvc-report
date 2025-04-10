@@ -19,10 +19,8 @@ class CardsController extends AbstractController
     }
 
     #[Route('/card/deck', name: 'deck')]
-    public function deck(
-        Request $request,
-        SessionInterface $session
-    ): Response {
+    public function deck(SessionInterface $session): Response
+    {
         /** @var array<int> $deck */
         $deck = $session->get('deck');
         dump($deck);
@@ -43,10 +41,8 @@ class CardsController extends AbstractController
     }
 
     #[Route('/card/deck/shuffle', name: 'shuffle')]
-    public function shuffle(
-        Request $request,
-        SessionInterface $session
-    ): Response {
+    public function shuffle(SessionInterface $session): Response
+    {
         $DeckOfCards = new DeckOfCards();
 
         $deck = $DeckOfCards->shuffle();
@@ -61,10 +57,8 @@ class CardsController extends AbstractController
     }
 
     #[Route('/card/deck/draw', name: 'draw')]
-    public function draw(
-        Request $request,
-        SessionInterface $session
-    ): Response {
+    public function draw(SessionInterface $session): Response
+    {
         $deck = $session->get('deck');
 
         if (!$session->get('deck')) {
@@ -90,13 +84,8 @@ class CardsController extends AbstractController
     }
 
     #[Route("/card/deck/draw/{num<\d+>}", name: 'drawNumber')]
-    public function drawNumber(
-        int $num,
-        Request $request,
-        SessionInterface $session
-    ): Response {
-        /** @var int $num */
-        $num = $request->get('num');
+    public function drawNumber(int $num, SessionInterface $session): Response
+    {
         $remainingCards = $session->get('remainingCards');
         if ($num > $remainingCards) {
             throw new \Exception('Can not get more cards!');
@@ -121,10 +110,8 @@ class CardsController extends AbstractController
     }
 
     #[Route('/card/deck/reset', name: 'reset')]
-    public function reset(
-        Request $request,
-        SessionInterface $session
-    ): Response {
+    public function reset(SessionInterface $session): Response
+    {
         $session->clear();
 
         return $this->render('card.html.twig');

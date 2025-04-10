@@ -121,11 +121,9 @@ class ApiController extends AbstractController
     #[Route("/api/deck/draw/{num<\d+>}", name: 'api_deck_draw_number', methods: ['GET', 'POST'])]
     public function apiDeckDrawNumber(
         SessionInterface $session,
-        Request $request,
-        int $num
+        Request $request
     ): Response {
-        /** @var int $num */
-        $num = $request->get('num');
+        $num = (int) $request->get('num');
         $remainingCards = $session->get('remainingCards');
         if ($num > $remainingCards) {
             throw new \Exception('Can not get more cards!');
