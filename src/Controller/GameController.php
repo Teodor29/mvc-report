@@ -95,7 +95,6 @@ class GameController extends AbstractController
 
     #[Route('/stand', name: 'stand')]
     public function stand(
-        Request $request,
         SessionInterface $session
     ): Response {
         /** @var DeckOfCards|null $deck */
