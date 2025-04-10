@@ -6,23 +6,57 @@
 <div class="text-container">
     <h1>Metrics analys</h1>
     <h2>Introduktion</h2>
-    <p><strong>Codestyle</strong> handlar om att följa enhetliga kodstandarder, vilket gör koden lättläst och underhållbar.
+    <p>Kodkvalitet är avgörande för att en applikation ska vara lätt att förstå och bygga vidare på. I denna analys har jag använt verktygen phpmetrics och scrutinizer för att undersöka kvaliteten på min rapport-sida.
     </p>
-    <p><strong>Coverage</strong> mäter hur stor del av koden som är täckt av tester.
-    </p>
-    <p><strong>Complexity</strong> avser hur komplicerade metoder och klasser är. Hög komplexitet kan leda till
-        svårigheter vid underhåll och debugging.
-    </p>
-    <p><strong>Cohesion</strong> avser hur väl metoder och klasser relaterar till sin specifika uppgift.
-    </p>
-    <p><strong>Coupling</strong> handlar om hur beroende moduler är av varandra. Låg koppling är önskvärt för bättre modulär kod.</p>
-    <p><strong>CRAP</strong> är ett mått som kombinerar komplexitet och testtäckning för att identifiera svag kod.
-    </p>
-    <p>Dessa faktorer påverkar direkt kodens kvalitet och underhållbarhet. Genom att analysera mätvärden från phpmetrics och Scrutinizer kan vi identifiera problemområden och förbättra koden.
-    </p>
+    <ul>
+        <li><strong>Scrutinizer</strong> är en plattform för kontinuerlig integration och kodgranskning som hjälper till att identifiera problem i koden och föreslå förbättringar.</li>
+        <li><strong>Coverage</strong> är hur stor andel av koden som täcks av tester. Ju högre täckning, desto bättre skydd mot framtida buggar.</li>
+        <li><strong>Complexity</strong> mäter hur komplicerade metoder och klasser är. Hög komplexitet gör koden svår att testa och förstå.</li>
+        <li><strong>Cohesion</strong> beskriver hur väl en klass eller modul fokuserar på en enskild uppgift. Hög kohesion innebär tydligt ansvar och bättre struktur.</li>
+        <li><strong>Coupling</strong> handlar om hur beroende olika delar av applikationen är av varandra. Lägre koppling förenklar förändringar.</li>
+        <li><strong>CRAP</strong> (Change Risk Anti Patterns) är ett mått som kombinerar komplexitet och testtäckning för att identifiera svag kod.</li>
+    </ul>
 
 
     <h2>Phpmetrics</h2>
+
+    <p>Phpmetrics genererar en rapport över hela kodbasens struktur och kvalitet. Genom att analysera den hittade jag flera svaga punkter:</p>
+
+    <ol>
+        <li>Hög komplexitet i vissa klasser. Flera klasser har ett summerat komplexitetsvärde på över 10. Funktionerna i dessa klasser är för komplicerade och bör brytas ner i mindre delar.</li>
+        <img src="img/complexity.png" width="100%" alt="complexity image">
+        <li>God Object, klasser gör för mycket. Två av mina klasser innehåller för många publika metoder och verkar göra för mycket.</li>
+        <img src="img/violations.png" width="100%" alt="violations image">
+        <li>Hög koppling mellan klasser. Några klasser är starkt beroende av andra, vilket gör det svårt att ändra en del av koden utan att påverka flera andra delar. Det gör koden mindre flexibel.</li>
+        <img src="img/coupling.png" width="100%" alt="coupling image">
+    </ol>
+
+    <p>Som exempel visar phpmetrics tydligt att ApiController är en klass med både hög komplexitet och många publika metoder. Det är en "God Object".</p>
+
+    <h2>Scrutinizer</h2>
+    <p>Scrutinizer analyserar automatiskt koden vid varje push till GitHub. Den ger en poängsatt överblick av kodkvaliteten Jag valde att exkludera tredjepartskod i scrutinizer.yml för att få bedömning av min egen kod. Annars blev det för rörigt när massa filer från bl.a. symfony fick F i betyg.</p>
+    <ol>
+        <li>Oanvänd kod. Flera variabler och funktioner är definierade men används aldrig.</li>
+        <li>Bug. En bugg hittades i CardsController.</li>
+        <li>Best Practice. Delar av koden bryter mot etablerade best practices.</li>
+        <img src="img/scrutinizer.png" width="100%" alt="scrutinizer image">
+    </ol> 
+    
+
+
+    <h2>Förbättringar</h2>
+    <p>Efter att ha analyserat rapporterna har jag valt ut tre förbättringsområden:</p>
+
+    <ol>
+        <li>Förenkla komplexa metoder. Jag kan reaktorisera metoder med hög komplexitet, särskilt i CardsController, och dela upp dem i mindre, mer fokuserade funktioner.</li>
+        <li>Ta bort oanvänd kod. Jag kan rensa bort variabler, funktioner och import-satser som inte används. Detta förbättrar kohesionen och ger bättre poäng i Scrutinizer.</li>
+        <li>Följa best practices. Jag implementerar förbättringar som Scrutinizers rekommendationer för att få bättre struktur.</li>
+    </ol>
+
+    <p>Jag förväntar mig att dessa förändringar leder till minskad komplexitet, färre varningar, bättre kodstruktur och förbättrade betyg i både phpmetrics och Scrutinizer.</p>
+    <p>Efter att ha genomfört förbättringarna uppdaterade jag rapporterna. Resultatet visade förbättrade CRAP-värden, minskad komplexitet i centrala klasser och förbättrad poäng i Scrutinizer.</p>
+
+    <h2>Diskussion</h2>
 
     <a href="https://scrutinizer-ci.com/g/Teodor29/mvc-report/">
         <img src="https://scrutinizer-ci.com/g/Teodor29/mvc-report/badges/quality-score.png?b=main" alt="Scrutinizer Quality Score">
