@@ -4,18 +4,19 @@ namespace App\Controller;
 
 use App\Card\Blackjack;
 use App\Card\DeckOfCards;
+use App\Service\BlackjackService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class GameController extends AbstractController
 {
-    #[Route('/game', name: 'game')]
-    public function game(): Response
+    private BlackjackService $blackjackService;
+
+    public function __construct(BlackjackService $blackjackService)
     {
-        return $this->render('game.html.twig');
+        $this->blackjackService = $blackjackService;
     }
 
     #[Route('/blackjack', name: 'blackjack')]
@@ -26,9 +27,7 @@ class GameController extends AbstractController
         $deck->shuffle();
         $blackjack = new Blackjack($deck);
 
-        /** @var array<string> $playerHand */
         $playerHand = [$blackjack->deal(), $blackjack->deal()];
-        /** @var array<string> $dealerHand */
         $dealerHand = [$blackjack->deal()];
 
         $playerScore = $blackjack->calculateScore($playerHand);
@@ -51,36 +50,19 @@ class GameController extends AbstractController
     }
 
     #[Route('/hit', name: 'hit')]
-    public function hit(
-        SessionInterface $session
-    ): Response {
-        /** @var DeckOfCards|null $deck */
-        $deck = $session->get('deck');
-        if (!$deck instanceof DeckOfCards) {
-            throw new \LogicException('Deck is not properly initialized.');
-        }
-
-        /** @var array<string>|null $playerHand */
-        $playerHand = $session->get('playerHand');
-        if (!is_array($playerHand)) {
-            $playerHand = [];
-        }
-
-        $blackjack = new Blackjack($deck);
-        $playerHand[] = $blackjack->deal();
-
-        $playerHand = array_filter($playerHand, fn($card) => null !== $card);
-
-        $playerScore = $blackjack->calculateScore($playerHand);
-        /** @var int|null $dealerScore */
+    public function hit(SessionInterface $session): Response
+    {
+        $playerHand = $session->get('playerHand', []);
         $dealerScore = $session->get('dealerScore');
+
         if (!is_int($dealerScore)) {
             throw new \LogicException('Dealer score is not properly initialized.');
         }
 
-        $end = $blackjack->checkGameEnd($playerScore, $dealerScore);
+        $playerHand = $this->blackjackService->playerHit($playerHand);
+        $playerScore = $this->blackjackService->calculateScore($playerHand);
+        $end = $this->blackjackService->checkGameEnd($playerScore, $dealerScore);
 
-        $session->set('deck', $deck);
         $session->set('playerHand', $playerHand);
         $session->set('playerScore', $playerScore);
 
@@ -94,47 +76,20 @@ class GameController extends AbstractController
     }
 
     #[Route('/stand', name: 'stand')]
-    public function stand(
-        SessionInterface $session
-    ): Response {
-        /** @var DeckOfCards|null $deck */
-        $deck = $session->get('deck');
-        if (!$deck instanceof DeckOfCards) {
-            throw new \LogicException('Deck is not properly initialized.');
-        }
-
-        /** @var array<string>|null $dealerHand */
-        $dealerHand = $session->get('dealerHand');
-        if (!is_array($dealerHand)) {
-            $dealerHand = [];
-        }
-
-        $blackjack = new Blackjack($deck);
-        $dealerHand = array_filter($dealerHand, fn($card) => null !== $card);
-
-        $dealerScore = $blackjack->calculateScore($dealerHand);
-
-        while ($dealerScore < 17) {
-            $dealerHand[] = $blackjack->deal();
-            $dealerHand = array_filter($dealerHand, fn($card) => null !== $card);
-            $dealerScore = $blackjack->calculateScore($dealerHand);
-        }
-
-        /** @var array<string>|null $playerHand */
-        $playerHand = $session->get('playerHand');
-        if (!is_array($playerHand)) {
-            $playerHand = [];
-        }
-
-        /** @var int|null $playerScore */
+    public function stand(SessionInterface $session): Response
+    {
+        $dealerHand = $session->get('dealerHand', []);
+        $playerHand = $session->get('playerHand', []);
         $playerScore = $session->get('playerScore');
+
         if (!is_int($playerScore)) {
             throw new \LogicException('Player score is not properly initialized.');
         }
 
+        $dealerHand = $this->blackjackService->dealerPlay($dealerHand);
+        $dealerScore = $this->blackjackService->calculateScore($dealerHand);
         $end = true;
 
-        $session->set('deck', $deck);
         $session->set('dealerHand', $dealerHand);
         $session->set('dealerScore', $dealerScore);
 
