@@ -22,54 +22,72 @@
 
     <p>Phpmetrics genererar en rapport över hela kodbasens struktur och kvalitet. Genom att analysera den hittade jag flera svaga punkter:</p>
 
-    <ol>
-        <li>Hög komplexitet i vissa klasser. Flera klasser har ett summerat komplexitetsvärde på över 10. Funktionerna i dessa klasser är för komplicerade och bör brytas ner i mindre delar.</li>
-        <img src="img/complexity.png" width="100%" alt="complexity image">
-        <li>God Object, klasser gör för mycket. Två av mina klasser innehåller för många publika metoder och verkar göra för mycket.</li>
-        <img src="img/violations.png" width="100%" alt="violations image">
-        <li>Hög koppling mellan klasser. Några klasser är starkt beroende av andra, vilket gör det svårt att ändra en del av koden utan att påverka flera andra delar. Det gör koden mindre flexibel.</li>
-        <img src="img/coupling.png" width="100%" alt="coupling image">
-    </ol>
-
-    <p>Som exempel visar phpmetrics tydligt att ApiController är en klass med både hög komplexitet och många publika metoder. Det är en "God Object".</p>
-
-    <h2>Scrutinizer</h2>
-    <p>Scrutinizer analyserar automatiskt koden vid varje push till GitHub. Den ger en poängsatt överblick av kodkvaliteten Jag valde att exkludera tredjepartskod i scrutinizer.yml för att få bedömning av min egen kod. Annars blev det för rörigt när massa filer från bl.a. symfony fick F i betyg.</p>
-    <ol>
-        <li>Oanvänd kod. Flera variabler och funktioner är definierade men används aldrig.</li>
-        <li>Bug. En bugg hittades i CardsController.</li>
-        <li>Best Practice. Delar av koden bryter mot etablerade best practices.</li>
-        <img src="img/scrutinizer.png" width="100%" alt="scrutinizer image">
-    </ol> 
-    
-
-
-    <h2>Förbättringar</h2>
-    <p>Efter att ha analyserat rapporterna har jag valt ut tre förbättringsområden:</p>
-
-    <ol>
-        <li>Förenkla komplexa metoder. Jag kan reaktorisera metoder med hög komplexitet, särskilt i GameController, och dela upp dem i mindre, mer fokuserade funktioner.</li>
-        <li>Ta bort oanvänd kod. Jag kan rensa bort variabler, funktioner och import-satser som inte används. Detta förbättrar kohesionen och ger bättre poäng i Scrutinizer.</li>
-        <li>Följa best practices. Jag implementerar förbättringar som Scrutinizers rekommendationer för att få bättre struktur.</li>
-    </ol>
-
-    <p>Jag förväntar mig att dessa förändringar leder till minskad komplexitet, färre varningar, bättre kodstruktur och förbättrade betyg i både phpmetrics och Scrutinizer.</p>
-    <p>Efter att ha genomfört förbättringarna uppdaterade jag rapporterna. Resultatet visade förbättrade CRAP-värden, minskad komplexitet i centrala klasser och förbättrad poäng i Scrutinizer.</p>
-
-    <h2>Diskussion</h2>
-
     <a href="https://scrutinizer-ci.com/g/Teodor29/mvc-report/">
         <img src="https://scrutinizer-ci.com/g/Teodor29/mvc-report/badges/quality-score.png?b=main" alt="Scrutinizer Quality Score">
     </a>
 
     <a href="https://scrutinizer-ci.com/g/Teodor29/mvc-report/">
         <img src="https://scrutinizer-ci.com/g/Teodor29/mvc-report/badges/coverage.png?b=main" alt="Scrutinizer Coverage">
-    </a>
-    <a href="https://scrutinizer-ci.com/g/Teodor29/mvc-report/">
-        <img src="https://scrutinizer-ci.com/g/Teodor29/mvc-report/badges/build.png?b=main" alt="Scrutinizer build">
-    </a>
-    <a href="https://scrutinizer-ci.com/g/Teodor29/mvc-report/">
-        <img src="https://scrutinizer-ci.com/g/Teodor29/mvc-report/badges/build.png?b=main" alt="Scrutinizer code intelligence">
+        <a href="https://scrutinizer-ci.com/g/Teodor29/mvc-report/">
+            <img src="https://scrutinizer-ci.com/g/Teodor29/mvc-report/badges/build.png?b=main" alt="Scrutinizer build">
+            <a href="https://scrutinizer-ci.com/g/Teodor29/mvc-report/">
+                <img src="https://scrutinizer-ci.com/g/Teodor29/mvc-report/badges/build.png?b=main" alt="Scrutinizer code intelligence">
+            </a>
+            <ol>
+                <li>Hög komplexitet i vissa klasser. Flera klasser har ett summerat komplexitetsvärde på över 10. Funktionerna i dessa klasser är för komplicerade och bör brytas ner i mindre delar.</li>
+                <img src="img/complexity.png" width="100%" alt="complexity image">
+                <li>God Object, klasser gör för mycket. Två av mina klasser innehåller för många publika metoder och verkar göra för mycket.</li>
+                <img src="img/violations.png" width="100%" alt="violations image">
+                <li>Hög koppling mellan klasser. Några klasser är starkt beroende av andra, vilket gör det svårt att ändra en del av koden utan att påverka flera andra delar. Det gör koden mindre flexibel.</li>
+                <img src="img/coupling.png" width="100%" alt="coupling image">
+            </ol>
+
+            <p>Som exempel visar phpmetrics tydligt att ApiController är en klass med både hög komplexitet och många publika metoder. Det är en "God Object".</p>
+
+            <h2>Scrutinizer</h2>
+            <p>Scrutinizer analyserar automatiskt koden vid varje push till GitHub. Den ger en poängsatt överblick av kodkvaliteten Jag valde att exkludera tredjepartskod i scrutinizer.yml för att få bedömning av min egen kod. Annars blev det för rörigt när massa filer från bl.a. symfony fick F i betyg.</p>
+            <ol>
+                <li>Oanvänd kod. Flera variabler och funktioner är definierade men används aldrig.</li>
+                <li>Bug. En bugg hittades i CardsController.</li>
+                <li>Best Practice. Delar av koden bryter mot etablerade best practices.</li>
+                <img src="img/scrutinizer.png" width="100%" alt="scrutinizer image">
+            </ol>
+
+
+
+            <h2>Förbättringar</h2>
+            <p>Efter att ha analyserat rapporterna har jag valt ut tre förbättringsområden:</p>
+
+            <ol>
+                <li>Förenkla komplexa metoder. Jag kan reaktorisera metoder med hög komplexitet, särskilt i GameController, och dela upp dem i mindre, mer fokuserade funktioner.</li>
+                <li>Ta bort oanvänd kod. Jag kan rensa bort variabler, funktioner och import-satser som inte används. Detta förbättrar kohesionen och ger bättre poäng i Scrutinizer.</li>
+                <li>Följa best practices. Jag implementerar förbättringar som Scrutinizers rekommendationer för att få bättre struktur.</li>
+            </ol>
+
+            <p>Jag förväntar mig att dessa förändringar leder till minskad komplexitet, färre varningar, bättre kodstruktur och förbättrade betyg i både phpmetrics och Scrutinizer.</p>
+            <img src="img/phpmet_improved.png" width="100%" alt="phpmet_improved image">
+            <img src="img/phpmet_improved2.png" width="100%" alt="phpmet_improved2 image">
+            <img src="img/scr_improved.png" width="100%" alt="scr_improved image">
+            <img src="img/scr_improved2.png" width="100%" alt="scr_improved2 image">
+
+            <p>Efter att ha genomfört förbättringarna uppdaterade jag rapporterna. Resultatet visade förbättrade minskad komplexitet, färre violations och issues och förbättrade poäng i Scrutinizer.</p>
+            <h2>Diskussion</h2>
+
+            <h2>Diskussion</h2>
+            <p>
+                Genom att använda verktyg som Phpmetrics och Scrutinizer har jag enkelt kunna se och få feedback av min kodkvalitet. Jag kunde se problem, som komplexa metoder och en del violations och issues. </p>
+
+            <p>
+                Det här sättet att jobba med kodkvalitet känns både smidigt och effektivt. Med hjälp av verktyg kan man se exakt vad som bör förbättras. Jag lärde mig också att även om koden fungerar, kan den ändå ha låg kvalitet.
+            </p>
+
+            <p>
+                En fördel med att jobba aktivt med “clean code” och analysverktyg är att det höjer kodens hållbarhet. Det blir enklare att bygga vidare, felsöka och samarbeta med andra.
+            </p>
+
+            <p>
+                En potentiell nackdel kan vara att man ibland fokuserar för mycket på att få bättre poäng än på faktisk funktionalitet. Med rätt verktyg och inställning blir det enkelt att säkerställa att koden håller hög kvalitet.
+            </p>
 
 </div>
 {% endblock %}
