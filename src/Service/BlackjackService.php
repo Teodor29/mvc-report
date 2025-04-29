@@ -18,25 +18,28 @@ class BlackjackService
     }
 
     /**
-     * @param string[] $playerHand Array of strings representing the player's hand.
-     * @return string[] Updated array of strings after the player hits.
+     * @param string[] $playerHand array of strings representing the player's hand
+     *
+     * @return string[] updated array of strings after the player hits
      */
     public function playerHit(array $playerHand): array
     {
         $playerHand[] = $this->blackjack->deal();
-        return array_filter($playerHand, fn($card) => $card !== null);
+
+        return array_filter($playerHand, fn ($card) => null !== $card);
     }
 
     /**
-     * @param string[] $dealerHand Array of strings representing the dealer's hand.
-     * @return string[] Updated array of strings after the dealer plays.
+     * @param string[] $dealerHand array of strings representing the dealer's hand
+     *
+     * @return string[] updated array of strings after the dealer plays
      */
     public function dealerPlay(array $dealerHand): array
     {
         $dealerScore = $this->blackjack->calculateScore($dealerHand);
         while ($dealerScore < 17) {
             $dealerHand[] = $this->blackjack->deal();
-            $dealerHand = array_filter($dealerHand, fn($card) => $card !== null);
+            $dealerHand = array_filter($dealerHand, fn ($card) => null !== $card);
             $dealerScore = $this->blackjack->calculateScore($dealerHand);
         }
 
@@ -44,8 +47,9 @@ class BlackjackService
     }
 
     /**
-     * @param string[] $hand Array of strings representing the hand.
-     * @return int The score of the hand.
+     * @param string[] $hand array of strings representing the hand
+     *
+     * @return int the score of the hand
      */
     public function calculateScore(array $hand): int
     {

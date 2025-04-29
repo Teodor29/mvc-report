@@ -30,8 +30,8 @@ class GameController extends AbstractController
         $playerHand = [$blackjack->deal(), $blackjack->deal()];
         $dealerHand = [$blackjack->deal()];
 
-        $playerHand = array_filter($playerHand, fn($card) => is_string($card));
-        $dealerHand = array_filter($dealerHand, fn($card) => is_string($card));
+        $playerHand = array_filter($playerHand, fn ($card) => is_string($card));
+        $dealerHand = array_filter($dealerHand, fn ($card) => is_string($card));
 
         $playerScore = $blackjack->calculateScore($playerHand);
         $dealerScore = $blackjack->calculateScore($dealerHand);
