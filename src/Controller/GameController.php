@@ -65,8 +65,6 @@ class GameController extends AbstractController
             throw new \LogicException('Player hand is not properly initialized.');
         }
 
-        var_dump($playerHand);
-
         $playerHand = $this->blackjackService->playerHit($playerHand);
         $playerScore = $this->blackjackService->calculateScore($playerHand);
         $end = $this->blackjackService->checkGameEnd($playerScore, $dealerScore);
