@@ -1,0 +1,27 @@
+.project {
+    background-color: rgb(6, 71, 52);
+}
+.project button, .project .button {
+    color: #f9fafb;
+    background-color: rgb(21, 57, 110);
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+.project button:hover, .project .button:hover {
+    background-color: rgb(20, 42, 70);
+}
+.project nav a {
+    color: #ccc;
+}
+.project nav,
+.project footer {
+    background-color: #0D2324;
+    background-size: cover;
+    background-position: center;
+}
+.project .footer-row h2 {
+    border-bottom: 2px double rgb(214, 172, 35);
+}
+.project a {
+    color: rgb(201, 175, 89);
+}/*# sourceMappingURL=project.css.map */

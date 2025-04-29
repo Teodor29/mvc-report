@@ -117,7 +117,7 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    CardsController
+    ApiDeckController
 
         <span class="phpdocumentor-element__extends">
         extends <abbr title="\Symfony\Bundle\FrameworkBundle\Controller\AbstractController">AbstractController</abbr>
@@ -139,9 +139,9 @@
 </div>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardsController.php"><a href="files/src-controller-cardscontroller.html"><abbr title="src/Controller/CardsController.php">CardsController.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/ApiDeckController.php"><a href="files/src-controller-apideckcontroller.html"><abbr title="src/Controller/ApiDeckController.php">ApiDeckController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
@@ -156,7 +156,7 @@
 
 <h3 id="toc">
     Table of Contents
-    <a href="classes/App-Controller-CardsController.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Controller-ApiDeckController.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
@@ -171,42 +171,30 @@
 
 <h4 id="toc-methods">
     Methods
-    <a href="classes/App-Controller-CardsController.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Controller-ApiDeckController.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Controller-CardsController.html#method_card">card()</a>
+    <a class="" href="classes/App-Controller-ApiDeckController.html#method_apiDeck">apiDeck()</a>
     <span>
                                 &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Controller-CardsController.html#method_deck">deck()</a>
+    <a class="" href="classes/App-Controller-ApiDeckController.html#method_apiDeckDraw">apiDeckDraw()</a>
     <span>
                                 &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Controller-CardsController.html#method_draw">draw()</a>
+    <a class="" href="classes/App-Controller-ApiDeckController.html#method_apiDeckDrawNumber">apiDeckDrawNumber()</a>
     <span>
                                 &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Controller-CardsController.html#method_drawNumber">drawNumber()</a>
-    <span>
-                                &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Controller-CardsController.html#method_reset">reset()</a>
-    <span>
-                                &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/App-Controller-CardsController.html#method_shuffle">shuffle()</a>
+    <a class="" href="classes/App-Controller-ApiDeckController.html#method_apiDeckShuffle">apiDeckShuffle()</a>
     <span>
                                 &nbsp;: <abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr>    </span>
 </dt>
@@ -222,7 +210,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/App-Controller-CardsController.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/App-Controller-ApiDeckController.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -231,77 +219,22 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_card">
-        card()
-        <a href="classes/App-Controller-CardsController.html#method_card" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_apiDeck">
+        apiDeck()
+        <a href="classes/App-Controller-ApiDeckController.html#method_apiDeck" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardsController.php"><a href="files/src-controller-cardscontroller.html"><abbr title="src/Controller/CardsController.php">CardsController.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/ApiDeckController.php"><a href="files/src-controller-apideckcontroller.html"><abbr title="src/Controller/ApiDeckController.php">ApiDeckController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">card</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-    
-
-    
-    <section class="phpdocumentor-attributes">
-        <h5 class="phpdocumentor-elements__header" id="attributes">
-            Attributes <a href="classes/App-Controller-CardsController.html#method_card#attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-        </h5>
-                    <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Symfony\Component\Routing\Annotation\Route">Route</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;/card&#039;
-    </dd>
-        <dd class="phpdocumentor-argument-list__entry">
-        $name: &#039;card&#039;
-    </dd>
-    </dl>
-            </section>
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_deck">
-        deck()
-        <a href="classes/App-Controller-CardsController.html#method_deck" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardsController.php"><a href="files/src-controller-cardscontroller.html"><abbr title="src/Controller/CardsController.php">CardsController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">20</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">deck</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">apiDeck</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -323,7 +256,7 @@
     
     <section class="phpdocumentor-attributes">
         <h5 class="phpdocumentor-elements__header" id="attributes">
-            Attributes <a href="classes/App-Controller-CardsController.html#method_deck#attributes" class="headerlink"><i class="fas fa-link"></i></a>
+            Attributes <a href="classes/App-Controller-ApiDeckController.html#method_apiDeck#attributes" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h5>
                     <dl class="phpdocumentor-argument-list">
@@ -331,10 +264,13 @@
         #[<abbr title="\Symfony\Component\Routing\Annotation\Route">Route</abbr>]
     </dt>
         <dd class="phpdocumentor-argument-list__entry">
-        &#039;/card/deck&#039;
+        &#039;/api/deck&#039;
     </dd>
         <dd class="phpdocumentor-argument-list__entry">
-        $name: &#039;deck&#039;
+        $name: &#039;api_deck&#039;
+    </dd>
+        <dd class="phpdocumentor-argument-list__entry">
+        $methods: [&#039;GET&#039;]
     </dd>
     </dl>
             </section>
@@ -351,22 +287,22 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_draw">
-        draw()
-        <a href="classes/App-Controller-CardsController.html#method_draw" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_apiDeckDraw">
+        apiDeckDraw()
+        <a href="classes/App-Controller-ApiDeckController.html#method_apiDeckDraw" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardsController.php"><a href="files/src-controller-cardscontroller.html"><abbr title="src/Controller/CardsController.php">CardsController.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/ApiDeckController.php"><a href="files/src-controller-apideckcontroller.html"><abbr title="src/Controller/ApiDeckController.php">ApiDeckController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">draw</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">apiDeckDraw</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -388,7 +324,7 @@
     
     <section class="phpdocumentor-attributes">
         <h5 class="phpdocumentor-elements__header" id="attributes">
-            Attributes <a href="classes/App-Controller-CardsController.html#method_draw#attributes" class="headerlink"><i class="fas fa-link"></i></a>
+            Attributes <a href="classes/App-Controller-ApiDeckController.html#method_apiDeckDraw#attributes" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h5>
                     <dl class="phpdocumentor-argument-list">
@@ -396,10 +332,13 @@
         #[<abbr title="\Symfony\Component\Routing\Annotation\Route">Route</abbr>]
     </dt>
         <dd class="phpdocumentor-argument-list__entry">
-        &#039;/card/deck/draw&#039;
+        &#039;/api/deck/draw&#039;
     </dd>
         <dd class="phpdocumentor-argument-list__entry">
-        $name: &#039;draw&#039;
+        $name: &#039;api_deck_draw&#039;
+    </dd>
+        <dd class="phpdocumentor-argument-list__entry">
+        $methods: [&#039;GET&#039;, &#039;POST&#039;]
     </dd>
     </dl>
             </section>
@@ -416,94 +355,22 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_drawNumber">
-        drawNumber()
-        <a href="classes/App-Controller-CardsController.html#method_drawNumber" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_apiDeckDrawNumber">
+        apiDeckDrawNumber()
+        <a href="classes/App-Controller-ApiDeckController.html#method_apiDeckDrawNumber" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardsController.php"><a href="files/src-controller-cardscontroller.html"><abbr title="src/Controller/CardsController.php">CardsController.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/ApiDeckController.php"><a href="files/src-controller-apideckcontroller.html"><abbr title="src/Controller/ApiDeckController.php">ApiDeckController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">85</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">drawNumber</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$num</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$num</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$session</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-    
-    <section class="phpdocumentor-attributes">
-        <h5 class="phpdocumentor-elements__header" id="attributes">
-            Attributes <a href="classes/App-Controller-CardsController.html#method_drawNumber#attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-        </h5>
-                    <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Symfony\Component\Routing\Annotation\Route">Route</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &quot;/card/deck/draw/{num&lt;\\d+&gt;}&quot;
-    </dd>
-        <dd class="phpdocumentor-argument-list__entry">
-        $name: &#039;drawNumber&#039;
-    </dd>
-    </dl>
-            </section>
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_reset">
-        reset()
-        <a href="classes/App-Controller-CardsController.html#method_reset" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardsController.php"><a href="files/src-controller-cardscontroller.html"><abbr title="src/Controller/CardsController.php">CardsController.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">111</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">reset</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">apiDeckDrawNumber</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -518,6 +385,13 @@
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$request</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Request">Request</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
             </dl>
 
     
@@ -525,7 +399,7 @@
     
     <section class="phpdocumentor-attributes">
         <h5 class="phpdocumentor-elements__header" id="attributes">
-            Attributes <a href="classes/App-Controller-CardsController.html#method_reset#attributes" class="headerlink"><i class="fas fa-link"></i></a>
+            Attributes <a href="classes/App-Controller-ApiDeckController.html#method_apiDeckDrawNumber#attributes" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h5>
                     <dl class="phpdocumentor-argument-list">
@@ -533,10 +407,13 @@
         #[<abbr title="\Symfony\Component\Routing\Annotation\Route">Route</abbr>]
     </dt>
         <dd class="phpdocumentor-argument-list__entry">
-        &#039;/card/deck/reset&#039;
+        &quot;/api/deck/draw/{num&lt;\\d+&gt;}&quot;
     </dd>
         <dd class="phpdocumentor-argument-list__entry">
-        $name: &#039;reset&#039;
+        $name: &#039;api_deck_draw_number&#039;
+    </dd>
+        <dd class="phpdocumentor-argument-list__entry">
+        $methods: [&#039;GET&#039;, &#039;POST&#039;]
     </dd>
     </dl>
             </section>
@@ -553,22 +430,22 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_shuffle">
-        shuffle()
-        <a href="classes/App-Controller-CardsController.html#method_shuffle" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_apiDeckShuffle">
+        apiDeckShuffle()
+        <a href="classes/App-Controller-ApiDeckController.html#method_apiDeckShuffle" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/CardsController.php"><a href="files/src-controller-cardscontroller.html"><abbr title="src/Controller/CardsController.php">CardsController.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/ApiDeckController.php"><a href="files/src-controller-apideckcontroller.html"><abbr title="src/Controller/ApiDeckController.php">ApiDeckController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">shuffle</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">apiDeckShuffle</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -590,7 +467,7 @@
     
     <section class="phpdocumentor-attributes">
         <h5 class="phpdocumentor-elements__header" id="attributes">
-            Attributes <a href="classes/App-Controller-CardsController.html#method_shuffle#attributes" class="headerlink"><i class="fas fa-link"></i></a>
+            Attributes <a href="classes/App-Controller-ApiDeckController.html#method_apiDeckShuffle#attributes" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h5>
                     <dl class="phpdocumentor-argument-list">
@@ -598,10 +475,13 @@
         #[<abbr title="\Symfony\Component\Routing\Annotation\Route">Route</abbr>]
     </dt>
         <dd class="phpdocumentor-argument-list__entry">
-        &#039;/card/deck/shuffle&#039;
+        &#039;/api/deck/shuffle&#039;
     </dd>
         <dd class="phpdocumentor-argument-list__entry">
-        $name: &#039;shuffle&#039;
+        $name: &#039;api_deck_shuffle&#039;
+    </dd>
+        <dd class="phpdocumentor-argument-list__entry">
+        $methods: [&#039;GET&#039;, &#039;POST&#039;]
     </dd>
     </dl>
             </section>
@@ -618,7 +498,7 @@
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Controller/CardsController.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Controller/ApiDeckController.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -717,7 +597,7 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                                                                <li><a href="classes/App-Controller-CardsController.html#toc-methods">Methods</a></li>
+                                                                                <li><a href="classes/App-Controller-ApiDeckController.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
             
@@ -725,12 +605,10 @@
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li class=""><a href="classes/App-Controller-CardsController.html#method_card">card()</a></li>
-                                            <li class=""><a href="classes/App-Controller-CardsController.html#method_deck">deck()</a></li>
-                                            <li class=""><a href="classes/App-Controller-CardsController.html#method_draw">draw()</a></li>
-                                            <li class=""><a href="classes/App-Controller-CardsController.html#method_drawNumber">drawNumber()</a></li>
-                                            <li class=""><a href="classes/App-Controller-CardsController.html#method_reset">reset()</a></li>
-                                            <li class=""><a href="classes/App-Controller-CardsController.html#method_shuffle">shuffle()</a></li>
+                                            <li class=""><a href="classes/App-Controller-ApiDeckController.html#method_apiDeck">apiDeck()</a></li>
+                                            <li class=""><a href="classes/App-Controller-ApiDeckController.html#method_apiDeckDraw">apiDeckDraw()</a></li>
+                                            <li class=""><a href="classes/App-Controller-ApiDeckController.html#method_apiDeckDrawNumber">apiDeckDrawNumber()</a></li>
+                                            <li class=""><a href="classes/App-Controller-ApiDeckController.html#method_apiDeckShuffle">apiDeckShuffle()</a></li>
                                     </ul>
             </li>
                     </ul>
@@ -750,7 +628,7 @@
     </section>
 </section>
         </div>
-        <a href="classes/App-Controller-CardsController.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/App-Controller-ApiDeckController.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

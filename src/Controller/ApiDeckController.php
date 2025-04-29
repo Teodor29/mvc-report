@@ -88,8 +88,15 @@ class ApiDeckController extends AbstractController
         SessionInterface $session,
         Request $request
     ): Response {
-        $num = (int) $request->get('num');
+        $num = $request->get('num');
+
+        if (!is_numeric($num)) {
+            throw new \InvalidArgumentException('The "num" parameter must be a valid number.');
+        }
+
+        $num = (int) $num;
         $remainingCards = $session->get('remainingCards');
+
         if ($num > $remainingCards) {
             throw new \Exception('Can not get more cards!');
         }

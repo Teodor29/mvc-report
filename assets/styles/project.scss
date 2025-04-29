@@ -1,0 +1,56 @@
+$color-accent:rgb(214, 172, 35);
+$color-accent-dark:#917723;
+$color-accent-light:rgb(201, 175, 89);
+$color-brown:#0D2324;
+$color-green:rgb(6, 71, 52);
+$color-blue:rgb(21, 57, 110);
+$color-blue-dark:rgb(20, 42, 70);
+
+$title-color: #f9fafb;
+$body-text-color: #ccc;
+$muted-text-color: #aaa;
+$text-primary-dark: #333;
+$text-link: $color-accent-light;
+
+$bg: $color-brown;
+$bg2: $color-green;
+$bg3: #323232;
+
+.project {
+    background-color: $bg2;
+
+    button, .button {
+        color: $title-color;
+        background-color: $color-blue;
+        border: 2px solid black;
+        border-radius: 1rem;
+
+        &:hover {
+            background-color: $color-blue-dark;
+        }
+    }
+
+
+    nav {
+        a {
+            color: $body-text-color;
+        }
+    }
+
+    nav,
+    footer {
+        background-color: $bg;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .footer-row {
+        h2 {
+            border-bottom: 2px double $color-accent;
+        }
+    }
+
+    a {
+        color: $text-link;
+    }
+}

@@ -9,7 +9,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ApiLibraryController extends AbstractController
 {
-
     #[Route('/api/library/books', name: 'api_library_books', methods: ['GET'])]
     public function getBooks(BookRepository $bookRepository): JsonResponse
     {

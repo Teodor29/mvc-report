@@ -17,13 +17,20 @@ class BlackjackService
         $this->blackjack = new Blackjack($this->deck);
     }
 
-
+    /**
+     * @param string[] $playerHand Array of strings representing the player's hand.
+     * @return string[] Updated array of strings after the player hits.
+     */
     public function playerHit(array $playerHand): array
     {
         $playerHand[] = $this->blackjack->deal();
         return array_filter($playerHand, fn($card) => $card !== null);
     }
 
+    /**
+     * @param string[] $dealerHand Array of strings representing the dealer's hand.
+     * @return string[] Updated array of strings after the dealer plays.
+     */
     public function dealerPlay(array $dealerHand): array
     {
         $dealerScore = $this->blackjack->calculateScore($dealerHand);
@@ -36,6 +43,10 @@ class BlackjackService
         return $dealerHand;
     }
 
+    /**
+     * @param string[] $hand Array of strings representing the hand.
+     * @return int The score of the hand.
+     */
     public function calculateScore(array $hand): int
     {
         return $this->blackjack->calculateScore($hand);

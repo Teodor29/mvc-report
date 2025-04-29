@@ -1,3 +1,31 @@
+.project {
+    background-color: rgb(6, 71, 52);
+}
+.project button, .project .button {
+    color: #f9fafb;
+    background-color: rgb(21, 57, 110);
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+.project button:hover, .project .button:hover {
+    background-color: rgb(20, 42, 70);
+}
+.project nav a {
+    color: #ccc;
+}
+.project nav,
+.project footer {
+    background-color: #0D2324;
+    background-size: cover;
+    background-position: center;
+}
+.project .footer-row h2 {
+    border-bottom: 2px double rgb(214, 172, 35);
+}
+.project a {
+    color: rgb(201, 175, 89);
+}
+
 html,
 body {
     font-family: "Roboto", sans-serif;
@@ -23,28 +51,32 @@ li {
 
 h1,
 h2,
-h3,
+h3 {
+    color: #f9fafb;
+    margin-bottom: 1rem;
+}
+
 p,
 button,
 a {
     margin-bottom: 1rem;
 }
 
-button {
-    margin: 0.5rem 0;
+button, .button {
+    text-decoration: none;
     font-weight: 600;
     font-size: 1.2rem;
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     cursor: pointer;
     text-align: center;
-    color: #333;
+    color: #020202;
     background-color: #9c82a1;
     border: none;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     transition: background-color 0.5s;
 }
-button:hover {
+button:hover, .button:hover {
     background-color: rgba(156, 130, 161, 0.6509803922);
 }
 
@@ -59,7 +91,7 @@ th,
 td {
     padding: 1em;
     text-align: left;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #aaa;
 }
 
 th {
@@ -84,7 +116,7 @@ textarea {
     background-color: #323232;
     color: #ccc;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #aaa;
 }
 
 .center {
@@ -114,32 +146,15 @@ textarea {
 
 h1 {
     text-align: center;
-    color: #ccc;
+    color: #f9fafb;
 }
 
 a {
     color: rgb(175, 153, 180);
 }
 
-.button {
-    margin: 0.5rem;
-    font-weight: 600;
-    font-size: 1.2rem;
-    display: inline-block;
-    padding: 10px 15px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-    background-color: #9c82a1;
-    border-radius: 1rem;
-    transition: background-color 0.5s;
-}
-.button:hover {
-    background-color: rgba(156, 130, 161, 0.6509803922);
-}
-
 .button-big {
+    border-radius: 10px;
     font-size: 2rem;
     padding: 20px 30px;
 }
@@ -159,7 +174,6 @@ nav li {
 }
 nav li a {
     padding: 0.5rem 1rem;
-    margin: 0.5rem;
     color: #ccc;
     text-decoration: none;
     font-size: 1.5rem;
@@ -179,6 +193,7 @@ footer {
 }
 footer p {
     text-align: center;
+    color: #ccc;
 }
 
 .footer-row {
@@ -248,7 +263,7 @@ figure.right {
 }
 .lucky h1,
 .lucky p {
-    color: #333;
+    color: #020202;
 }
 .lucky p {
     font-size: 5em;
@@ -291,7 +306,7 @@ figure.right {
 }
 .container-cards .card {
     background-color: #ccc;
-    color: #333;
+    color: #020202;
     margin: 0.3em;
     display: inline-block;
     width: 90px;
@@ -303,4 +318,9 @@ figure.right {
 .container-cards h1 {
     align-items: center;
     border-bottom: none;
+}
+
+.player-hands {
+    background-color: #323232;
+    padding: 1rem;
 }/*# sourceMappingURL=report.css.map */

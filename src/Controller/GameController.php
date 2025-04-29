@@ -30,6 +30,9 @@ class GameController extends AbstractController
         $playerHand = [$blackjack->deal(), $blackjack->deal()];
         $dealerHand = [$blackjack->deal()];
 
+        $playerHand = array_filter($playerHand, fn($card) => is_string($card));
+        $dealerHand = array_filter($dealerHand, fn($card) => is_string($card));
+
         $playerScore = $blackjack->calculateScore($playerHand);
         $dealerScore = $blackjack->calculateScore($dealerHand);
         $end = $blackjack->checkGameEnd($playerScore, $dealerScore);
@@ -52,12 +55,17 @@ class GameController extends AbstractController
     #[Route('/hit', name: 'hit')]
     public function hit(SessionInterface $session): Response
     {
-        $playerHand = $session->get('playerHand', []);
         $dealerScore = $session->get('dealerScore');
-
         if (!is_int($dealerScore)) {
             throw new \LogicException('Dealer score is not properly initialized.');
         }
+
+        $playerHand = $session->get('playerHand', []);
+        if (!is_array($playerHand)) {
+            throw new \LogicException('Player hand is not properly initialized.');
+        }
+
+        var_dump($playerHand);
 
         $playerHand = $this->blackjackService->playerHit($playerHand);
         $playerScore = $this->blackjackService->calculateScore($playerHand);
@@ -78,12 +86,16 @@ class GameController extends AbstractController
     #[Route('/stand', name: 'stand')]
     public function stand(SessionInterface $session): Response
     {
-        $dealerHand = $session->get('dealerHand', []);
         $playerHand = $session->get('playerHand', []);
         $playerScore = $session->get('playerScore');
 
         if (!is_int($playerScore)) {
             throw new \LogicException('Player score is not properly initialized.');
+        }
+
+        $dealerHand = $session->get('dealerHand', []);
+        if (!is_array($dealerHand)) {
+            throw new \LogicException('Dealer hand is not properly initialized.');
         }
 
         $dealerHand = $this->blackjackService->dealerPlay($dealerHand);

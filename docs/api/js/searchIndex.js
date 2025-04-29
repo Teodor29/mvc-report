@@ -101,40 +101,55 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ApiController.html#method_apiQuote"
         },                {
-            "fqsen": "\\App\\Controller\\ApiController\u003A\u003AapiDeck\u0028\u0029",
+            "fqsen": "\\App\\Controller\\ApiDeckController",
+            "name": "ApiDeckController",
+            "summary": "",
+            "url": "classes/App-Controller-ApiDeckController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiDeckController\u003A\u003AapiDeck\u0028\u0029",
             "name": "apiDeck",
             "summary": "",
-            "url": "classes/App-Controller-ApiController.html#method_apiDeck"
+            "url": "classes/App-Controller-ApiDeckController.html#method_apiDeck"
         },                {
-            "fqsen": "\\App\\Controller\\ApiController\u003A\u003AapiDeckShuffle\u0028\u0029",
+            "fqsen": "\\App\\Controller\\ApiDeckController\u003A\u003AapiDeckShuffle\u0028\u0029",
             "name": "apiDeckShuffle",
             "summary": "",
-            "url": "classes/App-Controller-ApiController.html#method_apiDeckShuffle"
+            "url": "classes/App-Controller-ApiDeckController.html#method_apiDeckShuffle"
         },                {
-            "fqsen": "\\App\\Controller\\ApiController\u003A\u003AapiDeckDraw\u0028\u0029",
+            "fqsen": "\\App\\Controller\\ApiDeckController\u003A\u003AapiDeckDraw\u0028\u0029",
             "name": "apiDeckDraw",
             "summary": "",
-            "url": "classes/App-Controller-ApiController.html#method_apiDeckDraw"
+            "url": "classes/App-Controller-ApiDeckController.html#method_apiDeckDraw"
         },                {
-            "fqsen": "\\App\\Controller\\ApiController\u003A\u003AapiDeckDrawNumber\u0028\u0029",
+            "fqsen": "\\App\\Controller\\ApiDeckController\u003A\u003AapiDeckDrawNumber\u0028\u0029",
             "name": "apiDeckDrawNumber",
             "summary": "",
-            "url": "classes/App-Controller-ApiController.html#method_apiDeckDrawNumber"
+            "url": "classes/App-Controller-ApiDeckController.html#method_apiDeckDrawNumber"
         },                {
-            "fqsen": "\\App\\Controller\\ApiController\u003A\u003AapiGame\u0028\u0029",
+            "fqsen": "\\App\\Controller\\ApiGameController",
+            "name": "ApiGameController",
+            "summary": "",
+            "url": "classes/App-Controller-ApiGameController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiGameController\u003A\u003AapiGame\u0028\u0029",
             "name": "apiGame",
             "summary": "",
-            "url": "classes/App-Controller-ApiController.html#method_apiGame"
+            "url": "classes/App-Controller-ApiGameController.html#method_apiGame"
         },                {
-            "fqsen": "\\App\\Controller\\ApiController\u003A\u003AgetBooks\u0028\u0029",
+            "fqsen": "\\App\\Controller\\ApiLibraryController",
+            "name": "ApiLibraryController",
+            "summary": "",
+            "url": "classes/App-Controller-ApiLibraryController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiLibraryController\u003A\u003AgetBooks\u0028\u0029",
             "name": "getBooks",
             "summary": "",
-            "url": "classes/App-Controller-ApiController.html#method_getBooks"
+            "url": "classes/App-Controller-ApiLibraryController.html#method_getBooks"
         },                {
-            "fqsen": "\\App\\Controller\\ApiController\u003A\u003AgetBook\u0028\u0029",
+            "fqsen": "\\App\\Controller\\ApiLibraryController\u003A\u003AgetBook\u0028\u0029",
             "name": "getBook",
             "summary": "",
-            "url": "classes/App-Controller-ApiController.html#method_getBook"
+            "url": "classes/App-Controller-ApiLibraryController.html#method_getBook"
         },                {
             "fqsen": "\\App\\Controller\\BookController",
             "name": "BookController",
@@ -206,10 +221,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-GameController.html"
         },                {
-            "fqsen": "\\App\\Controller\\GameController\u003A\u003Agame\u0028\u0029",
-            "name": "game",
+            "fqsen": "\\App\\Controller\\GameController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
             "summary": "",
-            "url": "classes/App-Controller-GameController.html#method_game"
+            "url": "classes/App-Controller-GameController.html#method___construct"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003Ablackjack\u0028\u0029",
             "name": "blackjack",
@@ -231,6 +246,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-GameController.html#method_doc"
         },                {
+            "fqsen": "\\App\\Controller\\GameController\u003A\u003A\u0024blackjackService",
+            "name": "blackjackService",
+            "summary": "",
+            "url": "classes/App-Controller-GameController.html#property_blackjackService"
+        },                {
             "fqsen": "\\App\\Controller\\LuckyController",
             "name": "LuckyController",
             "summary": "",
@@ -241,55 +261,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-LuckyController.html#method_number"
         },                {
-            "fqsen": "\\App\\Controller\\ProductController",
-            "name": "ProductController",
+            "fqsen": "\\App\\Controller\\ProjBlackjackController",
+            "name": "ProjBlackjackController",
             "summary": "",
-            "url": "classes/App-Controller-ProductController.html"
+            "url": "classes/App-Controller-ProjBlackjackController.html"
         },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003Aindex\u0028\u0029",
-            "name": "index",
+            "fqsen": "\\App\\Controller\\ProjBlackjackController\u003A\u003Aproj\u0028\u0029",
+            "name": "proj",
             "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_index"
+            "url": "classes/App-Controller-ProjBlackjackController.html#method_proj"
         },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AcreateProduct\u0028\u0029",
-            "name": "createProduct",
+            "fqsen": "\\App\\Controller\\ProjBlackjackController\u003A\u003Ablackjack\u0028\u0029",
+            "name": "blackjack",
             "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_createProduct"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AshowAllProduct\u0028\u0029",
-            "name": "showAllProduct",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_showAllProduct"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AshowProductById\u0028\u0029",
-            "name": "showProductById",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_showProductById"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AdeleteProductById\u0028\u0029",
-            "name": "deleteProductById",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_deleteProductById"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AupdateProduct\u0028\u0029",
-            "name": "updateProduct",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_updateProduct"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AviewAllProduct\u0028\u0029",
-            "name": "viewAllProduct",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_viewAllProduct"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AviewProductWithMinimumValue\u0028\u0029",
-            "name": "viewProductWithMinimumValue",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_viewProductWithMinimumValue"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AshowProductByMinimumValue\u0028\u0029",
-            "name": "showProductByMinimumValue",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_showProductByMinimumValue"
+            "url": "classes/App-Controller-ProjBlackjackController.html#method_blackjack"
         },                {
             "fqsen": "\\App\\Controller\\ReportController",
             "name": "ReportController",
@@ -316,10 +301,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ReportController.html#method_number"
         },                {
+            "fqsen": "\\App\\Controller\\ReportController\u003A\u003Agame\u0028\u0029",
+            "name": "game",
+            "summary": "",
+            "url": "classes/App-Controller-ReportController.html#method_game"
+        },                {
             "fqsen": "\\App\\Controller\\ReportController\u003A\u003Aindex\u0028\u0029",
             "name": "index",
             "summary": "",
             "url": "classes/App-Controller-ReportController.html#method_index"
+        },                {
+            "fqsen": "\\App\\Controller\\ReportController\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
+            "summary": "",
+            "url": "classes/App-Controller-ReportController.html#method_metrics"
         },                {
             "fqsen": "\\App\\Entity\\Book",
             "name": "Book",
@@ -396,51 +391,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Entity-Book.html#property_image"
         },                {
-            "fqsen": "\\App\\Entity\\Product",
-            "name": "Product",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AgetId\u0028\u0029",
-            "name": "getId",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_getId"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AgetName\u0028\u0029",
-            "name": "getName",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_getName"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AsetName\u0028\u0029",
-            "name": "setName",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_setName"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AgetValue\u0028\u0029",
-            "name": "getValue",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_getValue"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AsetValue\u0028\u0029",
-            "name": "setValue",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_setValue"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#property_id"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003A\u0024name",
-            "name": "name",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#property_name"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003A\u0024value",
-            "name": "value",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#property_value"
-        },                {
             "fqsen": "\\App\\Form\\BookType",
             "name": "BookType",
             "summary": "",
@@ -471,20 +421,50 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Repository-BookRepository.html#method___construct"
         },                {
-            "fqsen": "\\App\\Repository\\ProductRepository",
-            "name": "ProductRepository",
+            "fqsen": "\\App\\Service\\BlackjackService",
+            "name": "BlackjackService",
             "summary": "",
-            "url": "classes/App-Repository-ProductRepository.html"
+            "url": "classes/App-Service-BlackjackService.html"
         },                {
-            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Service\\BlackjackService\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/App-Repository-ProductRepository.html#method___construct"
+            "url": "classes/App-Service-BlackjackService.html#method___construct"
         },                {
-            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003AfindByMinimumValue\u0028\u0029",
-            "name": "findByMinimumValue",
-            "summary": "Find\u0020all\u0020producs\u0020having\u0020a\u0020value\u0020above\u0020the\u0020specified\u0020one\u0020with\u0020SQL.",
-            "url": "classes/App-Repository-ProductRepository.html#method_findByMinimumValue"
+            "fqsen": "\\App\\Service\\BlackjackService\u003A\u003AplayerHit\u0028\u0029",
+            "name": "playerHit",
+            "summary": "",
+            "url": "classes/App-Service-BlackjackService.html#method_playerHit"
+        },                {
+            "fqsen": "\\App\\Service\\BlackjackService\u003A\u003AdealerPlay\u0028\u0029",
+            "name": "dealerPlay",
+            "summary": "",
+            "url": "classes/App-Service-BlackjackService.html#method_dealerPlay"
+        },                {
+            "fqsen": "\\App\\Service\\BlackjackService\u003A\u003AcalculateScore\u0028\u0029",
+            "name": "calculateScore",
+            "summary": "",
+            "url": "classes/App-Service-BlackjackService.html#method_calculateScore"
+        },                {
+            "fqsen": "\\App\\Service\\BlackjackService\u003A\u003AcheckGameEnd\u0028\u0029",
+            "name": "checkGameEnd",
+            "summary": "",
+            "url": "classes/App-Service-BlackjackService.html#method_checkGameEnd"
+        },                {
+            "fqsen": "\\App\\Service\\BlackjackService\u003A\u003AgetDeck\u0028\u0029",
+            "name": "getDeck",
+            "summary": "",
+            "url": "classes/App-Service-BlackjackService.html#method_getDeck"
+        },                {
+            "fqsen": "\\App\\Service\\BlackjackService\u003A\u003A\u0024blackjack",
+            "name": "blackjack",
+            "summary": "",
+            "url": "classes/App-Service-BlackjackService.html#property_blackjack"
+        },                {
+            "fqsen": "\\App\\Service\\BlackjackService\u003A\u003A\u0024deck",
+            "name": "deck",
+            "summary": "",
+            "url": "classes/App-Service-BlackjackService.html#property_deck"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -520,5 +500,10 @@ Search.appendIndex(
             "name": "Repository",
             "summary": "",
             "url": "namespaces/app-repository.html"
+        },                {
+            "fqsen": "\\App\\Service",
+            "name": "Service",
+            "summary": "",
+            "url": "namespaces/app-service.html"
         }            ]
 );
