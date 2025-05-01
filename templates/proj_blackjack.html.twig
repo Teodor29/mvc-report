@@ -1,0 +1,41 @@
+{% extends "proj_base.html.twig" %}
+
+{% block title %}Blackjack 2.0{% endblock %}
+
+{% block body %}
+
+<div class="dealer">
+    <div class="container-cards">
+        <h3>{{ dealerHand.score }}</h3>
+        {% for card in dealerHand.hand %}
+        <div class="card">
+            <p>{{ card }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+<div class="players">
+    {% for player in playerHands %}
+
+    <div class="player">
+        <h3>{{ player.score }}</h3>
+        <div class="container-cards">
+            {% for card in player.hand %}
+            <div class="card">
+                <p>{{ card }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="actions">
+            {% if player.score < 21 %}
+            <a href="{{ path('hit', {'playerIndex': loop.index0}) }}" class="button">Hit</a>
+            {% endif %}
+            <a href="{{ path('stand', {'playerIndex': loop.index0}) }}" class="button">Stand</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

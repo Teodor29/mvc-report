@@ -1,5 +1,5 @@
 $color-accent:rgb(214, 172, 35);
-$color-accent-dark:#917723;
+$color-accent-dark:rgb(185, 148, 24);
 $color-accent-light:rgb(201, 175, 89);
 $color-brown:#0D2324;
 $color-green:rgb(6, 71, 52);
@@ -20,13 +20,12 @@ $bg3: #323232;
     background-color: $bg2;
 
     button, .button {
-        color: $title-color;
-        background-color: $color-blue;
-        border: 2px solid black;
+        color: $text-primary-dark;
+        background-color: $color-accent;
         border-radius: 1rem;
 
         &:hover {
-            background-color: $color-blue-dark;
+            background-color: $color-accent-dark;
         }
     }
 
@@ -53,4 +52,25 @@ $bg3: #323232;
     a {
         color: $text-link;
     }
+}
+
+.players {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.player {
+    text-align: center;
+    flex: 1;
+    border: 2px solid $color-accent;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    min-width: 200px;
+}
+
+.dealer {
+    min-height: 20vh;
+    padding-bottom: 2rem;
 }

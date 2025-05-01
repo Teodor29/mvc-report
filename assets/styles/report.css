@@ -26,6 +26,21 @@
     color: rgb(201, 175, 89);
 }
 
+.players {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.players .player {
+    flex: 1;
+    border: 2px solid rgb(214, 172, 35);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    min-width: 200px;
+}
+
 html,
 body {
     font-family: "Roboto", sans-serif;
@@ -65,7 +80,6 @@ a {
 button, .button {
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.2rem;
     display: inline-block;
     padding: 0.75rem 1.5rem;
     cursor: pointer;

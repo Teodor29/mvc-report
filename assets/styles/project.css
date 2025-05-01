@@ -2,13 +2,12 @@
     background-color: rgb(6, 71, 52);
 }
 .project button, .project .button {
-    color: #f9fafb;
-    background-color: rgb(21, 57, 110);
-    border: 2px solid black;
+    color: #333;
+    background-color: rgb(214, 172, 35);
     border-radius: 1rem;
 }
 .project button:hover, .project .button:hover {
-    background-color: rgb(20, 42, 70);
+    background-color: rgb(185, 148, 24);
 }
 .project nav a {
     color: #ccc;
@@ -24,4 +23,25 @@
 }
 .project a {
     color: rgb(201, 175, 89);
+}
+
+.players {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.player {
+    text-align: center;
+    flex: 1;
+    border: 2px solid rgb(214, 172, 35);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    min-width: 200px;
+}
+
+.dealer {
+    min-height: 20vh;
+    padding-bottom: 2rem;
 }/*# sourceMappingURL=project.css.map */

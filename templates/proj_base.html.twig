@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Titan+One&display=swap');
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+
+<body class="project">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ path('home') }}">Home</a></li>
+                <li><a href="{{ path('about') }}">About</a></li>
+                <li><a href="{{ path('report') }}">Report</a></li>
+                <li><a href="{{ path('lucky') }}">Lucky</a></li>
+                <li><a href="{{ path('card') }}">Card</a></li>
+                <li><a href="{{ path('api') }}">API</a></li>
+                <li><a href="{{ path('game') }}">Game</a></li>
+                <li><a href="{{ path('library') }}">Library</a></li>
+                <li><a href="{{ path('metrics') }}">Metrics</a></li>
+                <li><a href="{{ path('proj') }}">Blackjack</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block body %}{% endblock %}
+    </main>
+    <footer>
+        {% block footer %}
+        <footer class="footer">
+            <div class="footer-row">
+                <div>
+                    <h2>validering</h2>
+                    <ul>
+                        <li><a href="http://validator.w3.org/check/referer">HTML</a></li>
+                        <li><a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a></li>
+                        <li><a href="http://validator.w3.org/unicorn/check?ucn_uri=referer&amp;ucn_task=conformance">Unicorn</a></li>
+                        <li><a href="https://validator.w3.org/checklink">Link checker</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2>Manualer</h2>
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference">MDN: HTML</a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">MDN: CSS</a></li>
+                        <li><a href="https://html.spec.whatwg.org/multipage/">HTML Standard</a></li>
+                        <li><a href="https://www.w3.org/2009/cheatsheet/">Cheat Sheet</a></li>
+                        <li><a href="https://www.php.net/manual/en/">PHP</a></li>
+                    </ul>
+
+                </div>
+
+                <div>
+                    <h2>Verktyg och tjänster</h2>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/html/">HTML Tutorial</a></li>
+                        <li><a href="https://www.w3schools.com/css/">CSS Tutorial</a></li>
+                        <li><a href="https://www.w3.org/">W3C Standardiseringsorgan</a></li>
+                        <li><a href="https://www.w3.org/standards/webdesign/">W3C Web design and Applications</a></li>
+                        <li><a href="https://whatwg.org/">WHATWG Standardiseringsorgan</a></li>
+                        <li><a href="https://web.dev/measure/">Mät sidans prestanda</a></li>
+                        <li><a href="https://caniuse.com/">CanIUse</a></li>
+                        <li><a href="https://codepen.io/">CodePen</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>Denna sidan är Copyright &copy; av mig.</p>
+            </div>
+        </footer>
+        {% endblock %}
+    </footer>
+</body>
+
+</html>

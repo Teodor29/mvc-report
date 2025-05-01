@@ -17,6 +17,45 @@ class BlackjackService
         $this->blackjack = new Blackjack($this->deck);
     }
 
+    public function initDealerHand(): array
+    {
+        $dealerHand = [
+            $this->blackjack->deal(),
+            $this->blackjack->deal(),
+        ];
+        $dealerScore = $this->blackjack->calculateScore($dealerHand);
+
+        return [
+            "hand" => $dealerHand,
+            "score" => $dealerScore,
+        ];
+    }
+
+
+    /**
+     * @param int $numberOfHands number of hands to initialize
+     *
+     * @return array array of hands with their scores
+     */
+    public function initPlayerHands(int $numberOfHands): array
+    {
+        $hands = [];
+        for ($i = 0; $i < $numberOfHands; ++$i) {
+            $hand = [
+                $this->blackjack->deal(),
+                $this->blackjack->deal(),
+            ];
+            $score = $this->blackjack->calculateScore($hand);
+
+            $hands[] = [
+                "hand" => $hand,
+                "score" => $score,
+            ];
+        }
+
+        return $hands;
+    }
+
     /**
      * @param string[] $playerHand array of strings representing the player's hand
      *
@@ -26,7 +65,7 @@ class BlackjackService
     {
         $playerHand[] = $this->blackjack->deal();
 
-        return array_filter($playerHand, fn ($card) => null !== $card);
+        return array_filter($playerHand, fn($card) => null !== $card);
     }
 
     /**
@@ -39,7 +78,7 @@ class BlackjackService
         $dealerScore = $this->blackjack->calculateScore($dealerHand);
         while ($dealerScore < 17) {
             $dealerHand[] = $this->blackjack->deal();
-            $dealerHand = array_filter($dealerHand, fn ($card) => null !== $card);
+            $dealerHand = array_filter($dealerHand, fn($card) => null !== $card);
             $dealerScore = $this->blackjack->calculateScore($dealerHand);
         }
 
