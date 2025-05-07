@@ -9,7 +9,7 @@ class CardTest extends TestCase
 {
     public function testCreateCard(): void
     {
-        $deck = ['♠ 10', '♠ Knekt', '♠ Ess', '♦ 5', '♦ 10', '♣ 6'];
+        $deck = ['♠ 10', '♠ J', '♠ A', '♦ 5', '♦ 10', '♣ 6'];
         $card = new Card($deck, 1);
         $result = $card->drawCards();
         $this->assertEquals(['♠ 10'], $result['cards']);

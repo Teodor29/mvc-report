@@ -11,7 +11,7 @@ class BlackjackTest extends TestCase
 
     public function testCreateBlackjack(): void
     {
-        $deck = ['♠ 10', '♠ Knekt', '♠ Ess', '♦ 5', '♦ 10', '♣ 6'];
+        $deck = ['♠ 10', '♠ J', '♠ A', '♦ 5', '♦ 10', '♣ 6'];
         $deckOfCards = new DeckOfCards($deck);
         $blackjack = new Blackjack($deckOfCards);
         $this->assertInstanceOf(Blackjack::class, $blackjack);
@@ -19,7 +19,7 @@ class BlackjackTest extends TestCase
 
     public function testDealCard(): void
     {
-        $deck = ['♠ 10', '♠ Knekt', '♠ Ess', '♦ 5', '♦ 10', '♣ 6'];
+        $deck = ['♠ 10', '♠ J', '♠ A', '♦ 5', '♦ 10', '♣ 6'];
         $deckOfCards = new DeckOfCards($deck);
         $blackjack = new Blackjack($deckOfCards);
         $card = $blackjack->deal();
@@ -28,16 +28,16 @@ class BlackjackTest extends TestCase
 
     public function testCalculateScore(): void
     {
-        $deck = ['♠ 10', '♠ Knekt', '♠ Ess', '♦ 5', '♦ 10', '♣ 6'];
+        $deck = ['♠ 10', '♠ J', '♠ A', '♦ 5', '♦ 10', '♣ 6'];
         $deckOfCards = new DeckOfCards($deck);
         $blackjack = new Blackjack($deckOfCards);
-        $score = $blackjack->calculateScore(['♠ 10', '♠ Knekt', '♠ Ess']);
+        $score = $blackjack->calculateScore(['♠ 10', '♠ J', '♠ A']);
         $this->assertEquals(21, $score);
     }
 
     public function testCheckGameEnd(): void
     {
-        $deck = ['♠ 10', '♠ Knekt', '♠ Ess', '♦ 5', '♦ 10', '♣ 6'];
+        $deck = ['♠ 10', '♠ J', '♠ A', '♦ 5', '♦ 10', '♣ 6'];
         $deckOfCards = new DeckOfCards($deck);
         $blackjack = new Blackjack($deckOfCards);
         $gameEnd = $blackjack->checkGameEnd(21, 20);
