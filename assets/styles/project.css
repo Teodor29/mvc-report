@@ -1,20 +1,29 @@
+@charset "UTF-8";
 .project {
     background-color: rgb(6, 71, 52);
 }
-.project button, .project .button {
+.project .container {
+    max-width: none !important;
+}
+.project button,
+.project .button {
     color: #333;
     background-color: rgb(214, 172, 35);
     border-radius: 1rem;
 }
-.project button:hover, .project .button:hover {
+.project button:hover,
+.project .button:hover {
     background-color: rgb(185, 148, 24);
 }
 .project nav a {
     color: #ccc;
 }
+.project nav a:hover {
+    background-color: none !important;
+}
 .project nav,
 .project footer {
-    background-color: #0D2324;
+    background-color: #0d2324;
     background-size: cover;
     background-position: center;
 }
@@ -23,6 +32,10 @@
 }
 .project a {
     color: rgb(201, 175, 89);
+}
+
+.dealer {
+    text-align: center;
 }
 
 .players {
@@ -41,7 +54,43 @@
     min-width: 200px;
 }
 
+.player .container-cards {
+    gap: 0.5rem !important;
+}
+
+.player .card {
+    width: 70px !important;
+    height: 90px !important;
+}
+
+.player .actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.player .actions .button {
+    width: 6rem;
+}
+
 .dealer {
     min-height: 20vh;
     padding-bottom: 2rem;
+}
+
+.blackjack form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.blackjack input {
+    margin-bottom: 1rem;
+}
+
+.bet-form {
+    text-align: center;
+    display: inline-block;
+}
+
+.bet-input {
+    width: 6rem; /* Gör input-fältet bredare */
+    font-size: 1.25rem;
 }/*# sourceMappingURL=project.css.map */

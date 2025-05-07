@@ -24,7 +24,7 @@ class DeckOfCards
             $this->deck = $deck;
         } else {
             $suits = ['♣', '♦', '♥', '♠'];
-            $ranks = ['Ess', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Knekt', 'Drottning', 'Kung'];
+            $ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 
             foreach ($suits as $suit) {
                 foreach ($ranks as $rank) {
@@ -64,8 +64,6 @@ class DeckOfCards
     public function deal()
     {
         $card = array_shift($this->deck);
-        dump("$card");
-
         return $card;
     }
 }

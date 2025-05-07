@@ -1,21 +1,29 @@
+@charset "UTF-8";
 .project {
     background-color: rgb(6, 71, 52);
 }
-.project button, .project .button {
-    color: #f9fafb;
-    background-color: rgb(21, 57, 110);
-    border: 2px solid black;
+.project .container {
+    max-width: none !important;
+}
+.project button,
+.project .button {
+    color: #333;
+    background-color: rgb(214, 172, 35);
     border-radius: 1rem;
 }
-.project button:hover, .project .button:hover {
-    background-color: rgb(20, 42, 70);
+.project button:hover,
+.project .button:hover {
+    background-color: rgb(185, 148, 24);
 }
 .project nav a {
     color: #ccc;
 }
+.project nav a:hover {
+    background-color: none !important;
+}
 .project nav,
 .project footer {
-    background-color: #0D2324;
+    background-color: #0d2324;
     background-size: cover;
     background-position: center;
 }
@@ -26,19 +34,65 @@
     color: rgb(201, 175, 89);
 }
 
+.dealer {
+    text-align: center;
+}
+
 .players {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
-.players .player {
+.player {
+    text-align: center;
     flex: 1;
     border: 2px solid rgb(214, 172, 35);
     border-radius: 1rem;
     padding: 1rem;
     margin-bottom: 1rem;
     min-width: 200px;
+}
+
+.player .container-cards {
+    gap: 0.5rem !important;
+}
+
+.player .card {
+    width: 70px !important;
+    height: 90px !important;
+}
+
+.player .actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.player .actions .button {
+    width: 6rem;
+}
+
+.dealer {
+    min-height: 20vh;
+    padding-bottom: 2rem;
+}
+
+.blackjack form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.blackjack input {
+    margin-bottom: 1rem;
+}
+
+.bet-form {
+    text-align: center;
+    display: inline-block;
+}
+
+.bet-input {
+    width: 6rem; /* Gör input-fältet bredare */
+    font-size: 1.25rem;
 }
 
 html,
@@ -77,9 +131,11 @@ a {
     margin-bottom: 1rem;
 }
 
-button, .button {
+button,
+.button {
     text-decoration: none;
     font-weight: 600;
+    font-size: 1rem;
     display: inline-block;
     padding: 0.75rem 1.5rem;
     cursor: pointer;
@@ -90,7 +146,8 @@ button, .button {
     border-radius: 0.5rem;
     transition: background-color 0.5s;
 }
-button:hover, .button:hover {
+button:hover,
+.button:hover {
     background-color: rgba(156, 130, 161, 0.6509803922);
 }
 
@@ -117,20 +174,24 @@ th {
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 input,
 select,
 textarea {
+    box-sizing: border-box;
     width: 100%;
-    padding: 1rem;
+    padding: 0.5rem;
     margin-bottom: 0.5rem;
     border-radius: 5px;
     background-color: #323232;
     color: #ccc;
     font-size: 1rem;
     border: 1px solid #aaa;
+}
+
+label {
+    margin-bottom: 0.25rem;
 }
 
 .center {
@@ -140,7 +201,7 @@ textarea {
 
 .container {
     max-width: 1200px;
-    padding: 3rem 2rem;
+    padding: 2rem 1rem;
     margin: 0 auto;
 }
 
@@ -314,6 +375,10 @@ figure.right {
 }
 
 .container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
     text-align: center;
     margin: 0 auto;
     margin-bottom: 1rem;
@@ -321,7 +386,6 @@ figure.right {
 .container-cards .card {
     background-color: #ccc;
     color: #020202;
-    margin: 0.3em;
     display: inline-block;
     width: 90px;
     height: 130px;

@@ -1,0 +1,33 @@
+{% extends "proj_base.html.twig" %}
+
+{% block title %}Blackjack 2.0{% endblock %}
+
+{% block body %}
+
+<div class="dealer">
+    <div class="container-cards">
+
+    </div>
+</div>
+
+<div class="center player-info">
+    <h2>Spelare: {{ playerName }}</h2>
+    <h3>Saldo: {{ balance }}</h3>
+    <a href="{{ path('proj_reset_session') }}">Återställ session</a>
+</div>
+
+<form class="bet-form" method="post" action="{{ path('proj_blackjack') }}">
+    <div class="players">
+        {% for player in playerHands %}
+
+        <div class="player">
+
+            <h3>Bet</h3>
+            <input class="bet-input" type="number" name="bet{{ loop.index0 }}" value="5" min="5" step="5" required>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="button" type="submit">Bet</button>
+</form>
+
+{% endblock %}

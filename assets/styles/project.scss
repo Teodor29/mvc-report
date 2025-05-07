@@ -1,10 +1,11 @@
-$color-accent:rgb(214, 172, 35);
-$color-accent-dark:rgb(185, 148, 24);
-$color-accent-light:rgb(201, 175, 89);
-$color-brown:#0D2324;
-$color-green:rgb(6, 71, 52);
-$color-blue:rgb(21, 57, 110);
-$color-blue-dark:rgb(20, 42, 70);
+$color-accent: rgb(214, 172, 35);
+$color-accent-dark: rgb(185, 148, 24);
+$color-accent-dark2: rgba(185, 147, 24, 0.48);
+$color-accent-light: rgb(230, 194, 78);
+$color-brown: #0d2324;
+$color-green: rgb(6, 71, 52);
+$color-blue: rgb(21, 57, 110);
+$color-blue-dark: rgb(20, 42, 70);
 
 $title-color: #f9fafb;
 $body-text-color: #ccc;
@@ -17,9 +18,14 @@ $bg2: $color-green;
 $bg3: #323232;
 
 .project {
+    .container {
+        max-width: none !important;
+    }
+
     background-color: $bg2;
 
-    button, .button {
+    button,
+    .button {
         color: $text-primary-dark;
         background-color: $color-accent;
         border-radius: 1rem;
@@ -29,10 +35,12 @@ $bg3: #323232;
         }
     }
 
-
     nav {
         a {
             color: $body-text-color;
+            &:hover {
+                background-color: none !important;
+            }
         }
     }
 
@@ -70,7 +78,48 @@ $bg3: #323232;
     min-width: 200px;
 }
 
+.player .container-cards {
+    gap: 0.5rem !important;
+}
+
+.player .card {
+    width: 40px !important;
+    height: 60px !important;
+}
+
+.player .actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+
+    .button {
+        width: 6rem;
+    }
+}
+
+.player-info {
+    padding-bottom: 1rem;
+}
+
 .dealer {
-    min-height: 20vh;
+    min-height: 10vh;
     padding-bottom: 2rem;
+    text-align: center;
+}
+
+.blackjack {
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+.bet-form {
+    text-align: center;
+    display: inline-block;
+}
+
+.bet-input {
+    width: 6rem;
+    font-size: 1.25rem;
 }

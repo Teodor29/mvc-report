@@ -1,0 +1,31 @@
+{% extends "proj_base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+
+<h1>Blackjack 2.0</h1>
+
+<div class="text-container blackjack">
+    <p>Målet är att dra kort som tillsammans ger poängsumman 21 eller så nära som möjligt utan att överskrida 21</p>
+    <p>En hand vars poäng överstiger 21 har spruckit, och förlorar omedelbart. Är spelarens poängsumma närmare 21 än dealern vinner spelaren</p>
+    <p>Nummerkorten 2 – 10 har sitt vanliga värde. Knekt, dam och kung värda 10. Ess är värt 1 eller 11 beroende på vad som passar spelaren bäst för tillfället.</p>
+
+
+    <form method="post" action="{{ path('proj_bet') }}">
+        <label for="playerName">Namn</label>
+        <input type="text" id="playerName" name="playerName" required>
+
+        <label for="numberOfPlayers">Antal spelare</label>
+        <select id="numberOfPlayers" name="numberOfPlayers" required>
+            <option value="1">1 spelare</option>
+            <option value="2">2 spelare</option>
+            <option value="3">3 spelare</option>
+        </select>
+
+        <button class="button button-big" type="submit">Starta spelet</button>
+    </form>
+
+</div>
+
+{% endblock %}

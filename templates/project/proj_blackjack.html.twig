@@ -1,0 +1,52 @@
+{% extends "proj_base.html.twig" %}
+
+{% block title %}Blackjack 2.0{% endblock %}
+
+{% block body %}
+
+<div class="dealer">
+    <h3>{{ dealerHand.score }}</h3>
+    <div class="container-cards">
+        {% for card in dealerHand.hand %}
+        <div class="card">
+            <p>{{ card }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="center">
+    <h3>Spelare: {{ playerName }}</h3>
+    <h3>Saldo: {{ balance }}</h3>
+</div>
+
+<div class="players">
+    {% for player in playerHands %}
+
+    <div class="player">
+        <h3>{{ player.score }}</h3>
+        <div class="container-cards">
+            {% for card in player.hand %}
+            <div class="card">
+                <p>{{ card }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <p>Insats: {{ player.bet }}</p>
+        <div class="actions">
+            {% if player.isActive and player.status == 'playing' %}
+            <form action="{{ path('proj_hit', {playerIndex: loop.index0}) }}" method="POST">
+                <button type="submit" class="button">Hit</button>
+            </form>
+            <form action="{{ path('proj_stand', {playerIndex: loop.index0}) }}" method="POST">
+                <button type="submit" class="button">Stand</button>
+            </form>
+            {% elseif player.status != 'playing' %}
+            <h3>{{ player.status }}
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

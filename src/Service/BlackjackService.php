@@ -17,45 +17,6 @@ class BlackjackService
         $this->blackjack = new Blackjack($this->deck);
     }
 
-    public function initDealerHand(): array
-    {
-        $dealerHand = [
-            $this->blackjack->deal(),
-            $this->blackjack->deal(),
-        ];
-        $dealerScore = $this->blackjack->calculateScore($dealerHand);
-
-        return [
-            "hand" => $dealerHand,
-            "score" => $dealerScore,
-        ];
-    }
-
-
-    /**
-     * @param int $numberOfHands number of hands to initialize
-     *
-     * @return array array of hands with their scores
-     */
-    public function initPlayerHands(int $numberOfHands): array
-    {
-        $hands = [];
-        for ($i = 0; $i < $numberOfHands; ++$i) {
-            $hand = [
-                $this->blackjack->deal(),
-                $this->blackjack->deal(),
-            ];
-            $score = $this->blackjack->calculateScore($hand);
-
-            $hands[] = [
-                "hand" => $hand,
-                "score" => $score,
-            ];
-        }
-
-        return $hands;
-    }
-
     /**
      * @param string[] $playerHand array of strings representing the player's hand
      *

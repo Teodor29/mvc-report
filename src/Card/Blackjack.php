@@ -44,9 +44,9 @@ class Blackjack
 
         foreach ($hand as $card) {
             $rank = explode(' ', $card)[1];
-            if (in_array($rank, ['Knekt', 'Drottning', 'Kung'])) {
+            if (in_array($rank, ['J', 'Q', 'K'])) {
                 $score += 10;
-            } elseif ('Ess' === $rank) {
+            } elseif ('A' === $rank) {
                 $score += 11;
                 ++$numAces;
             } else {

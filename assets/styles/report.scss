@@ -14,6 +14,11 @@ $bg: #171717;
 $bg2: #212121;
 $bg3: #323232;
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html,
 body {
     font-family: "Roboto", sans-serif;
@@ -50,9 +55,11 @@ a {
     margin-bottom: 1rem;
 }
 
-button, .button {
+button,
+.button {
     text-decoration: none;
     font-weight: 600;
+    font-size: 1rem;
     display: inline-block;
     padding: 0.75rem 1.5rem;
     cursor: pointer;
@@ -88,20 +95,24 @@ th {
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 input,
 select,
 textarea {
+    box-sizing: border-box;
     width: 100%;
-    padding: 1rem;
-    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
     border-radius: 5px;
     background-color: $bg3;
     color: $body-text-color;
     font-size: 1rem;
     border: 1px solid $muted-text-color;
+}
+
+label {
+    margin-bottom: 0.25rem;
 }
 
 .center {
@@ -111,7 +122,7 @@ textarea {
 
 .container {
     max-width: 1200px;
-    padding: 3rem 2rem;
+    padding: 2rem 1rem;
     margin: 0 auto;
 }
 
@@ -140,7 +151,6 @@ h1 {
 a {
     color: $text-link;
 }
-
 
 .button-big {
     border-radius: 10px;
@@ -273,6 +283,7 @@ figure.right {
 }
 
 .api_link {
+    padding: 1rem;
     background-color: $bg;
     text-decoration: none;
     color: $body-text-color;
@@ -284,7 +295,6 @@ figure.right {
     border-radius: 2rem;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     p {
-        padding: 0 1rem;
     }
     &:hover {
         box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.2),
@@ -293,13 +303,18 @@ figure.right {
 }
 
 .container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
     text-align: center;
     margin: 0 auto;
     margin-bottom: 1rem;
+
     .card {
+        padding: 0.5rem;
         background-color: $body-text-color;
         color: $text-primary-dark;
-        margin: 0.3em;
         display: inline-block;
         width: 90px;
         height: 130px;
@@ -308,6 +323,7 @@ figure.right {
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
             0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
+
     h1 {
         align-items: center;
         border-bottom: none;
@@ -317,5 +333,4 @@ figure.right {
 .player-hands {
     background-color: $bg3;
     padding: 1rem;
-
 }
