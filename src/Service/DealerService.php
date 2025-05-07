@@ -42,11 +42,17 @@ class DealerService
      */
     public function dealerPlay(array $dealerHand): array
     {
-        while ($dealerHand['score'] < 17) {
-            $dealerHand['hand'][] = $this->blackjack->deal();
-            $dealerHand['score'] = $this->blackjack->calculateScore($dealerHand['hand']);
+        $hand = $dealerHand['hand'];
+        $score = $dealerHand['score'];
+
+        while ($score < 17) {
+            $hand[] = $this->blackjack->deal();
+            $score = $this->blackjack->calculateScore($hand);
         }
 
-        return $dealerHand;
+        return [
+            "hand" => $hand,
+            "score" => $score,
+        ];
     }
 }
