@@ -18,17 +18,32 @@ class GameService
             if ($hand['status'] === "bust") {
                 $hand['status'] = "lose";
             } elseif ($hand['status'] === "stand") {
-                if ($dealerHand['score'] > 21 || $hand['score'] > $dealerHand['score']) {
-                    $hand['status'] = "win";
-                } elseif ($hand['score'] < $dealerHand['score']) {
-                    $hand['status'] = "lose";
-                } else {
-                    $hand['status'] = "draw";
-                }
+                $hand['status'] = $this->compareScores($hand['score'], $dealerHand['score']);
             }
         }
 
         return $playerHands;
+    }
+
+    /**
+     * Compare the player's score with the dealer's score
+     *
+     * @param int $playerScore player's score
+     * @param int $dealerScore dealer's score
+     *
+     * @return string result of the comparison: "win", "lose", or "draw"
+     */
+    public function compareScores(int $playerScore, int $dealerScore): string
+    {
+        if ($dealerScore > 21 || $playerScore > $dealerScore) {
+            return "win";
+        }
+
+        if ($playerScore < $dealerScore) {
+            return "lose";
+        }
+
+        return "draw";
     }
 
     /**
