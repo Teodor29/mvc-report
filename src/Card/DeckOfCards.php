@@ -64,6 +64,7 @@ class DeckOfCards
     public function deal()
     {
         $card = array_shift($this->deck);
+
         return $card;
     }
 }

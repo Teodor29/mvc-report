@@ -1,7 +1,7 @@
 $color-accent: rgb(214, 172, 35);
 $color-accent-dark: rgb(185, 148, 24);
 $color-accent-dark2: rgba(185, 147, 24, 0.48);
-$color-accent-light: rgb(230, 194, 78);
+$color-accent-light: rgb(238, 208, 110);
 $color-brown: #0d2324;
 $color-green: rgb(6, 71, 52);
 $color-blue: rgb(21, 57, 110);
@@ -36,10 +36,13 @@ $bg3: #323232;
     }
 
     nav {
-        a {
-            color: $body-text-color;
-            &:hover {
-                background-color: none !important;
+        li {
+            a {
+                color: $body-text-color;
+                &:hover {
+                    background-color: $bg;
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -94,6 +97,7 @@ $bg3: #323232;
 
     .button {
         width: 6rem;
+        margin: 0;
     }
 }
 
@@ -105,6 +109,19 @@ $bg3: #323232;
     min-height: 10vh;
     padding-bottom: 2rem;
     text-align: center;
+}
+
+.end-actions {
+    text-align: center;
+
+    form {
+        display: inline-block;
+    }
+
+    .button {
+        width: 6rem;
+        margin: 0;
+    }
 }
 
 .blackjack {

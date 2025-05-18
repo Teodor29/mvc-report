@@ -89,7 +89,7 @@
             "@phpstan"
         ],
         "phpdoc": "tools/phpdoc/phpdoc --config=tools/phpdoc/phpdoc.xml",
-        "phpunit": "vendor/bin/phpunit --no-coverage",
+        "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit",
         "phpmetrics": "tools/phpmetrics/vendor/bin/phpmetrics --report-html=docs/metrics src",
         "auto-scripts": {
             "cache:clear": "symfony-cmd",

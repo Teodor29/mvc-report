@@ -2,10 +2,9 @@
 
 namespace App\Controller;
 
-use App\Card\DeckOfCards;
-use App\Service\PlayerService;
 use App\Service\DealerService;
 use App\Service\GameService;
+use App\Service\PlayerService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -46,8 +45,11 @@ class ProjBlackjackController extends AbstractController
         SessionInterface $session
     ): Response {
         $playerName = $request->request->get('playerName');
-        $numberOfPlayers = $request->request->get('numberOfPlayers');
-
+        if ($request->request->get('numberOfPlayers')) {
+            $numberOfPlayers = (int) $request->request->get('numberOfPlayers');
+        } else {
+            $numberOfPlayers = $session->get('numberOfPlayers', 1);
+        }
         $session->set('playerName', $playerName);
         $session->set('numberOfPlayers', $numberOfPlayers);
 
@@ -55,8 +57,9 @@ class ProjBlackjackController extends AbstractController
 
         $session->set('balance', $balance);
 
-        $deck = new DeckOfCards();
-        $deck->shuffle();
+        if (!is_int($numberOfPlayers)) {
+            $numberOfPlayers = 1;
+        }
 
         $playerHands = $this->playerService->initPlayerHands($numberOfPlayers);
         $dealerHand = $this->dealerService->initDealerHand();
@@ -81,27 +84,39 @@ class ProjBlackjackController extends AbstractController
         $playerName = $session->get('playerName');
 
         $playerHands = $session->get('playerHands', []);
+
         $dealerHand = $session->get('dealerHand', []);
         $balance = $session->get('balance');
+
+        if (!is_array($playerHands)) {
+            $playerHands = [];
+        }
+        if (!is_array($dealerHand)) {
+            $dealerHand = [];
+        }
 
         if ($this->playerService->checkPlayerDone($playerHands)) {
             $dealerHand = $this->dealerService->dealerPlay($dealerHand);
             $playerHands = $this->gameService->endGame($playerHands, $dealerHand);
-            $balance = $this->gameService->calculateBalance($playerHands, $balance);
+            $winnings = $this->gameService->calculateWinnings($playerHands);
+            $balance += $winnings;
 
             $session->set('dealerHand', $dealerHand);
             $session->set('playerHands', $playerHands);
             $session->set('balance', $balance);
+            $session->set('winnings', $winnings);
+            $session->set('roundFinished', true);
+        } else {
+            $session->set('roundFinished', false);
         }
 
         if ($request->isMethod('POST')) {
-            foreach ($playerHands as $key => &$playerHand) {
-                if (!isset($playerHand['bet'])) {
-                    $playerHand['bet'] = $request->request->get('bet' . $key, 0);
-                    $balance -= $playerHand['bet'];
-                }
+            $bets = [];
+            foreach ($playerHands as $key => $playerHand) {
+                $bets[$key] = (int) $request->request->get('bet' . $key, 0);
             }
 
+            $this->gameService->placeBets($playerHands, $balance, $bets);
             $session->set('playerHands', $playerHands);
             $session->set('balance', $balance);
         }
@@ -111,6 +126,8 @@ class ProjBlackjackController extends AbstractController
             'dealerHand' => $dealerHand,
             'playerName' => $playerName,
             'balance' => $balance,
+            'roundFinished' => $session->get('roundFinished', false),
+            'winnings' => $session->get('winnings', 0),
         ]);
     }
 
@@ -120,12 +137,14 @@ class ProjBlackjackController extends AbstractController
         SessionInterface $session
     ): Response {
         $playerHands = $session->get('playerHands', []);
-        $deck = $session->get('deck');
+
+        if (!is_array($playerHands)) {
+            $playerHands = [];
+        }
 
         $playerHands = $this->playerService->playerHit($playerHands, $playerIndex);
 
         $session->set('playerHands', $playerHands);
-        $session->set('deck', $deck);
 
         return $this->redirectToRoute('proj_blackjack');
     }
@@ -136,12 +155,14 @@ class ProjBlackjackController extends AbstractController
         SessionInterface $session
     ): Response {
         $playerHands = $session->get('playerHands', []);
-        $deck = $session->get('deck');
+
+        if (!is_array($playerHands)) {
+            $playerHands = [];
+        }
 
         $playerHands = $this->playerService->playerStand($playerHands, $playerIndex);
 
         $session->set('playerHands', $playerHands);
-        $session->set('deck', $deck);
 
         return $this->redirectToRoute('proj_blackjack');
     }
@@ -150,6 +171,7 @@ class ProjBlackjackController extends AbstractController
     public function resetSession(SessionInterface $session): Response
     {
         $session->clear();
+
         return $this->redirectToRoute('proj');
     }
 }

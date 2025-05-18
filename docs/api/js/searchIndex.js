@@ -151,6 +151,66 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ApiLibraryController.html#method_getBook"
         },                {
+            "fqsen": "\\App\\Controller\\ApiProjBlackjackController",
+            "name": "ApiProjBlackjackController",
+            "summary": "",
+            "url": "classes/App-Controller-ApiProjBlackjackController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiProjBlackjackController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Controller-ApiProjBlackjackController.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiProjBlackjackController\u003A\u003AapiBlackjack\u0028\u0029",
+            "name": "apiBlackjack",
+            "summary": "",
+            "url": "classes/App-Controller-ApiProjBlackjackController.html#method_apiBlackjack"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiProjBlackjackController\u003A\u003AstartGame\u0028\u0029",
+            "name": "startGame",
+            "summary": "",
+            "url": "classes/App-Controller-ApiProjBlackjackController.html#method_startGame"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiProjBlackjackController\u003A\u003AplayerHit\u0028\u0029",
+            "name": "playerHit",
+            "summary": "",
+            "url": "classes/App-Controller-ApiProjBlackjackController.html#method_playerHit"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiProjBlackjackController\u003A\u003AplayerStand\u0028\u0029",
+            "name": "playerStand",
+            "summary": "",
+            "url": "classes/App-Controller-ApiProjBlackjackController.html#method_playerStand"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiProjBlackjackController\u003A\u003Adeal\u0028\u0029",
+            "name": "deal",
+            "summary": "",
+            "url": "classes/App-Controller-ApiProjBlackjackController.html#method_deal"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiProjBlackjackController\u003A\u003AgameState\u0028\u0029",
+            "name": "gameState",
+            "summary": "",
+            "url": "classes/App-Controller-ApiProjBlackjackController.html#method_gameState"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiProjBlackjackController\u003A\u003AgetDeck\u0028\u0029",
+            "name": "getDeck",
+            "summary": "",
+            "url": "classes/App-Controller-ApiProjBlackjackController.html#method_getDeck"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiProjBlackjackController\u003A\u003A\u0024playerService",
+            "name": "playerService",
+            "summary": "",
+            "url": "classes/App-Controller-ApiProjBlackjackController.html#property_playerService"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiProjBlackjackController\u003A\u003A\u0024dealerService",
+            "name": "dealerService",
+            "summary": "",
+            "url": "classes/App-Controller-ApiProjBlackjackController.html#property_dealerService"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiProjBlackjackController\u003A\u003A\u0024gameService",
+            "name": "gameService",
+            "summary": "",
+            "url": "classes/App-Controller-ApiProjBlackjackController.html#property_gameService"
+        },                {
             "fqsen": "\\App\\Controller\\BookController",
             "name": "BookController",
             "summary": "",
@@ -266,15 +326,60 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ProjBlackjackController.html"
         },                {
+            "fqsen": "\\App\\Controller\\ProjBlackjackController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Controller-ProjBlackjackController.html#method___construct"
+        },                {
             "fqsen": "\\App\\Controller\\ProjBlackjackController\u003A\u003Aproj\u0028\u0029",
             "name": "proj",
             "summary": "",
             "url": "classes/App-Controller-ProjBlackjackController.html#method_proj"
         },                {
+            "fqsen": "\\App\\Controller\\ProjBlackjackController\u003A\u003Aabout\u0028\u0029",
+            "name": "about",
+            "summary": "",
+            "url": "classes/App-Controller-ProjBlackjackController.html#method_about"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjBlackjackController\u003A\u003Abet\u0028\u0029",
+            "name": "bet",
+            "summary": "",
+            "url": "classes/App-Controller-ProjBlackjackController.html#method_bet"
+        },                {
             "fqsen": "\\App\\Controller\\ProjBlackjackController\u003A\u003Ablackjack\u0028\u0029",
             "name": "blackjack",
             "summary": "",
             "url": "classes/App-Controller-ProjBlackjackController.html#method_blackjack"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjBlackjackController\u003A\u003Ahit\u0028\u0029",
+            "name": "hit",
+            "summary": "",
+            "url": "classes/App-Controller-ProjBlackjackController.html#method_hit"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjBlackjackController\u003A\u003Astand\u0028\u0029",
+            "name": "stand",
+            "summary": "",
+            "url": "classes/App-Controller-ProjBlackjackController.html#method_stand"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjBlackjackController\u003A\u003AresetSession\u0028\u0029",
+            "name": "resetSession",
+            "summary": "",
+            "url": "classes/App-Controller-ProjBlackjackController.html#method_resetSession"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjBlackjackController\u003A\u003A\u0024playerService",
+            "name": "playerService",
+            "summary": "",
+            "url": "classes/App-Controller-ProjBlackjackController.html#property_playerService"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjBlackjackController\u003A\u003A\u0024dealerService",
+            "name": "dealerService",
+            "summary": "",
+            "url": "classes/App-Controller-ProjBlackjackController.html#property_dealerService"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjBlackjackController\u003A\u003A\u0024gameService",
+            "name": "gameService",
+            "summary": "",
+            "url": "classes/App-Controller-ProjBlackjackController.html#property_gameService"
         },                {
             "fqsen": "\\App\\Controller\\ReportController",
             "name": "ReportController",
@@ -465,6 +570,111 @@ Search.appendIndex(
             "name": "deck",
             "summary": "",
             "url": "classes/App-Service-BlackjackService.html#property_deck"
+        },                {
+            "fqsen": "\\App\\Service\\DealerService",
+            "name": "DealerService",
+            "summary": "",
+            "url": "classes/App-Service-DealerService.html"
+        },                {
+            "fqsen": "\\App\\Service\\DealerService\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Service-DealerService.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Service\\DealerService\u003A\u003AinitDealerHand\u0028\u0029",
+            "name": "initDealerHand",
+            "summary": "Initialize\u0020the\u0020dealer\u0027s\u0020hand\u0020with\u0020one\u0020card.",
+            "url": "classes/App-Service-DealerService.html#method_initDealerHand"
+        },                {
+            "fqsen": "\\App\\Service\\DealerService\u003A\u003AdealerPlay\u0028\u0029",
+            "name": "dealerPlay",
+            "summary": "",
+            "url": "classes/App-Service-DealerService.html#method_dealerPlay"
+        },                {
+            "fqsen": "\\App\\Service\\DealerService\u003A\u003A\u0024blackjack",
+            "name": "blackjack",
+            "summary": "",
+            "url": "classes/App-Service-DealerService.html#property_blackjack"
+        },                {
+            "fqsen": "\\App\\Service\\DealerService\u003A\u003A\u0024deck",
+            "name": "deck",
+            "summary": "",
+            "url": "classes/App-Service-DealerService.html#property_deck"
+        },                {
+            "fqsen": "\\App\\Service\\GameService",
+            "name": "GameService",
+            "summary": "",
+            "url": "classes/App-Service-GameService.html"
+        },                {
+            "fqsen": "\\App\\Service\\GameService\u003A\u003AendGame\u0028\u0029",
+            "name": "endGame",
+            "summary": "End\u0020the\u0020game\u0020and\u0020determine\u0020the\u0020outcome\u0020for\u0020each\u0020player\u0020hand.",
+            "url": "classes/App-Service-GameService.html#method_endGame"
+        },                {
+            "fqsen": "\\App\\Service\\GameService\u003A\u003AcompareScores\u0028\u0029",
+            "name": "compareScores",
+            "summary": "Compare\u0020the\u0020player\u0027s\u0020score\u0020with\u0020the\u0020dealer\u0027s\u0020score.",
+            "url": "classes/App-Service-GameService.html#method_compareScores"
+        },                {
+            "fqsen": "\\App\\Service\\GameService\u003A\u003AcalculateBalance\u0028\u0029",
+            "name": "calculateBalance",
+            "summary": "Calculate\u0020the\u0020player\u0027s\u0020balance\u0020based\u0020on\u0020the\u0020hands\u0020and\u0020their\u0020status.",
+            "url": "classes/App-Service-GameService.html#method_calculateBalance"
+        },                {
+            "fqsen": "\\App\\Service\\GameService\u003A\u003AcalculateWinnings\u0028\u0029",
+            "name": "calculateWinnings",
+            "summary": "Calculate\u0020the\u0020winnings\u0020based\u0020on\u0020the\u0020player\u0027s\u0020hands\u0020and\u0020their\u0020status.",
+            "url": "classes/App-Service-GameService.html#method_calculateWinnings"
+        },                {
+            "fqsen": "\\App\\Service\\GameService\u003A\u003AplaceBets\u0028\u0029",
+            "name": "placeBets",
+            "summary": "Place\u0020bets\u0020for\u0020each\u0020player\u0020hand.",
+            "url": "classes/App-Service-GameService.html#method_placeBets"
+        },                {
+            "fqsen": "\\App\\Service\\PlayerService",
+            "name": "PlayerService",
+            "summary": "",
+            "url": "classes/App-Service-PlayerService.html"
+        },                {
+            "fqsen": "\\App\\Service\\PlayerService\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Service-PlayerService.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Service\\PlayerService\u003A\u003AinitPlayerHands\u0028\u0029",
+            "name": "initPlayerHands",
+            "summary": "",
+            "url": "classes/App-Service-PlayerService.html#method_initPlayerHands"
+        },                {
+            "fqsen": "\\App\\Service\\PlayerService\u003A\u003AplayerHit\u0028\u0029",
+            "name": "playerHit",
+            "summary": "",
+            "url": "classes/App-Service-PlayerService.html#method_playerHit"
+        },                {
+            "fqsen": "\\App\\Service\\PlayerService\u003A\u003AplayerStand\u0028\u0029",
+            "name": "playerStand",
+            "summary": "",
+            "url": "classes/App-Service-PlayerService.html#method_playerStand"
+        },                {
+            "fqsen": "\\App\\Service\\PlayerService\u003A\u003AcheckHandStatus\u0028\u0029",
+            "name": "checkHandStatus",
+            "summary": "Check\u0020the\u0020status\u0020of\u0020a\u0020hand\u0020\u0028e.g.,\u0020blackjack,\u0020bust,\u0020or\u0020playing\u0029.",
+            "url": "classes/App-Service-PlayerService.html#method_checkHandStatus"
+        },                {
+            "fqsen": "\\App\\Service\\PlayerService\u003A\u003AcheckPlayerDone\u0028\u0029",
+            "name": "checkPlayerDone",
+            "summary": "Check\u0020if\u0020all\u0020players\u0020have\u0020finished\u0020their\u0020turns.",
+            "url": "classes/App-Service-PlayerService.html#method_checkPlayerDone"
+        },                {
+            "fqsen": "\\App\\Service\\PlayerService\u003A\u003A\u0024blackjack",
+            "name": "blackjack",
+            "summary": "",
+            "url": "classes/App-Service-PlayerService.html#property_blackjack"
+        },                {
+            "fqsen": "\\App\\Service\\PlayerService\u003A\u003A\u0024deck",
+            "name": "deck",
+            "summary": "",
+            "url": "classes/App-Service-PlayerService.html#property_deck"
         },                {
             "fqsen": "\\",
             "name": "\\",

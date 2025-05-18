@@ -18,20 +18,20 @@ class DealerService
     }
 
     /**
-     * Initialize the dealer's hand with one card
-     *
      * @return array array containing the dealer's hand and score
      */
     public function initDealerHand(): array
     {
-        $dealerHand = [
-            $this->blackjack->deal(),
-        ];
+        $card = $this->blackjack->deal();
+        $dealerHand = [];
+        if (is_string($card)) {
+            $dealerHand[] = $card;
+        }
         $dealerScore = $this->blackjack->calculateScore($dealerHand);
 
         return [
-            "hand" => $dealerHand,
-            "score" => $dealerScore,
+            'hand' => $dealerHand,
+            'score' => $dealerScore,
         ];
     }
 
@@ -46,13 +46,16 @@ class DealerService
         $score = $dealerHand['score'];
 
         while ($score < 17) {
-            $hand[] = $this->blackjack->deal();
+            $card = $this->blackjack->deal();
+            if (is_string($card)) {
+                $hand[] = $card;
+            }
             $score = $this->blackjack->calculateScore($hand);
         }
 
         return [
-            "hand" => $hand,
-            "score" => $score,
+            'hand' => $hand,
+            'score' => $score,
         ];
     }
 }

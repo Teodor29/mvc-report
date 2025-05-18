@@ -26,7 +26,7 @@ class BlackjackService
     {
         $playerHand[] = $this->blackjack->deal();
 
-        return array_filter($playerHand, fn($card) => null !== $card);
+        return array_filter($playerHand, fn ($card) => null !== $card);
     }
 
     /**
@@ -39,7 +39,7 @@ class BlackjackService
         $dealerScore = $this->blackjack->calculateScore($dealerHand);
         while ($dealerScore < 17) {
             $dealerHand[] = $this->blackjack->deal();
-            $dealerHand = array_filter($dealerHand, fn($card) => null !== $card);
+            $dealerHand = array_filter($dealerHand, fn ($card) => null !== $card);
             $dealerScore = $this->blackjack->calculateScore($dealerHand);
         }
 

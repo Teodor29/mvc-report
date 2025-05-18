@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .project {
     background-color: rgb(6, 71, 52);
 }
@@ -15,11 +14,12 @@
 .project .button:hover {
     background-color: rgb(185, 148, 24);
 }
-.project nav a {
+.project nav li a {
     color: #ccc;
 }
-.project nav a:hover {
-    background-color: none !important;
+.project nav li a:hover {
+    background-color: #0d2324;
+    text-decoration: underline;
 }
 .project nav,
 .project footer {
@@ -31,11 +31,7 @@
     border-bottom: 2px double rgb(214, 172, 35);
 }
 .project a {
-    color: rgb(201, 175, 89);
-}
-
-.dealer {
-    text-align: center;
+    color: rgb(238, 208, 110);
 }
 
 .players {
@@ -59,8 +55,8 @@
 }
 
 .player .card {
-    width: 70px !important;
-    height: 90px !important;
+    width: 40px !important;
+    height: 60px !important;
 }
 
 .player .actions {
@@ -70,19 +66,33 @@
 }
 .player .actions .button {
     width: 6rem;
+    margin: 0;
+}
+
+.player-info {
+    padding-bottom: 1rem;
 }
 
 .dealer {
-    min-height: 20vh;
+    min-height: 10vh;
     padding-bottom: 2rem;
+    text-align: center;
+}
+
+.end-actions {
+    text-align: center;
+}
+.end-actions form {
+    display: inline-block;
+}
+.end-actions .button {
+    width: 6rem;
+    margin: 0;
 }
 
 .blackjack form {
     max-width: 500px;
     margin: 0 auto;
-}
-.blackjack input {
-    margin-bottom: 1rem;
 }
 
 .bet-form {
@@ -91,8 +101,13 @@
 }
 
 .bet-input {
-    width: 6rem; /* Gör input-fältet bredare */
+    width: 6rem;
     font-size: 1.25rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 html,
@@ -182,7 +197,7 @@ textarea {
     box-sizing: border-box;
     width: 100%;
     padding: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     border-radius: 5px;
     background-color: #323232;
     color: #ccc;
@@ -356,6 +371,7 @@ figure.right {
 }
 
 .api_link {
+    padding: 1rem;
     background-color: #171717;
     text-decoration: none;
     color: #ccc;
@@ -366,9 +382,6 @@ figure.right {
     height: 200px;
     border-radius: 2rem;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.api_link p {
-    padding: 0 1rem;
 }
 .api_link:hover {
     box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -384,6 +397,7 @@ figure.right {
     margin-bottom: 1rem;
 }
 .container-cards .card {
+    padding: 0.5rem;
     background-color: #ccc;
     color: #020202;
     display: inline-block;
@@ -401,4 +415,9 @@ figure.right {
 .player-hands {
     background-color: #323232;
     padding: 1rem;
+}
+
+.player-links {
+    display: flex;
+    gap: 1rem;
 }/*# sourceMappingURL=report.css.map */

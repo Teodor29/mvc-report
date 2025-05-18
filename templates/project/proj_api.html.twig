@@ -1,0 +1,69 @@
+{% extends "proj_base.html.twig" %}
+
+{% block title %}Blackjack API{% endblock %}
+
+{% block body %}
+
+<h1>Blackjack API</h1>
+
+<ul>
+    <li>
+        <h2>Init</h2>
+        <p>Startar ett nytt spel och returnerar JSON med spelarens och dealerns händer.</p>
+        <div class="player-links">
+            <a href="{{ path('proj_api_init', { 'numberOfPlayers': 1 }) }}">
+                <span>1 Spelare</span>
+            </a>
+            <a href="{{ path('proj_api_init', { 'numberOfPlayers': 2 }) }}">
+                <span>2 Spelare</span>
+            </a>
+            <a href="{{ path('proj_api_init', { 'numberOfPlayers': 3 }) }}">
+                <span>3 Spelare</span>
+            </a>
+        </div>
+    </li>
+    <li>
+        <h2>Hit</h2>
+        <p>Spelaren drar ett kort och JSON med uppdaterade händer returneras.</p>
+        <div class="player-links">
+            <a href="{{ path('proj_api_hit', { 'playerIndex': 0 }) }}">
+                <span>Spelare 1</span>
+            </a>
+            <a href="{{ path('proj_api_hit', { 'playerIndex': 1 }) }}">
+                <span>Spelare 2</span>
+            </a>
+            <a href="{{ path('proj_api_hit', { 'playerIndex': 2 }) }}">
+                <span>Spelare 3</span>
+            </a>
+        </div>
+    </li>
+    <li>
+        <h2>Stand</h2>
+        <p>Spelaren står och JSON med uppdaterade händer returneras.</p>
+        <div class="player-links">
+            <a href="{{ path('proj_api_stand', { 'playerIndex': 0 }) }}">
+                <span>Spelare 1</span>
+            </a>
+            <a href="{{ path('proj_api_stand', { 'playerIndex': 1 }) }}">
+                <span>Spelare 2</span>
+            </a>
+            <a href="{{ path('proj_api_stand', { 'playerIndex': 2 }) }}">
+                <span>Spelare 3</span>
+            </a>
+        </div>
+    </li>
+    <li>
+        <a href="{{ path('proj_api_dealer_play') }}">
+            <h2>Dealer Play</h2>
+            <p>Dealern spelar sin tur och JSON med uppdaterade händer returneras.</p>
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('proj_api_game') }}">
+            <h2>Game State</h2>
+            <p>Hämtar aktuell spelstatus som JSON.</p>
+        </a>
+    </li>
+</ul>
+
+{% endblock %}

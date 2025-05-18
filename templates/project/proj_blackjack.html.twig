@@ -43,10 +43,19 @@
             </form>
             {% elseif player.status != 'playing' %}
             <h3>{{ player.status }}
-            {% endif %}
+                {% endif %}
         </div>
     </div>
     {% endfor %}
 </div>
+
+{% if roundFinished %}
+<div class="end-actions">
+    <h3>Vinst: {{ winnings }}</h3>
+    <form action="{{ path('proj_bet') }}" method="post">
+        <button type="submit" class="btn btn-primary">Starta ny runda</button>
+    </form>
+</div>
+{% endif %}
 
 {% endblock %}

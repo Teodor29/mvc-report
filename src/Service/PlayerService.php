@@ -33,10 +33,10 @@ class PlayerService
             $score = $this->blackjack->calculateScore($hand);
 
             $hands[] = [
-                "hand" => $hand,
-                "score" => $score,
-                "status" => "playing",
-                "isActive" => ($i === 0),
+                'hand' => $hand,
+                'score' => $score,
+                'status' => 'playing',
+                'isActive' => ($i === 0),
             ];
         }
 
@@ -45,7 +45,7 @@ class PlayerService
 
     /**
      * @param array $playerHands array of player hands
-     * @param int $playerIndex index of the player who hit
+     * @param int   $playerIndex index of the player who hit
      *
      * @return array updated array of player hands
      */
@@ -55,7 +55,7 @@ class PlayerService
         $playerHands[$playerIndex]['score'] = $this->blackjack->calculateScore($playerHands[$playerIndex]['hand']);
         $playerHands[$playerIndex]['status'] = $this->checkHandStatus($playerHands[$playerIndex]['hand']);
 
-        if ($playerHands[$playerIndex]['status'] === "bust" || $playerHands[$playerIndex]['status'] === "stand") {
+        if ($playerHands[$playerIndex]['status'] === "bust" || $playerHands[$playerIndex]['status'] === 'stand') {
             $playerHands[$playerIndex]['isActive'] = false;
             if (isset($playerHands[$playerIndex + 1])) {
                 $playerHands[$playerIndex + 1]['isActive'] = true;
@@ -67,13 +67,13 @@ class PlayerService
 
     /**
      * @param array $playerHands array of player hands
-     * @param int $playerIndex index of the player who stood
+     * @param int   $playerIndex index of the player who stood
      *
      * @return array updated array of player hands
      */
     public function playerStand(array $playerHands, int $playerIndex): array
     {
-        $playerHands[$playerIndex]['status'] = "stand";
+        $playerHands[$playerIndex]['status'] = 'stand';
         $playerHands[$playerIndex]['isActive'] = false;
 
         if (isset($playerHands[$playerIndex + 1])) {
@@ -84,8 +84,6 @@ class PlayerService
     }
 
     /**
-     * Check the status of a hand (e.g., blackjack, bust, or playing)
-     *
      * @param array $hand the player's hand
      *
      * @return string the status of the hand (e.g., "blackjack", "bust", "playing", "stand")
@@ -95,19 +93,17 @@ class PlayerService
         $score = $this->blackjack->calculateScore($hand);
 
         if (count($hand) === 2 && $score === 21) {
-            return "blackjack";
+            return 'blackjack';
         } elseif ($score > 21) {
-            return "bust";
+            return 'bust';
         } elseif ($score === 21) {
-            return "stand";
+            return 'stand';
         }
 
-        return "playing";
+        return 'playing';
     }
 
     /**
-     * Check if all players have finished their turns
-     *
      * @param array $playerHands array of player hands
      *
      * @return bool true if all players are done, false otherwise
@@ -115,10 +111,11 @@ class PlayerService
     public function checkPlayerDone(array $playerHands): bool
     {
         foreach ($playerHands as $hand) {
-            if ($hand['status'] === "playing") {
+            if ($hand['status'] === 'playing') {
                 return false;
             }
         }
+
         return true;
     }
 }
