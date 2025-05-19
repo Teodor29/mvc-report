@@ -45,23 +45,23 @@ class ProjBlackjackController extends AbstractController
         SessionInterface $session
     ): Response {
         $playerName = $request->request->get('playerName');
-        if ($request->request->get('numberOfPlayers')) {
-            $numberOfPlayers = (int) $request->request->get('numberOfPlayers');
+        if ($request->request->get('numberOfHands')) {
+            $numberOfHands = (int) $request->request->get('numberOfHands');
         } else {
-            $numberOfPlayers = $session->get('numberOfPlayers', 1);
+            $numberOfHands = $session->get('numberOfHands', 1);
         }
         $session->set('playerName', $playerName);
-        $session->set('numberOfPlayers', $numberOfPlayers);
+        $session->set('numberOfHands', $numberOfHands);
 
         $balance = $session->get('balance', 1000);
 
         $session->set('balance', $balance);
 
-        if (!is_int($numberOfPlayers)) {
-            $numberOfPlayers = 1;
+        if (!is_int($numberOfHands)) {
+            $numberOfHands = 1;
         }
 
-        $playerHands = $this->playerService->initPlayerHands($numberOfPlayers);
+        $playerHands = $this->playerService->initPlayerHands($numberOfHands);
         $dealerHand = $this->dealerService->initDealerHand();
 
         $session->set('playerHands', $playerHands);

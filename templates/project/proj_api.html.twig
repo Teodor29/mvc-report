@@ -11,14 +11,14 @@
         <h2>Init</h2>
         <p>Startar ett nytt spel och returnerar JSON med spelarens och dealerns händer.</p>
         <div class="player-links">
-            <a href="{{ path('proj_api_init', { 'numberOfPlayers': 1 }) }}">
-                <span>1 Spelare</span>
+            <a href="{{ path('proj_api_init', { 'numberOfHands': 1 }) }}">
+                <span>1 Hand</span>
             </a>
-            <a href="{{ path('proj_api_init', { 'numberOfPlayers': 2 }) }}">
-                <span>2 Spelare</span>
+            <a href="{{ path('proj_api_init', { 'numberOfHands': 2 }) }}">
+                <span>2 Händer</span>
             </a>
-            <a href="{{ path('proj_api_init', { 'numberOfPlayers': 3 }) }}">
-                <span>3 Spelare</span>
+            <a href="{{ path('proj_api_init', { 'numberOfHands': 3 }) }}">
+                <span>3 Händer</span>
             </a>
         </div>
     </li>
@@ -27,13 +27,13 @@
         <p>Spelaren drar ett kort och JSON med uppdaterade händer returneras.</p>
         <div class="player-links">
             <a href="{{ path('proj_api_hit', { 'playerIndex': 0 }) }}">
-                <span>Spelare 1</span>
+                <span>Hand 1</span>
             </a>
             <a href="{{ path('proj_api_hit', { 'playerIndex': 1 }) }}">
-                <span>Spelare 2</span>
+                <span>Hand 2</span>
             </a>
             <a href="{{ path('proj_api_hit', { 'playerIndex': 2 }) }}">
-                <span>Spelare 3</span>
+                <span>Hand 3</span>
             </a>
         </div>
     </li>
@@ -42,13 +42,13 @@
         <p>Spelaren står och JSON med uppdaterade händer returneras.</p>
         <div class="player-links">
             <a href="{{ path('proj_api_stand', { 'playerIndex': 0 }) }}">
-                <span>Spelare 1</span>
+                <span>Hand 1</span>
             </a>
             <a href="{{ path('proj_api_stand', { 'playerIndex': 1 }) }}">
-                <span>Spelare 2</span>
+                <span>Hand 2</span>
             </a>
             <a href="{{ path('proj_api_stand', { 'playerIndex': 2 }) }}">
-                <span>Spelare 3</span>
+                <span>Hand 3</span>
             </a>
         </div>
     </li>

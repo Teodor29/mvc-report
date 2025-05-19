@@ -34,12 +34,12 @@ class ApiProjBlackjackController extends AbstractController
         return $this->render('project/proj_api.html.twig');
     }
 
-    #[Route('/proj/api/init/{numberOfPlayers}', name: 'proj_api_init', methods: ['GET', 'POST'])]
+    #[Route('/proj/api/init/{numberOfHands}', name: 'proj_api_init', methods: ['GET', 'POST'])]
     public function startGame(
-        int $numberOfPlayers,
+        int $numberOfHands,
         SessionInterface $session
     ): JsonResponse {
-        $playerHands = $this->playerService->initPlayerHands($numberOfPlayers);
+        $playerHands = $this->playerService->initPlayerHands($numberOfHands);
         $dealerHand = $this->dealerService->initDealerHand();
 
         $session->set('playerHands', $playerHands);
