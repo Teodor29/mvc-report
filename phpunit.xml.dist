@@ -6,7 +6,7 @@
          backupGlobals="false"
          colors="true"
          bootstrap="tests/bootstrap.php"
-         convertDeprecationsToExceptions="false"
+         cacheDirectory=".phpunit.cache"
 >
     <php>
         <ini name="display_errors" value="1" />
@@ -23,20 +23,17 @@
         </testsuite>
     </testsuites>
 
-    <coverage>
-        <report>
-            <clover outputFile="docs/coverage.clover"/>
-            <html outputDirectory="docs/coverage" lowUpperBound="35" highLowerBound="70"/>
-        </report>
-    </coverage>
-
-    <filter>
+    <coverage processUncoveredFiles="true">
         <include>
             <directory suffix=".php">src/Card</directory>
             <directory suffix=".php">src/Entity</directory>
             <directory suffix=".php">src/Service</directory>
         </include>
-    </filter>
+        <report>
+            <clover outputFile="docs/coverage.clover"/>
+            <html outputDirectory="docs/coverage" lowUpperBound="35" highLowerBound="70"/>
+        </report>
+    </coverage>
 
     <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
