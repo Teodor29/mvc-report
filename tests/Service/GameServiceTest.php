@@ -89,7 +89,6 @@ class GameServiceTest extends TestCase
                 'bet' => 10,
             ],
         ];
-        $balance = 100;
         $winnings = $service->calculateWinnings($playerHands);
         $this->assertEquals(30, $winnings);
     }

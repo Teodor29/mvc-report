@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1747649065">
-  <project timestamp="1747649065">
+<coverage generated="1747649857">
+  <project timestamp="1747649857">
     <package name="App\Card">
       <file name="/home/teo/dbwebb-kurser/mvc/me/report/src/Card/Blackjack.php">
         <class name="App\Card\Blackjack" namespace="App\Card">
@@ -18,12 +18,12 @@
         <line num="47" type="stmt" count="8"/>
         <line num="48" type="stmt" count="3"/>
         <line num="49" type="stmt" count="8"/>
-        <line num="50" type="stmt" count="4"/>
-        <line num="51" type="stmt" count="4"/>
+        <line num="50" type="stmt" count="2"/>
+        <line num="51" type="stmt" count="2"/>
         <line num="53" type="stmt" count="8"/>
         <line num="57" type="stmt" count="8"/>
-        <line num="58" type="stmt" count="2"/>
-        <line num="59" type="stmt" count="2"/>
+        <line num="58" type="stmt" count="1"/>
+        <line num="59" type="stmt" count="1"/>
         <line num="62" type="stmt" count="8"/>
         <line num="73" type="method" name="checkGameEnd" visibility="public" complexity="3" crap="3" count="2"/>
         <line num="75" type="stmt" count="2"/>
@@ -194,7 +194,7 @@
       </file>
       <file name="/home/teo/dbwebb-kurser/mvc/me/report/src/Service/PlayerService.php">
         <class name="App\Service\PlayerService" namespace="App\Service">
-          <metrics complexity="17" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="42" coveredstatements="38" elements="48" coveredelements="42"/>
+          <metrics complexity="17" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="42" coveredstatements="41" elements="48" coveredelements="46"/>
         </class>
         <line num="13" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="5"/>
         <line num="15" type="stmt" count="5"/>
@@ -215,14 +215,14 @@
         <line num="39" type="stmt" count="1"/>
         <line num="40" type="stmt" count="1"/>
         <line num="43" type="stmt" count="1"/>
-        <line num="52" type="method" name="playerHit" visibility="public" complexity="4" crap="4.84" count="1"/>
+        <line num="52" type="method" name="playerHit" visibility="public" complexity="4" crap="4" count="1"/>
         <line num="54" type="stmt" count="1"/>
         <line num="55" type="stmt" count="1"/>
         <line num="56" type="stmt" count="1"/>
         <line num="58" type="stmt" count="1"/>
-        <line num="59" type="stmt" count="0"/>
-        <line num="60" type="stmt" count="0"/>
-        <line num="61" type="stmt" count="0"/>
+        <line num="59" type="stmt" count="1"/>
+        <line num="60" type="stmt" count="1"/>
+        <line num="61" type="stmt" count="1"/>
         <line num="65" type="stmt" count="1"/>
         <line num="74" type="method" name="playerStand" visibility="public" complexity="2" crap="2" count="1"/>
         <line num="76" type="stmt" count="1"/>
@@ -237,16 +237,16 @@
         <line num="97" type="stmt" count="2"/>
         <line num="98" type="stmt" count="0"/>
         <line num="99" type="stmt" count="2"/>
-        <line num="100" type="stmt" count="1"/>
-        <line num="103" type="stmt" count="2"/>
+        <line num="100" type="stmt" count="2"/>
+        <line num="103" type="stmt" count="1"/>
         <line num="111" type="method" name="checkPlayerDone" visibility="public" complexity="3" crap="3" count="1"/>
         <line num="113" type="stmt" count="1"/>
         <line num="114" type="stmt" count="1"/>
         <line num="115" type="stmt" count="1"/>
         <line num="119" type="stmt" count="1"/>
-        <metrics loc="122" ncloc="95" classes="1" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="42" coveredstatements="38" elements="48" coveredelements="42"/>
+        <metrics loc="122" ncloc="95" classes="1" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="42" coveredstatements="41" elements="48" coveredelements="46"/>
       </file>
     </package>
-    <metrics files="8" loc="623" ncloc="472" classes="8" methods="39" coveredmethods="37" conditionals="0" coveredconditionals="0" statements="153" coveredstatements="149" elements="192" coveredelements="186"/>
+    <metrics files="8" loc="623" ncloc="472" classes="8" methods="39" coveredmethods="38" conditionals="0" coveredconditionals="0" statements="153" coveredstatements="152" elements="192" coveredelements="190"/>
   </project>
 </coverage>
