@@ -2,7 +2,7 @@
 
 <!-- https://phpunit.readthedocs.io/en/latest/configuration.html -->
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.0/phpunit.xsd"
          backupGlobals="false"
          colors="true"
          bootstrap="tests/bootstrap.php"
@@ -23,17 +23,20 @@
         </testsuite>
     </testsuites>
 
-    <coverage processUncoveredFiles="true">
-        <include>
-            <directory suffix=".php">src/Card</directory>
-            <directory suffix=".php">src/Entity</directory>
-            <directory suffix=".php">src/Service</directory>
-        </include>
+    <coverage>
         <report>
             <clover outputFile="docs/coverage.clover"/>
             <html outputDirectory="docs/coverage" lowUpperBound="35" highLowerBound="70"/>
         </report>
     </coverage>
+
+    <filter>
+        <include>
+            <directory suffix=".php">src/Card</directory>
+            <directory suffix=".php">src/Entity</directory>
+            <directory suffix=".php">src/Service</directory>
+        </include>
+    </filter>
 
     <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
