@@ -36,9 +36,9 @@ class DealerService
     }
 
     /**
-     * @param string[] $dealerHand array of strings representing the dealer's hand
+     * @param array $dealerHand array of strings representing the dealer's hand
      *
-     * @return string[] updated array of strings after the dealer plays
+     * @return array updated array of strings after the dealer plays
      */
     public function dealerPlay(array $dealerHand): array
     {
@@ -50,6 +50,7 @@ class DealerService
             if (is_string($card)) {
                 $hand[] = $card;
             }
+            dump($hand);
             $score = $this->blackjack->calculateScore($hand);
         }
 
