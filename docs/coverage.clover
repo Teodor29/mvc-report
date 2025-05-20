@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1747686045">
-  <project timestamp="1747686045">
+<coverage generated="1747731442">
+  <project timestamp="1747731442">
     <package name="App\Card">
       <file name="/home/teo/dbwebb-kurser/mvc/me/report/src/Card/Blackjack.php">
         <class name="App\Card\Blackjack" namespace="App\Card">
@@ -18,9 +18,9 @@
         <line num="47" type="stmt" count="8"/>
         <line num="48" type="stmt" count="2"/>
         <line num="49" type="stmt" count="8"/>
-        <line num="50" type="stmt" count="4"/>
-        <line num="51" type="stmt" count="4"/>
-        <line num="53" type="stmt" count="7"/>
+        <line num="50" type="stmt" count="3"/>
+        <line num="51" type="stmt" count="3"/>
+        <line num="53" type="stmt" count="8"/>
         <line num="57" type="stmt" count="8"/>
         <line num="58" type="stmt" count="2"/>
         <line num="59" type="stmt" count="2"/>
