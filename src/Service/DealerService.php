@@ -50,7 +50,6 @@ class DealerService
             if (is_string($card)) {
                 $hand[] = $card;
             }
-            dump($hand);
             $score = $this->blackjack->calculateScore($hand);
         }
 

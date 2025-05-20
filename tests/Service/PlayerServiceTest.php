@@ -24,21 +24,31 @@ class PlayerServiceTest extends TestCase
         $service = new PlayerService();
         $playerHands = [
             [
-                'hand' => ['♠ 10', '♦ 5'], 
-                'score' => 15, 
+                'hand' => ['♠ 1', '♦ 1'], 
+                'score' => 2, 
                 'status' => 'playing', 
-                'isActive' => true],
+                'isActive' => true
+            ],
             [
-                'hand' => ['♠ 8', '♦ 7'], 
-                'score' => 15, 
+                'hand' => ['♠ 10', '♦ 5', '♣ 6'],
+                'score' => 21, 
                 'status' => 'playing', 
                 'isActive' => false
             ],
+            [
+                'hand' => ['♠ 1', '♦ 1'],
+                'score' => 2,
+                'status' => 'playing',
+                'isActive' => true
+            ],
+
         ];
         $updatedHands = $service->playerHit($playerHands, 0);
+        $service->playerHit($playerHands, 1);
 
         $this->assertCount(3, $updatedHands[0]['hand']);
         $this->assertNotEmpty($updatedHands[0]['hand'][2]);
+
     }
 
     public function testPlayerStand(): void

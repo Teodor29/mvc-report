@@ -103,6 +103,12 @@
 
         <h2 id="kmom10">kmom10</h2>
 
+        <p>Projektet ligger under /proj med en egen layoutfil (proj_base.html.twig). Jag har skapat en egen SASS-fil för projektet som ger ett nytt färgtema, typsnitt och design. På landningssidan finns en introduktion till spelet. Man kan spela mot dealern med upp till tre händer och placera olika bets per hand. GameService hanterar huvudlogiken, PlayerService och DealerService hanterar logiken för spelaren och dealern. Allt körs via ProjBlackjackController och sparas i sessionen. Det finns också en about-sida där jag kort förklarar projektets syfte och funktion. kodtäckningen ligger på över 100% för src/Card, src/Entity och src/Service</p>
+        <p>Jag har byggt ett JSON API med sex routes där man kan initiera spelet, dra ett kort, stanna, spela dealerns tur och få spelets status. Med POST kan man starta spelet med valfritt antal händer. Man kan också ta kort och stanna för valfri hand. Jag har lagt till /proj/api där man kan klicka och testa alla API-anrop direkt via länkar. Jag tycker det blev en bra lösning och API:t fungerar som det ska. Det är enkelt att se game-state och felsöka.</p>
+        <p>Projektet gick ganska bra att genomföra. Jag hade redan grunden till Blackjack-spelet från tidigare kursmoment så det var mest att bygga vidare på den koden och göra lite förbättringar. Jag delade upp logiken i separata klasser och skrev tester för varje del. Det svåraste var kanske att få till spelet för flera händer samtidigt. Det blev mycket att hålla reda på i sessionen. Men överlag gick det bra.
+        </p>
+        <p>Jag tycker det här har varit väldigt bra. Symfony var ganska svårt i början men nu tycker jag att det är rätt smidigt. Det har varit nyttigt att jobba med enhetstester, kodkvalitet och dokumentation. Det känns som viktiga delar att kunna i framtiden. Jag tycker materialet och handledningen har varit bra. Jag skulle ge kursen 8 av 10 i betyg och hade absolut kunnat rekommendera den.</p>
+
     </article>
 </div>
 {% endblock %}
